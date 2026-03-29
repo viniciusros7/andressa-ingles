@@ -4,13 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inglês da Andressa 🌸</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Inglês 🌸">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#e8856a">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%23e8856a'/%3E%3Ctext x='256' y='340' text-anchor='middle' font-size='300' fill='white'%3E🌸%3C/text%3E%3C/svg%3E">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%23e8856a'/%3E%3Ctext x='256' y='340' text-anchor='middle' font-size='300' fill='white'%3E🌸%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -226,6 +219,52 @@
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
   @media(max-width:360px){.pack-grid,.quiz-options{grid-template-columns:1fr;}}
+
+  /* PRONUNCIATION */
+  .pron-intro{background:linear-gradient(135deg,#fff0e8,white);border:2px solid var(--primary-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
+  .pron-intro p{font-size:0.85rem;color:var(--text-soft);line-height:1.5;}
+  .pron-level-title{font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin:16px 0 8px;display:flex;align-items:center;gap:6px;}
+  .pron-word-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;transition:all 0.2s;}
+  .pron-word-card:hover{box-shadow:var(--shadow);}
+  .pron-word-card.practiced{border-color:var(--green);background:linear-gradient(to right,var(--green-light),white);}
+  .pron-word-top{display:flex;align-items:center;gap:10px;}
+  .pron-word-en{font-size:1.1rem;font-weight:900;color:var(--primary-dark);flex:1;}
+  .pron-r-highlight{color:var(--primary);text-decoration:underline;text-underline-offset:3px;}
+  .pron-word-tip{font-size:0.75rem;color:var(--text-soft);margin-top:5px;background:var(--bg);border-radius:6px;padding:5px 9px;line-height:1.4;}
+  .pron-word-tip strong{color:var(--primary-dark);}
+  .pron-actions{display:flex;gap:8px;margin-top:8px;align-items:center;}
+  .pron-practiced-btn{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:white;font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;cursor:pointer;transition:all 0.2s;color:var(--text-muted);}
+  .pron-practiced-btn.done{background:var(--green-light);border-color:var(--green);color:#2e7a44;}
+  .pron-prog-bar-wrap{background:var(--border);border-radius:50px;height:10px;overflow:hidden;margin-top:6px;}
+  .pron-prog-bar{background:linear-gradient(90deg,var(--primary),var(--primary-dark));height:100%;border-radius:50px;transition:width 0.5s ease;}
+  .pron-prog-label{font-size:0.75rem;color:var(--text-muted);font-weight:700;display:flex;justify-content:space-between;margin-top:4px;}
+
+  /* BADGES */
+  .badges-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+  .badge-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;transition:all 0.2s;position:relative;overflow:hidden;}
+  .badge-card.unlocked{border-color:var(--yellow);background:linear-gradient(135deg,var(--yellow-light),white);}
+  .badge-card.locked{opacity:0.5;filter:grayscale(0.6);}
+  .badge-emoji{font-size:2rem;margin-bottom:6px;}
+  .badge-name{font-size:0.78rem;font-weight:800;color:var(--text);}
+  .badge-desc{font-size:0.68rem;color:var(--text-muted);margin-top:3px;}
+  .badge-unlocked-tag{position:absolute;top:6px;right:6px;font-size:0.6rem;background:var(--yellow);color:#6a4a00;padding:2px 6px;border-radius:20px;font-weight:800;}
+
+  /* QUIZ DAILY GOAL */
+  .quiz-daily-goal{background:linear-gradient(135deg,var(--accent-light),white);border:2px solid var(--accent);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;}
+  .quiz-goal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .quiz-goal-label{font-size:0.78rem;font-weight:800;color:var(--accent);}
+  .quiz-goal-count{font-size:0.78rem;font-weight:800;color:var(--text-soft);}
+  .quiz-goal-bar-wrap{background:var(--border);border-radius:50px;height:8px;overflow:hidden;}
+  .quiz-goal-bar{background:linear-gradient(90deg,var(--accent),#4a9ab5);height:100%;border-radius:50px;transition:width 0.5s ease;}
+
+  /* WEEKLY TRACKER */
+  .week-tracker{display:flex;gap:6px;justify-content:center;margin-bottom:4px;}
+  .week-day{flex:1;text-align:center;}
+  .week-day-name{font-size:0.62rem;color:var(--text-muted);font-weight:700;margin-bottom:4px;}
+  .week-day-dot{width:100%;aspect-ratio:1;border-radius:50%;border:2px solid var(--border);background:var(--bg);margin:0 auto;max-width:32px;}
+  .week-day-dot.done{background:var(--green);border-color:var(--green);}
+  .week-day-dot.today{border-color:var(--primary);border-width:3px;}
+  .week-day-dot.done.today{background:var(--primary);border-color:var(--primary-dark);}
 </style>
 </head>
 <body>
@@ -245,6 +284,7 @@
   <button class="nav-btn" onclick="showSection('quiz',this)">🃏 Quiz</button>
   <button class="nav-btn" onclick="showSection('diary',this)">🎬 Diário</button>
   <button class="nav-btn" onclick="showSection('miguel',this)">👶 Miguel</button>
+  <button class="nav-btn" onclick="showSection('pron',this)">🗣️ Pronúncia R</button>
   <button class="nav-btn" onclick="showSection('recs',this)">🎥 Séries</button>
   <button class="nav-btn" onclick="showSection('admin',this)">⚙️ Admin</button>
 </nav>
@@ -268,6 +308,28 @@
       <div class="stat-box"><div class="stat-num" id="statMastered">0</div><div class="stat-label">Palavras ⭐ dominadas</div></div>
       <div class="stat-box"><div class="stat-num" id="statTasks">0</div><div class="stat-label">Tarefas feitas</div></div>
       <div class="stat-box"><div class="stat-num" id="statQuiz">0</div><div class="stat-label">Quiz acertos</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📅 Semana atual</div>
+      <div class="week-tracker" id="weekTracker"></div>
+      <div style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:6px;">🟢 dias que você praticou</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🃏 Meta de Quiz do Dia</div>
+      <div class="quiz-daily-goal">
+        <div class="quiz-goal-top">
+          <div class="quiz-goal-label">🎯 Meta: <span id="goalTarget">3</span> quiz por dia</div>
+          <div class="quiz-goal-count"><span id="goalDone">0</span>/<span id="goalTarget2">3</span></div>
+        </div>
+        <div class="quiz-goal-bar-wrap"><div class="quiz-goal-bar" id="goalBar" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏅 Conquistas</div>
+      <div class="badges-grid" id="badgesGrid"></div>
     </div>
     <div class="card">
       <div class="card-title">📋 Tarefas de hoje</div>
@@ -405,6 +467,20 @@
     </div>
   </div>
 
+  <!-- PRONÚNCIA R -->
+  <div id="section-pron" class="section">
+    <div class="pron-intro">
+      <div class="card-title" style="color:var(--primary);">🗣️ Treino do R em inglês</div>
+      <p>O R em inglês é diferente do português! É um som mais <strong>suave e profundo</strong> — a língua vai ligeiramente para trás sem tocar o céu da boca. Ouça, repita e marque quando conseguir! 💪</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 Progresso</div>
+      <div class="pron-prog-bar-wrap"><div class="pron-prog-bar" id="pronProgBar" style="width:0%"></div></div>
+      <div class="pron-prog-label"><span id="pronProgText">0 palavras praticadas</span><span id="pronProgPct">0%</span></div>
+    </div>
+    <div id="pronContent"></div>
+  </div>
+
   <!-- ADMIN -->
   <div id="section-admin" class="section">
     <div class="admin-locked" id="adminLocked">
@@ -445,6 +521,15 @@
         <button onclick="clearDoneTasks()" style="margin-top:8px;padding:9px 16px;background:#fff0e0;border:1.5px solid var(--yellow);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;color:#a07a00;">🧹 Limpar concluídas</button>
       </div>
       <div class="card">
+        <div class="card-title">🎯 Meta de Quiz Diária</div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input class="input-field" id="adminQuizGoal" type="number" min="1" max="20" placeholder="Ex: 3" style="max-width:80px;">
+          <button class="btn-save" onclick="saveQuizGoal()">✓ Salvar</button>
+          <span style="font-size:0.82rem;color:var(--text-soft);">Atual: <strong id="currentGoalDisplay">3</strong>/dia</span>
+        </div>
+        <div class="success-msg" id="goalSaved">✅ Meta salva!</div>
+      </div>
+      <div class="card">
         <div class="card-title">📊 Progresso da Andressa</div>
         <p style="font-size:0.85rem;color:var(--text-soft);">⭐ Palavras dominadas: <strong id="adminStatMastered">0</strong></p>
         <p style="font-size:0.85rem;color:var(--text-soft);margin-top:6px;">✅ Tarefas concluídas: <strong id="adminStatTasks">0</strong></p>
@@ -460,6 +545,51 @@
 
 <script>
 // ── DATA ──────────────────────────────────────────────
+const PRON_R_WORDS = [
+  { level: '🟢 Nível 1 — R no início (mais fácil)', words: [
+    { en:'remember', pt:'lembrar', tip:'Diga "ri-MÊM-ber" — o R inicial soa quase como um "r" suave, não como o "rr" forte do português.' },
+    { en:'red', pt:'vermelho', tip:'Diga "rred" com a língua levemente curvada para trás. Não é "hred"!' },
+    { en:'ready', pt:'pronto/a', tip:'"RÉ-di" — R bem suave no começo, sem vibrar a garganta.' },
+    { en:'really', pt:'realmente', tip:'"RÍ-li" — o R aqui é quase inaudível comparado ao português.' },
+    { en:'room', pt:'quarto/sala', tip:'"rrum" — boca arredondada, R suave como um sussurro.' },
+    { en:'right', pt:'certo/direita', tip:'"rait" — R rápido e suave antes do ditongo "ai".' },
+    { en:'run', pt:'correr', tip:'"rran" — R vibrante mas suave, língua curvada levemente.' },
+  ]},
+  { level: '🟡 Nível 2 — R no meio (atenção!)', words: [
+    { en:'sorry', pt:'desculpa', tip:'Diga "SÓ-ri" — o R do meio é quase imperceptível! Não "SÓ-ui".' },
+    { en:'very', pt:'muito', tip:'"VÉ-ri" — o R final é bem suave. Pense em "veri" não "veui".' },
+    { en:'carry', pt:'carregar', tip:'"KÉ-ri" — dois sons, o segundo R é quase um "i" rápido.' },
+    { en:'worry', pt:'preocupar', tip:'"UÓ-ri" — o R do meio precisa aparecer, não sumir!' },
+    { en:'story', pt:'história', tip:'"STÓH-ri" — termine com "ri", não "ui".' },
+    { en:'every', pt:'todo/cada', tip:'"É-vri" — R rápido entre o "v" e o "i".' },
+    { en:'orange', pt:'laranja', tip:'"ÓR-rinj" — o R depois do O é importante, não pule!' },
+    { en:'record', pt:'gravar/registro', tip:'"RÉ-cord" — R tanto no início quanto no meio!' },
+  ]},
+  { level: '🔴 Nível 3 — R no final (mais difícil)', words: [
+    { en:'better', pt:'melhor', tip:'"BÉ-ter" — o R final é quase um "er" com a língua curvada. Não "BÉ-tchi".' },
+    { en:'water', pt:'água', tip:'"UÓ-ter" — termine com o R suave, não corte a palavra.' },
+    { en:'teacher', pt:'professora', tip:'"TÍ-cher" — o R final é bem sutil, mas presente.' },
+    { en:'mother', pt:'mãe', tip:'"MÂ-der" — o R do final precisa aparecer suavemente.' },
+    { en:'sister', pt:'irmã', tip:'"SÍS-ter" — termine com o R, não com "tchi".' },
+    { en:'doctor', pt:'médico', tip:'"DÓK-ter" — R final suave, língua curvada ligeiramente.' },
+    { en:'butter', pt:'manteiga', tip:'"BÂ-ter" — preste atenção no R do fim, não deixe cair!' },
+    { en:'remember', pt:'lembrar', tip:'"ri-MÊM-ber" — R no início E no fim. Desafio duplo!' },
+  ]},
+];
+
+const BADGES_DEF = [
+  { id:'first_word',   emoji:'🌱', name:'Primeira Palavra',    desc:'Dominou sua 1ª palavra',        check: s => Object.keys(s.mastered).length >= 1 },
+  { id:'ten_words',    emoji:'⭐', name:'10 Palavras',          desc:'Dominou 10 palavras',           check: s => Object.keys(s.mastered).length >= 10 },
+  { id:'all_words',    emoji:'📚', name:'Vocabulário Completo', desc:'Dominou todas as palavras!',    check: s => Object.keys(s.mastered).length >= 60 },
+  { id:'first_quiz',   emoji:'🃏', name:'Primeiro Quiz',        desc:'Completou seu 1º quiz',         check: s => s.quizCorrect >= 1 },
+  { id:'quiz_50',      emoji:'🎯', name:'50 Acertos',           desc:'50 respostas certas no quiz',   check: s => s.quizCorrect >= 50 },
+  { id:'streak_3',     emoji:'🔥', name:'3 Dias Seguidos',      desc:'Praticou 3 dias consecutivos',  check: s => s.streak >= 3 },
+  { id:'streak_7',     emoji:'🏆', name:'1 Semana!',            desc:'7 dias consecutivos — incrível!', check: s => s.streak >= 7 },
+  { id:'pron_10',      emoji:'🗣️', name:'Treino do R',          desc:'Praticou 10 palavras com R',    check: s => Object.keys(s.pronPracticed||{}).length >= 10 },
+  { id:'quiz_goal_3',  emoji:'💎', name:'Meta do Dia',          desc:'3 quiz num único dia!',         check: s => (s.quizToday||0) >= 3 },
+  { id:'diary_5',      emoji:'🎬', name:'Cinéfila',             desc:'5 entradas no diário',          check: s => (s.diary||[]).length >= 5 },
+];
+
 const VOCAB_PACKS=[
   {id:'supermarket',name:'Supermercado',emoji:'🛒',words:[
     {en:'bread',pt:'pão',pron:'bred',ex:'"Can I have some bread?"'},
@@ -574,6 +704,11 @@ let state={
   lastVisit:   load('ae_lastVisit',''),
   quizCorrect: load('ae_quizCorrect',0),
   mastered:    load('ae_mastered',{}),
+  pronPracticed: load('ae_pron',{}),
+  quizToday:   load('ae_quizToday',0),
+  quizTodayDate: load('ae_quizTodayDate',''),
+  quizGoal:    load('ae_quizGoal',3),
+  weekDays:    load('ae_weekDays',{}),
   phrasePack:  load('ae_phrase',{en:'Good morning, how are you?',pt:'Bom dia, como você está?',tip:'💡 Pronúncia: "gud môr-nin, hau ar yu?"'}),
 };
 
@@ -604,6 +739,13 @@ function init(){
   else if(!state.lastVisit) state.streak=1;
   state.lastVisit=today;
   save('ae_streak',state.streak); save('ae_lastVisit',state.lastVisit);
+
+  // Reset daily quiz count if new day
+  if(state.quizTodayDate !== today){ state.quizToday=0; state.quizTodayDate=today; save('ae_quizToday',0); save('ae_quizTodayDate',today); }
+
+  // Mark today as active in weekdays
+  state.weekDays[today]=true; save('ae_weekDays',state.weekDays);
+
   document.getElementById('streakCount').textContent=state.streak;
   const days=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
   const months=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
@@ -611,7 +753,7 @@ function init(){
   document.getElementById('headerDate').textContent=`${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]}`;
   const h=now.getHours();
   document.getElementById('welcomeMsg').textContent=`${h<12?'Bom dia':h<18?'Boa tarde':'Boa noite'}, Andressa! 👋`;
-  renderHome(); renderTasks(); renderVocab(); renderDiary(); renderMiguel(); startQuiz(); updateStats();
+  renderHome(); renderTasks(); renderVocab(); renderDiary(); renderMiguel(); renderPron(); startQuiz(); updateStats();
 }
 
 // ── NAV ───────────────────────────────────────────────
@@ -638,6 +780,96 @@ function renderHome(){
         ${t.desc?`<div class="task-desc">${t.desc}</div>`:''}
       </div>
     </div>`).join('');
+  renderWeekTracker();
+  renderQuizGoal();
+  renderBadges();
+}
+
+function renderWeekTracker(){
+  const dayNames=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  const today=new Date();
+  const todayStr=today.toDateString();
+  // Get last 7 days
+  const days=[];
+  for(let i=6;i>=0;i--){
+    const d=new Date(today); d.setDate(d.getDate()-i);
+    days.push({str:d.toDateString(),name:dayNames[d.getDay()],isToday:d.toDateString()===todayStr});
+  }
+  document.getElementById('weekTracker').innerHTML=days.map(d=>`
+    <div class="week-day">
+      <div class="week-day-name">${d.name}</div>
+      <div class="week-day-dot ${state.weekDays[d.str]?'done':''} ${d.isToday?'today':''}"></div>
+    </div>`).join('');
+}
+
+function renderQuizGoal(){
+  const done=state.quizToday||0;
+  const goal=state.quizGoal||3;
+  const pct=Math.min(100,Math.round(done/goal*100));
+  document.getElementById('goalTarget').textContent=goal;
+  document.getElementById('goalTarget2').textContent=goal;
+  document.getElementById('goalDone').textContent=done;
+  document.getElementById('goalBar').style.width=pct+'%';
+}
+
+function renderBadges(){
+  const grid=document.getElementById('badgesGrid');
+  if(!grid) return;
+  grid.innerHTML=BADGES_DEF.map(b=>{
+    const unlocked=b.check(state);
+    return `<div class="badge-card ${unlocked?'unlocked':'locked'}">
+      ${unlocked?'<div class="badge-unlocked-tag">✓ Conquistada</div>':''}
+      <div class="badge-emoji">${b.emoji}</div>
+      <div class="badge-name">${b.name}</div>
+      <div class="badge-desc">${b.desc}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── PRONUNCIATION ──────────────────────────────────────
+function renderPron(){
+  const allWords=PRON_R_WORDS.flatMap(g=>g.words);
+  const practiced=Object.keys(state.pronPracticed).length;
+  const pct=Math.min(100,Math.round(practiced/allWords.length*100));
+  document.getElementById('pronProgBar').style.width=pct+'%';
+  document.getElementById('pronProgText').textContent=`${practiced} palavras praticadas`;
+  document.getElementById('pronProgPct').textContent=pct+'%';
+
+  document.getElementById('pronContent').innerHTML=PRON_R_WORDS.map(group=>`
+    <div class="pron-level-title">${group.level}</div>
+    ${group.words.map(w=>{
+      const key=w.en.replace(/\s/g,'_');
+      const done=!!state.pronPracticed[key];
+      // Highlight R letters
+      const highlighted=w.en.replace(/r/gi, m=>`<span class="pron-r-highlight">${m}</span>`);
+      return `<div class="pron-word-card ${done?'practiced':''}" id="pron-${key}">
+        <div class="pron-word-top">
+          <div class="pron-word-en">${highlighted}</div>
+          <div style="font-size:0.8rem;color:var(--text-soft);font-weight:600;">${w.pt}</div>
+          <button class="speak-btn" onclick="speakText('${w.en}',this)">🔊</button>
+        </div>
+        <div class="pron-word-tip">💡 <strong>Como pronunciar:</strong> ${w.tip}</div>
+        <div class="pron-actions">
+          <button class="pron-practiced-btn ${done?'done':''}" onclick="togglePronPracticed('${key}',this)">
+            ${done?'✅ Praticada!':'☐ Marcar como praticada'}
+          </button>
+        </div>
+      </div>`;
+    }).join('')}`).join('');
+}
+
+function togglePronPracticed(key,btn){
+  state.pronPracticed[key]=!state.pronPracticed[key];
+  if(!state.pronPracticed[key]) delete state.pronPracticed[key];
+  save('ae_pron',state.pronPracticed);
+  const done=!!state.pronPracticed[key];
+  btn.classList.toggle('done',done);
+  btn.textContent=done?'✅ Praticada!':'☐ Marcar como praticada';
+  const card=document.getElementById('pron-'+key);
+  if(card) card.classList.toggle('practiced',done);
+  renderPron();
+  checkBadges();
+  showToast(done?'💪 Boa! Continue praticando!':'↩️ Desmarcada');
 }
 
 // ── TASKS ─────────────────────────────────────────────
@@ -699,7 +931,7 @@ function toggleMastered(enKey,btn){
   btn.classList.toggle('on',!!state.mastered[en]);
   const card=document.getElementById('vc-'+enKey);
   if(card) card.classList.toggle('mastered',!!state.mastered[en]);
-  renderVocab(); updateStats();
+  renderVocab(); updateStats(); checkBadges();
   showToast(state.mastered[en]?'⭐ Palavra dominada! Incrível!':'↩️ Removida das dominadas');
 }
 
@@ -738,8 +970,14 @@ function loadQuizQuestion(){
   if(quizIndex>=quizPool.length){
     const correct=quizHistory.filter(Boolean).length;
     state.quizCorrect+=correct;
+    // Track daily quiz completion
+    state.quizToday=(state.quizToday||0)+1;
+    save('ae_quizToday',state.quizToday);
     save('ae_quizCorrect',state.quizCorrect);
     updateStats();
+    renderQuizGoal();
+    checkBadges();
+    if(state.quizToday===state.quizGoal) showToast('🎯 Meta do dia atingida! Incrível! 🌸');
     document.getElementById('quizCard').innerHTML=`
       <div style="text-align:center;padding:20px 0;">
         <div style="font-size:3.5rem;margin-bottom:12px;">${correct>=8?'🏆':correct>=5?'⭐':'💪'}</div>
@@ -747,7 +985,8 @@ function loadQuizQuestion(){
         <div style="font-size:0.88rem;color:var(--text-soft);line-height:1.5;">
           ${correct>=8?'Incrível! Você está arrasando! 🌸':correct>=5?'Bom trabalho! Continue assim! 😊':'Não desiste! Prática leva à perfeição! 💪'}
         </div>
-        <div style="margin-top:14px;font-size:0.8rem;color:var(--text-muted);">Clique em "🔄 Novo Quiz" para jogar de novo!</div>
+        <div style="margin-top:10px;font-size:0.82rem;color:var(--accent);font-weight:800;">Quiz ${state.quizToday}/${state.quizGoal} de hoje ✓</div>
+        <div style="margin-top:10px;font-size:0.8rem;color:var(--text-muted);">Clique em "🔄 Novo Quiz" para jogar de novo!</div>
       </div>`;
     return;
   }
@@ -830,12 +1069,28 @@ function renderMiguel(){
     </div>`).join('');
 }
 
+// ── BADGES ────────────────────────────────────────────
+function checkBadges(){
+  const prev=load('ae_unlockedBadges',{});
+  BADGES_DEF.forEach(b=>{
+    if(!prev[b.id]&&b.check(state)){
+      prev[b.id]=true;
+      save('ae_unlockedBadges',prev);
+      showToast(`🏅 Conquista desbloqueada: ${b.name} ${b.emoji}`);
+    }
+  });
+  renderBadges();
+}
+
 // ── STATS ─────────────────────────────────────────────
 function updateStats(){
   const mc=Object.keys(state.mastered).length;
   document.getElementById('statMastered').textContent=mc;
   document.getElementById('statTasks').textContent=state.tasks.filter(t=>t.done).length;
   document.getElementById('statQuiz').textContent=state.quizCorrect;
+  renderWeekTracker();
+  renderQuizGoal();
+  renderBadges();
 }
 
 // ── ADMIN ─────────────────────────────────────────────
@@ -852,12 +1107,22 @@ function checkPin(){
     document.getElementById('adminPhraseEn').value=state.phrasePack.en;
     document.getElementById('adminPhrasePt').value=state.phrasePack.pt;
     document.getElementById('adminPhraseTip').value=state.phrasePack.tip||'';
+    document.getElementById('adminQuizGoal').value=state.quizGoal||3;
+    document.getElementById('currentGoalDisplay').textContent=state.quizGoal||3;
   } else {
     document.getElementById('pinError').style.display='block';
     ['p0','p1','p2','p3'].forEach(id=>document.getElementById(id).value='');
     document.getElementById('p0').focus();
     setTimeout(()=>document.getElementById('pinError').style.display='none',2000);
   }
+}
+function saveQuizGoal(){
+  const v=parseInt(document.getElementById('adminQuizGoal').value);
+  if(!v||v<1){showToast('⚠️ Meta inválida!');return;}
+  state.quizGoal=v; save('ae_quizGoal',v);
+  document.getElementById('currentGoalDisplay').textContent=v;
+  renderQuizGoal();
+  const m=document.getElementById('goalSaved'); m.classList.add('show'); setTimeout(()=>m.classList.remove('show'),2000);
 }
 function adminLogout(){
   adminUnlocked=false;
