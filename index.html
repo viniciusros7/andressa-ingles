@@ -4,267 +4,360 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inglês da Andressa 🌸</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Inglês 🌸">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#e8856a">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%23e8856a'/%3E%3Ctext x='256' y='340' text-anchor='middle' font-size='300'%3E🌸%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%23e8856a'/%3E%3Ctext x='256' y='340' text-anchor='middle' font-size='300'%3E🌸%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:#fdf6f0; --card:#fff; --primary:#e8856a; --primary-light:#f5b8a8; --primary-dark:#c96a50;
-    --accent:#6ab5c9; --accent-light:#b8e0ed; --green:#7bbf8e; --green-light:#c5e8cf;
-    --yellow:#f5c842; --yellow-light:#fdedb8; --purple:#9b7ec8; --purple-light:#d9ccef;
-    --pink:#e87aaa; --pink-light:#fad5e8;
-    --text:#3a2e28; --text-soft:#7a6a60; --text-muted:#b0a098; --border:#ecddd5;
-    --shadow:0 4px 20px rgba(58,46,40,0.08); --radius:18px; --radius-sm:10px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;
-    background-image:radial-gradient(circle at 20% 20%,#fce8e0 0%,transparent 50%),
-                     radial-gradient(circle at 80% 80%,#e0f0f8 0%,transparent 50%);}
+:root{
+  --bg:#fdf6f0;--card:#fff;--primary:#e8856a;--primary-light:#f5b8a8;--primary-dark:#c96a50;
+  --accent:#6ab5c9;--accent-light:#b8e0ed;--green:#7bbf8e;--green-light:#c5e8cf;
+  --yellow:#f5c842;--yellow-light:#fdedb8;--purple:#9b7ec8;--purple-light:#d9ccef;
+  --pink:#e87aaa;--pink-light:#fad5e8;--teal:#4ab5a0;--teal-light:#c0ede5;
+  --text:#3a2e28;--text-soft:#7a6a60;--text-muted:#b0a098;--border:#ecddd5;
+  --shadow:0 4px 20px rgba(58,46,40,0.08);--radius:18px;--radius-sm:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;
+  background-image:radial-gradient(circle at 20% 20%,#fce8e0 0%,transparent 50%),
+                   radial-gradient(circle at 80% 80%,#e0f0f8 0%,transparent 50%);}
 
-  /* HEADER */
-  .header{background:var(--card);border-bottom:2px solid var(--border);padding:14px 20px;
-    display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
-  .header-left h1{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--primary-dark);}
-  .header-left span{font-size:0.75rem;color:var(--text-soft);font-weight:600;}
-  .streak-badge{background:var(--yellow-light);border:2px solid var(--yellow);border-radius:50px;padding:6px 14px;
-    font-size:0.85rem;font-weight:800;color:#a07a00;display:flex;align-items:center;gap:5px;}
+/* HEADER */
+.header{background:var(--card);border-bottom:2px solid var(--border);padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.header-left h1{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--primary-dark);}
+.header-left span{font-size:0.75rem;color:var(--text-soft);font-weight:600;}
+.streak-badge{background:var(--yellow-light);border:2px solid var(--yellow);border-radius:50px;padding:6px 14px;
+  font-size:0.85rem;font-weight:800;color:#a07a00;display:flex;align-items:center;gap:5px;}
 
-  /* NAV */
-  .nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none;}
-  .nav::-webkit-scrollbar{display:none;}
-  .nav-btn{flex:0 0 auto;padding:11px 16px;border:none;background:transparent;color:var(--text-soft);
-    font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;
-    border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;display:flex;align-items:center;gap:4px;}
-  .nav-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
-  .nav-btn:hover:not(.active){color:var(--text);background:var(--bg);}
+/* NAV */
+.nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.nav-btn{flex:0 0 auto;padding:11px 15px;border:none;background:transparent;color:var(--text-soft);
+  font-family:'Nunito',sans-serif;font-size:0.78rem;font-weight:700;cursor:pointer;
+  border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;display:flex;align-items:center;gap:4px;}
+.nav-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+.nav-btn:hover:not(.active){color:var(--text);background:var(--bg);}
 
-  /* MAIN */
-  .main{padding:20px 16px 100px;max-width:600px;margin:0 auto;}
-  .section{display:none;}
-  .section.active{display:block;animation:fadeIn 0.3s ease;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* MAIN */
+.main{padding:20px 16px 100px;max-width:600px;margin:0 auto;}
+.section{display:none;}
+.section.active{display:block;animation:fadeIn 0.3s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-  /* CARDS */
-  .card{background:var(--card);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:var(--shadow);border:1.5px solid var(--border);}
-  .card-title{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:12px;}
+/* CARDS */
+.card{background:var(--card);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:var(--shadow);border:1.5px solid var(--border);}
+.card-title{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:12px;}
 
-  /* HOME */
-  .welcome-card{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:white;
-    border-radius:var(--radius);padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden;}
-  .welcome-card::before{content:'🌸';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:3.5rem;opacity:0.3;}
-  .welcome-card h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:4px;}
-  .welcome-card p{font-size:0.88rem;opacity:0.9;}
-  .frase-card{background:linear-gradient(135deg,var(--accent-light),#e8f7fc);border:2px solid var(--accent);
-    border-radius:var(--radius);padding:20px;margin-bottom:16px;text-align:center;}
-  .frase-en{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--accent);margin-bottom:6px;font-style:italic;}
-  .frase-pt{font-size:0.9rem;color:var(--text-soft);font-weight:600;}
-  .frase-tip{font-size:0.75rem;color:var(--text-muted);margin-top:8px;background:white;border-radius:8px;padding:6px 10px;}
-  .frase-speak-btn{margin-top:10px;padding:8px 18px;background:var(--accent);color:white;border:none;
-    border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;cursor:pointer;
-    transition:all 0.2s;display:inline-flex;align-items:center;gap:5px;}
-  .frase-speak-btn:hover{background:#4a9ab5;}
-  .frase-speak-btn.speaking{background:var(--primary);animation:pulse 0.8s infinite;}
-  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+/* HOME */
+.welcome-card{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:white;
+  border-radius:var(--radius);padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden;}
+.welcome-card::before{content:'🌸';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:3.5rem;opacity:0.3;}
+.welcome-card h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:4px;}
+.welcome-card p{font-size:0.88rem;opacity:0.9;}
 
-  .progress-row{display:flex;gap:10px;margin-bottom:16px;}
-  .stat-box{flex:1;background:var(--card);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;box-shadow:var(--shadow);border:1.5px solid var(--border);}
-  .stat-num{font-size:1.6rem;font-weight:900;color:var(--primary);}
-  .stat-label{font-size:0.67rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.4px;}
+/* FRASE DO DIA — auto */
+.frase-card{background:linear-gradient(135deg,var(--accent-light),#e8f7fc);border:2px solid var(--accent);
+  border-radius:var(--radius);padding:20px;margin-bottom:16px;text-align:center;}
+.frase-label{font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}
+.frase-en{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--accent);margin-bottom:6px;font-style:italic;}
+.frase-pt{font-size:0.88rem;color:var(--text-soft);font-weight:600;}
+.frase-structure{font-size:0.73rem;background:white;border-radius:8px;padding:5px 10px;margin-top:8px;color:var(--text-muted);}
+.frase-speak-btn{margin-top:10px;padding:8px 18px;background:var(--accent);color:white;border:none;
+  border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;cursor:pointer;
+  transition:all 0.2s;display:inline-flex;align-items:center;gap:5px;}
+.frase-speak-btn:hover{background:#4a9ab5;}
+.frase-speak-btn.speaking{background:var(--primary);animation:pulse 0.8s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 
-  /* TASKS */
-  .task-item{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:var(--radius-sm);
-    border:1.5px solid var(--border);margin-bottom:10px;background:var(--bg);transition:all 0.2s;}
-  .task-item.done{background:var(--green-light);border-color:var(--green);}
-  .task-check{width:24px;height:24px;border-radius:50%;border:2.5px solid var(--border);background:white;
-    cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;font-size:0.8rem;}
-  .task-item.done .task-check{background:var(--green);border-color:var(--green);color:white;}
-  .task-text{flex:1;}
-  .task-title{font-weight:700;font-size:0.9rem;}
-  .task-desc{font-size:0.78rem;color:var(--text-soft);margin-top:2px;}
-  .task-item.done .task-title{text-decoration:line-through;color:var(--text-muted);}
+/* STATS */
+.progress-row{display:flex;gap:10px;margin-bottom:16px;}
+.stat-box{flex:1;background:var(--card);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;box-shadow:var(--shadow);border:1.5px solid var(--border);}
+.stat-num{font-size:1.6rem;font-weight:900;color:var(--primary);}
+.stat-label{font-size:0.67rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.4px;}
 
-  /* VOCAB */
-  .pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
-  .pack-btn{background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);
-    padding:16px 12px;text-align:center;cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;position:relative;}
-  .pack-btn:hover,.pack-btn.active{border-color:var(--primary);background:#fff5f2;transform:translateY(-2px);box-shadow:var(--shadow);}
-  .pack-emoji{font-size:1.8rem;margin-bottom:6px;}
-  .pack-name{font-size:0.82rem;font-weight:800;color:var(--text);}
-  .pack-count{font-size:0.7rem;color:var(--text-muted);margin-top:2px;}
-  .pack-mastered{position:absolute;top:6px;right:8px;font-size:0.63rem;background:var(--green-light);color:#2e7a44;padding:2px 6px;border-radius:20px;font-weight:800;}
-  .vocab-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);
-    padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;transition:all 0.2s;}
-  .vocab-card:hover{box-shadow:var(--shadow);transform:translateX(3px);}
-  .vocab-card.mastered{border-color:var(--green);background:linear-gradient(to right,var(--green-light),white);}
-  .vocab-en{font-weight:800;font-size:0.95rem;color:var(--primary-dark);min-width:80px;}
-  .vocab-mid{flex:1;}
-  .vocab-pt{font-size:0.85rem;color:var(--text-soft);font-weight:600;}
-  .vocab-ex{font-size:0.72rem;color:var(--text-muted);font-style:italic;margin-top:2px;}
-  .vocab-pron{font-size:0.67rem;background:var(--primary-light);color:var(--primary-dark);padding:2px 7px;border-radius:20px;font-weight:700;white-space:nowrap;}
-  .speak-btn{width:32px;height:32px;border-radius:50%;border:none;background:var(--accent-light);color:var(--accent);
-    cursor:pointer;font-size:0.95rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
-  .speak-btn:hover{background:var(--accent);color:white;transform:scale(1.1);}
-  .speak-btn.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
-  .mastered-star{width:28px;height:28px;border-radius:50%;border:none;background:transparent;
-    cursor:pointer;font-size:1.1rem;flex-shrink:0;transition:all 0.2s;opacity:0.35;}
-  .mastered-star.on{opacity:1;}
-  .mastered-star:hover{transform:scale(1.2);opacity:1;}
+/* TASKS */
+.task-item{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:var(--radius-sm);
+  border:1.5px solid var(--border);margin-bottom:10px;background:var(--bg);transition:all 0.2s;}
+.task-item.done{background:var(--green-light);border-color:var(--green);}
+.task-check{width:24px;height:24px;border-radius:50%;border:2.5px solid var(--border);background:white;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;font-size:0.8rem;}
+.task-item.done .task-check{background:var(--green);border-color:var(--green);color:white;}
+.task-text{flex:1;}
+.task-title{font-weight:700;font-size:0.9rem;}
+.task-desc{font-size:0.78rem;color:var(--text-soft);margin-top:2px;}
+.task-item.done .task-title{text-decoration:line-through;color:var(--text-muted);}
 
-  /* QUIZ */
-  .quiz-score-bar{display:flex;gap:6px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
-  .score-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--border);background:var(--bg);transition:all 0.3s;}
-  .score-dot.correct{background:var(--green);border-color:var(--green);}
-  .score-dot.wrong{background:#e86a6a;border-color:#e86a6a;}
-  .quiz-card{background:linear-gradient(135deg,#fff5f2,white);border:2px solid var(--primary-light);
-    border-radius:var(--radius);padding:26px 20px;text-align:center;margin-bottom:16px;}
-  .quiz-word-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;}
-  .quiz-question{font-size:1.6rem;font-weight:900;color:var(--primary-dark);font-family:'Playfair Display',serif;}
-  .quiz-speak-btn{width:36px;height:36px;border-radius:50%;border:none;background:var(--accent-light);color:var(--accent);
-    cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
-  .quiz-speak-btn:hover{background:var(--accent);color:white;}
-  .quiz-speak-btn.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
-  .quiz-sub{font-size:0.82rem;color:var(--text-muted);margin-bottom:22px;}
-  .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .quiz-opt{padding:14px 10px;border:2.5px solid var(--border);border-radius:var(--radius-sm);background:white;
-    font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.2s;color:var(--text);}
-  .quiz-opt:hover{border-color:var(--primary);background:#fff5f2;}
-  .quiz-opt.correct{border-color:var(--green);background:var(--green-light);color:#2e7a44;}
-  .quiz-opt.wrong{border-color:#e86a6a;background:#ffd5d5;color:#8b2020;}
-  .quiz-result{margin-top:14px;font-size:1rem;font-weight:800;display:none;}
-  .quiz-result.show{display:block;}
-  .quiz-next-btn{margin-top:12px;padding:11px 26px;background:var(--primary);color:white;border:none;
-    border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;display:none;transition:all 0.2s;}
-  .quiz-next-btn.show{display:inline-block;}
-  .quiz-next-btn:hover{background:var(--primary-dark);transform:translateY(-1px);}
-  .mastered-banner{background:var(--green-light);border:1.5px solid var(--green);border-radius:var(--radius-sm);
-    padding:10px 14px;margin-bottom:12px;font-size:0.82rem;color:#2e7a44;font-weight:700;display:none;}
-  .mastered-banner.show{display:block;}
+/* VOCAB */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.pack-btn{background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);
+  padding:16px 12px;text-align:center;cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;position:relative;}
+.pack-btn:hover,.pack-btn.active{border-color:var(--primary);background:#fff5f2;transform:translateY(-2px);box-shadow:var(--shadow);}
+.pack-emoji{font-size:1.8rem;margin-bottom:6px;}
+.pack-name{font-size:0.82rem;font-weight:800;color:var(--text);}
+.pack-count{font-size:0.7rem;color:var(--text-muted);margin-top:2px;}
+.pack-mastered{position:absolute;top:6px;right:8px;font-size:0.63rem;background:var(--green-light);color:#2e7a44;padding:2px 6px;border-radius:20px;font-weight:800;}
+.vocab-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);
+  padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;transition:all 0.2s;}
+.vocab-card:hover{box-shadow:var(--shadow);transform:translateX(3px);}
+.vocab-card.mastered{border-color:var(--green);background:linear-gradient(to right,var(--green-light),white);}
+.vocab-en{font-weight:800;font-size:0.95rem;color:var(--primary-dark);min-width:80px;}
+.vocab-mid{flex:1;}
+.vocab-pt{font-size:0.85rem;color:var(--text-soft);font-weight:600;}
+.vocab-ex{font-size:0.72rem;color:var(--text-muted);font-style:italic;margin-top:2px;}
+.vocab-pron{font-size:0.67rem;background:var(--primary-light);color:var(--primary-dark);padding:2px 7px;border-radius:20px;font-weight:700;white-space:nowrap;}
+.speak-btn{width:32px;height:32px;border-radius:50%;border:none;background:var(--accent-light);color:var(--accent);
+  cursor:pointer;font-size:0.95rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.speak-btn:hover{background:var(--accent);color:white;transform:scale(1.1);}
+.speak-btn.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
+.mastered-star{width:28px;height:28px;border-radius:50%;border:none;background:transparent;
+  cursor:pointer;font-size:1.1rem;flex-shrink:0;transition:all 0.2s;opacity:0.35;}
+.mastered-star.on{opacity:1;}
+.mastered-star:hover{transform:scale(1.2);opacity:1;}
 
-  /* DIARY */
-  .input-group{margin-bottom:12px;}
-  .input-label{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-soft);margin-bottom:5px;display:block;}
-  .input-field{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);
-    font-family:'Nunito',sans-serif;font-size:0.9rem;background:white;color:var(--text);transition:border-color 0.2s;outline:none;}
-  .input-field:focus{border-color:var(--primary);}
-  .btn-primary{padding:12px 24px;background:var(--primary);color:white;border:none;border-radius:50px;
-    font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;transition:all 0.2s;width:100%;}
-  .btn-primary:hover{background:var(--primary-dark);}
-  .diary-entry{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;}
-  .entry-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
-  .entry-title{font-weight:800;font-size:0.9rem;}
-  .entry-date{font-size:0.72rem;color:var(--text-muted);}
-  .entry-words{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;}
-  .word-tag{background:var(--accent-light);color:#2a6a7a;padding:3px 9px;border-radius:20px;font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.2s;}
-  .word-tag:hover{background:var(--accent);color:white;}
-  .entry-del{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:4px;}
-  .entry-del:hover{background:#ffe0e0;color:#c0392b;}
+/* PRONOMES */
+.pronouns-intro{background:linear-gradient(135deg,var(--teal-light),white);border:2px solid var(--teal-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
+.pronouns-intro p{font-size:0.85rem;color:var(--text-soft);line-height:1.5;}
+.pronouns-intro strong{color:var(--teal);}
+.pronoun-table{width:100%;border-collapse:collapse;margin-bottom:0;}
+.pronoun-table th{background:var(--teal);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;}
+.pronoun-table th:first-child{border-radius:8px 0 0 0;}
+.pronoun-table th:last-child{border-radius:0 8px 0 0;}
+.pronoun-table td{padding:9px 10px;font-size:0.83rem;border-bottom:1px solid var(--border);}
+.pronoun-table tr:last-child td{border-bottom:none;}
+.pronoun-table tr:nth-child(even) td{background:#f8fbfc;}
+.pronoun-en{font-weight:900;color:var(--teal);font-size:0.95rem;}
+.pronoun-speak{width:26px;height:26px;border-radius:50%;border:none;background:var(--teal-light);color:var(--teal);
+  cursor:pointer;font-size:0.8rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.pronoun-speak:hover{background:var(--teal);color:white;}
+.pronoun-speak.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
 
-  /* MIGUEL */
-  .miguel-cat-title{font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:10px;}
-  .phrase-card{background:var(--card);border:1.5px solid var(--purple-light);border-radius:var(--radius-sm);
-    padding:12px 14px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;}
-  .phrase-text{flex:1;}
-  .phrase-en{font-weight:800;color:var(--purple);font-size:0.92rem;}
-  .phrase-pt{font-size:0.8rem;color:var(--text-soft);margin-top:2px;}
-  .phrase-pron{font-size:0.7rem;background:var(--purple-light);color:var(--purple);padding:2px 7px;border-radius:20px;font-weight:700;display:inline-block;margin-top:4px;}
-  .phrase-speak{width:30px;height:30px;border-radius:50%;border:none;background:var(--purple-light);color:var(--purple);
-    cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;margin-top:2px;}
-  .phrase-speak:hover{background:var(--purple);color:white;}
-  .phrase-speak.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
+/* ESTRUTURAS DE FRASES */
+.structure-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:10px;}
+.structure-formula{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;align-items:center;}
+.formula-block{padding:5px 12px;border-radius:8px;font-size:0.78rem;font-weight:800;}
+.formula-subject{background:var(--teal-light);color:var(--teal);}
+.formula-verb{background:var(--primary-light);color:var(--primary-dark);}
+.formula-complement{background:var(--yellow-light);color:#a07a00;}
+.formula-plus{color:var(--text-muted);font-size:0.9rem;font-weight:900;}
+.structure-examples{display:flex;flex-direction:column;gap:6px;}
+.struct-ex{display:flex;align-items:center;gap:8px;}
+.struct-ex-en{font-weight:800;font-size:0.88rem;color:var(--text);flex:1;}
+.struct-ex-pt{font-size:0.78rem;color:var(--text-soft);}
 
-  /* RECS */
-  .rec-intro{background:linear-gradient(135deg,var(--pink-light),white);border:2px solid var(--pink-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
-  .rec-intro p{font-size:0.88rem;color:var(--text-soft);line-height:1.5;}
-  .rec-intro strong{color:var(--pink);}
-  .rec-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;}
-  .rec-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
-  .rec-emoji{font-size:2rem;flex-shrink:0;margin-top:2px;}
-  .rec-body{flex:1;}
-  .rec-title{font-weight:900;font-size:0.95rem;color:var(--text);margin-bottom:3px;}
-  .rec-platform{font-size:0.67rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:5px;}
-  .rec-platform.netflix{background:#ffe0e0;color:#c0392b;}
-  .rec-platform.amazon{background:#fff0cc;color:#a06000;}
-  .rec-platform.apple{background:#e0e8ff;color:#2040c0;}
-  .rec-platform.multi{background:#e8e0ff;color:#5020c0;}
-  .rec-desc{font-size:0.8rem;color:var(--text-soft);line-height:1.4;}
-  .rec-why{font-size:0.75rem;background:var(--green-light);color:#2e7a44;padding:4px 9px;border-radius:6px;margin-top:6px;font-weight:700;display:inline-block;}
-  .rec-tip-card{background:var(--yellow-light);border:1.5px solid var(--yellow);border-radius:var(--radius-sm);padding:14px 16px;margin-top:4px;}
-  .rec-tip-card p{font-size:0.83rem;color:#6a5000;line-height:1.5;}
+/* QUIZ */
+.quiz-score-bar{display:flex;gap:6px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
+.score-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--border);background:var(--bg);transition:all 0.3s;}
+.score-dot.correct{background:var(--green);border-color:var(--green);}
+.score-dot.wrong{background:#e86a6a;border-color:#e86a6a;}
+.quiz-card{background:linear-gradient(135deg,#fff5f2,white);border:2px solid var(--primary-light);
+  border-radius:var(--radius);padding:26px 20px;text-align:center;margin-bottom:16px;}
+.quiz-word-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;}
+.quiz-question{font-size:1.6rem;font-weight:900;color:var(--primary-dark);font-family:'Playfair Display',serif;}
+.quiz-speak-btn{width:36px;height:36px;border-radius:50%;border:none;background:var(--accent-light);color:var(--accent);
+  cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.quiz-speak-btn:hover{background:var(--accent);color:white;}
+.quiz-speak-btn.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
+.quiz-sub{font-size:0.82rem;color:var(--text-muted);margin-bottom:22px;}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.quiz-opt{padding:14px 10px;border:2.5px solid var(--border);border-radius:var(--radius-sm);background:white;
+  font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.2s;color:var(--text);}
+.quiz-opt:hover{border-color:var(--primary);background:#fff5f2;}
+.quiz-opt.correct{border-color:var(--green);background:var(--green-light);color:#2e7a44;}
+.quiz-opt.wrong{border-color:#e86a6a;background:#ffd5d5;color:#8b2020;}
+.quiz-result{margin-top:14px;font-size:1rem;font-weight:800;display:none;}
+.quiz-result.show{display:block;}
+.quiz-next-btn{margin-top:12px;padding:11px 26px;background:var(--primary);color:white;border:none;
+  border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;display:none;transition:all 0.2s;}
+.quiz-next-btn.show{display:inline-block;}
+.quiz-next-btn:hover{background:var(--primary-dark);transform:translateY(-1px);}
+.mastered-banner{background:var(--green-light);border:1.5px solid var(--green);border-radius:var(--radius-sm);
+  padding:10px 14px;margin-bottom:12px;font-size:0.82rem;color:#2e7a44;font-weight:700;display:none;}
+.mastered-banner.show{display:block;}
+.quiz-type-tabs{display:flex;gap:8px;margin-bottom:14px;}
+.quiz-type-tab{flex:1;padding:9px;border:2px solid var(--border);border-radius:var(--radius-sm);background:white;
+  font-family:'Nunito',sans-serif;font-size:0.78rem;font-weight:800;cursor:pointer;transition:all 0.2s;color:var(--text-soft);text-align:center;}
+.quiz-type-tab.active{border-color:var(--primary);background:#fff5f2;color:var(--primary-dark);}
 
-  /* ADMIN */
-  .admin-locked{text-align:center;padding:30px 20px;}
-  .admin-locked h3{font-size:1.1rem;font-weight:800;margin-bottom:8px;}
-  .admin-locked p{font-size:0.85rem;color:var(--text-soft);margin-bottom:20px;}
-  .pin-input{display:flex;gap:8px;justify-content:center;margin-bottom:16px;}
-  .pin-digit{width:48px;height:56px;border:2.5px solid var(--border);border-radius:var(--radius-sm);text-align:center;
-    font-size:1.4rem;font-weight:900;font-family:'Nunito',sans-serif;outline:none;transition:border-color 0.2s;background:white;}
-  .pin-digit:focus{border-color:var(--primary);}
-  .pin-error{color:#c0392b;font-size:0.82rem;font-weight:700;display:none;}
-  .admin-panel{display:none;}
-  .admin-panel.unlocked{display:block;}
-  .task-row{display:flex;gap:8px;margin-bottom:8px;}
-  .task-row .input-field{flex:1;}
-  .btn-add{padding:11px 16px;background:var(--green);color:white;border:none;border-radius:var(--radius-sm);font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;font-size:0.85rem;white-space:nowrap;}
-  .btn-del-task{padding:6px 10px;background:#ffe0e0;color:#c0392b;border:none;border-radius:6px;cursor:pointer;font-size:0.8rem;font-weight:700;}
-  .admin-task-item{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:6px;}
-  .admin-task-text{font-size:0.85rem;font-weight:700;}
-  .frase-admin{display:flex;gap:8px;}
-  .frase-admin .input-field{flex:1;}
-  .btn-save{padding:11px 16px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;font-size:0.85rem;}
-  .btn-logout{margin-top:20px;padding:10px 20px;background:var(--bg);border:1.5px solid var(--border);border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;color:var(--text-soft);}
-  .success-msg{color:var(--green);font-size:0.82rem;font-weight:700;margin-top:6px;display:none;}
-  .success-msg.show{display:block;}
+/* QUIZ DAILY GOAL */
+.quiz-daily-goal{background:linear-gradient(135deg,var(--accent-light),white);border:2px solid var(--accent);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;}
+.quiz-goal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.quiz-goal-label{font-size:0.78rem;font-weight:800;color:var(--accent);}
+.quiz-goal-count{font-size:0.78rem;font-weight:800;color:var(--text-soft);}
+.quiz-goal-bar-wrap{background:var(--border);border-radius:50px;height:8px;overflow:hidden;}
+.quiz-goal-bar{background:linear-gradient(90deg,var(--accent),#4a9ab5);height:100%;border-radius:50px;transition:width 0.5s ease;}
 
-  /* TOAST */
-  .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);
-    color:white;padding:10px 20px;border-radius:50px;font-size:0.85rem;font-weight:700;opacity:0;transition:all 0.3s;z-index:999;white-space:nowrap;}
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+/* EXERCÍCIOS */
+.ex-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 20px;margin-bottom:16px;box-shadow:var(--shadow);}
+.ex-progress{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.ex-progress-label{font-size:0.75rem;color:var(--text-muted);font-weight:700;}
+.ex-dots{display:flex;gap:5px;}
+.ex-dot{width:10px;height:10px;border-radius:50%;background:var(--border);}
+.ex-dot.done{background:var(--green);}
+.ex-dot.current{background:var(--primary);}
+.ex-sentence{font-size:1rem;font-weight:700;color:var(--text);line-height:1.7;margin-bottom:18px;text-align:center;}
+.ex-blank{display:inline-block;min-width:80px;border-bottom:3px solid var(--primary);text-align:center;color:var(--primary);font-weight:900;padding:0 4px;vertical-align:bottom;transition:all 0.3s;}
+.ex-blank.filled{border-color:var(--green);color:var(--green);}
+.ex-blank.wrong-fill{border-color:#e86a6a;color:#e86a6a;}
+.ex-options{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:14px;}
+.ex-opt{padding:9px 18px;border:2px solid var(--border);border-radius:50px;background:white;
+  font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:800;cursor:pointer;transition:all 0.2s;color:var(--text);}
+.ex-opt:hover{border-color:var(--primary);background:#fff5f2;transform:translateY(-1px);}
+.ex-opt.used{opacity:0.35;pointer-events:none;}
+.ex-opt.correct-opt{border-color:var(--green);background:var(--green-light);color:#2e7a44;}
+.ex-opt.wrong-opt{border-color:#e86a6a;background:#ffd5d5;color:#8b2020;}
+.ex-feedback{text-align:center;font-size:0.9rem;font-weight:800;margin-bottom:12px;display:none;}
+.ex-feedback.show{display:block;}
+.ex-listen-card{background:linear-gradient(135deg,var(--purple-light),white);border:2px solid var(--purple-light);
+  border-radius:var(--radius);padding:22px 20px;margin-bottom:16px;text-align:center;}
+.ex-listen-btn{padding:14px 28px;background:var(--purple);color:white;border:none;border-radius:50px;
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:all 0.2s;
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;}
+.ex-listen-btn:hover{background:#7a5eb0;transform:translateY(-1px);}
+.ex-listen-btn.speaking{background:var(--primary);animation:pulse 0.8s infinite;}
+.ex-listen-hint{font-size:0.75rem;color:var(--text-muted);margin-bottom:14px;}
+.ex-type-tabs{display:flex;gap:8px;margin-bottom:16px;}
+.ex-type-tab{flex:1;padding:10px;border:2px solid var(--border);border-radius:var(--radius-sm);background:white;
+  font-family:'Nunito',sans-serif;font-size:0.78rem;font-weight:800;cursor:pointer;color:var(--text-soft);text-align:center;transition:all 0.2s;}
+.ex-type-tab.active{border-color:var(--purple);background:var(--purple-light);color:var(--purple);}
 
-  @media(max-width:360px){.pack-grid,.quiz-options{grid-template-columns:1fr;}}
+/* PRONÚNCIA */
+.pron-intro{background:linear-gradient(135deg,#fff0e8,white);border:2px solid var(--primary-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
+.pron-intro p{font-size:0.85rem;color:var(--text-soft);line-height:1.5;}
+.pron-level-title{font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin:16px 0 8px;}
+.pron-word-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;transition:all 0.2s;}
+.pron-word-card.practiced{border-color:var(--green);background:linear-gradient(to right,var(--green-light),white);}
+.pron-word-top{display:flex;align-items:center;gap:10px;}
+.pron-word-en{font-size:1.1rem;font-weight:900;color:var(--primary-dark);flex:1;}
+.pron-r-highlight{color:var(--primary);text-decoration:underline;text-underline-offset:3px;}
+.pron-word-tip{font-size:0.75rem;color:var(--text-soft);margin-top:5px;background:var(--bg);border-radius:6px;padding:5px 9px;line-height:1.4;}
+.pron-word-tip strong{color:var(--primary-dark);}
+.pron-actions{display:flex;gap:8px;margin-top:8px;}
+.pron-practiced-btn{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:white;
+  font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;cursor:pointer;transition:all 0.2s;color:var(--text-muted);}
+.pron-practiced-btn.done{background:var(--green-light);border-color:var(--green);color:#2e7a44;}
+.pron-prog-bar-wrap{background:var(--border);border-radius:50px;height:10px;overflow:hidden;margin-top:6px;}
+.pron-prog-bar{background:linear-gradient(90deg,var(--primary),var(--primary-dark));height:100%;border-radius:50px;transition:width 0.5s ease;}
+.pron-prog-label{font-size:0.75rem;color:var(--text-muted);font-weight:700;display:flex;justify-content:space-between;margin-top:4px;}
 
-  /* PRONUNCIATION */
-  .pron-intro{background:linear-gradient(135deg,#fff0e8,white);border:2px solid var(--primary-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
-  .pron-intro p{font-size:0.85rem;color:var(--text-soft);line-height:1.5;}
-  .pron-level-title{font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin:16px 0 8px;display:flex;align-items:center;gap:6px;}
-  .pron-word-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;transition:all 0.2s;}
-  .pron-word-card:hover{box-shadow:var(--shadow);}
-  .pron-word-card.practiced{border-color:var(--green);background:linear-gradient(to right,var(--green-light),white);}
-  .pron-word-top{display:flex;align-items:center;gap:10px;}
-  .pron-word-en{font-size:1.1rem;font-weight:900;color:var(--primary-dark);flex:1;}
-  .pron-r-highlight{color:var(--primary);text-decoration:underline;text-underline-offset:3px;}
-  .pron-word-tip{font-size:0.75rem;color:var(--text-soft);margin-top:5px;background:var(--bg);border-radius:6px;padding:5px 9px;line-height:1.4;}
-  .pron-word-tip strong{color:var(--primary-dark);}
-  .pron-actions{display:flex;gap:8px;margin-top:8px;align-items:center;}
-  .pron-practiced-btn{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:white;font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;cursor:pointer;transition:all 0.2s;color:var(--text-muted);}
-  .pron-practiced-btn.done{background:var(--green-light);border-color:var(--green);color:#2e7a44;}
-  .pron-prog-bar-wrap{background:var(--border);border-radius:50px;height:10px;overflow:hidden;margin-top:6px;}
-  .pron-prog-bar{background:linear-gradient(90deg,var(--primary),var(--primary-dark));height:100%;border-radius:50px;transition:width 0.5s ease;}
-  .pron-prog-label{font-size:0.75rem;color:var(--text-muted);font-weight:700;display:flex;justify-content:space-between;margin-top:4px;}
+/* BADGES */
+.badges-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px;}
+.badge-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;position:relative;overflow:hidden;}
+.badge-card.unlocked{border-color:var(--yellow);background:linear-gradient(135deg,var(--yellow-light),white);}
+.badge-card.locked{opacity:0.45;filter:grayscale(0.5);}
+.badge-emoji{font-size:2rem;margin-bottom:6px;}
+.badge-name{font-size:0.78rem;font-weight:800;color:var(--text);}
+.badge-desc{font-size:0.68rem;color:var(--text-muted);margin-top:3px;}
+.badge-unlocked-tag{position:absolute;top:6px;right:6px;font-size:0.58rem;background:var(--yellow);color:#6a4a00;padding:2px 6px;border-radius:20px;font-weight:800;}
 
-  /* BADGES */
-  .badges-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
-  .badge-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;transition:all 0.2s;position:relative;overflow:hidden;}
-  .badge-card.unlocked{border-color:var(--yellow);background:linear-gradient(135deg,var(--yellow-light),white);}
-  .badge-card.locked{opacity:0.5;filter:grayscale(0.6);}
-  .badge-emoji{font-size:2rem;margin-bottom:6px;}
-  .badge-name{font-size:0.78rem;font-weight:800;color:var(--text);}
-  .badge-desc{font-size:0.68rem;color:var(--text-muted);margin-top:3px;}
-  .badge-unlocked-tag{position:absolute;top:6px;right:6px;font-size:0.6rem;background:var(--yellow);color:#6a4a00;padding:2px 6px;border-radius:20px;font-weight:800;}
+/* WEEKLY TRACKER */
+.week-tracker{display:flex;gap:6px;justify-content:center;margin-bottom:4px;}
+.week-day{flex:1;text-align:center;}
+.week-day-name{font-size:0.62rem;color:var(--text-muted);font-weight:700;margin-bottom:4px;}
+.week-day-dot{width:100%;aspect-ratio:1;border-radius:50%;border:2px solid var(--border);background:var(--bg);margin:0 auto;max-width:32px;}
+.week-day-dot.done{background:var(--green);border-color:var(--green);}
+.week-day-dot.today{border-color:var(--primary);border-width:3px;}
+.week-day-dot.done.today{background:var(--primary);border-color:var(--primary-dark);}
 
-  /* QUIZ DAILY GOAL */
-  .quiz-daily-goal{background:linear-gradient(135deg,var(--accent-light),white);border:2px solid var(--accent);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;}
-  .quiz-goal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
-  .quiz-goal-label{font-size:0.78rem;font-weight:800;color:var(--accent);}
-  .quiz-goal-count{font-size:0.78rem;font-weight:800;color:var(--text-soft);}
-  .quiz-goal-bar-wrap{background:var(--border);border-radius:50px;height:8px;overflow:hidden;}
-  .quiz-goal-bar{background:linear-gradient(90deg,var(--accent),#4a9ab5);height:100%;border-radius:50px;transition:width 0.5s ease;}
+/* DIARY */
+.input-group{margin-bottom:12px;}
+.input-label{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-soft);margin-bottom:5px;display:block;}
+.input-field{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);
+  font-family:'Nunito',sans-serif;font-size:0.9rem;background:white;color:var(--text);transition:border-color 0.2s;outline:none;}
+.input-field:focus{border-color:var(--primary);}
+.btn-primary{padding:12px 24px;background:var(--primary);color:white;border:none;border-radius:50px;
+  font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;transition:all 0.2s;width:100%;}
+.btn-primary:hover{background:var(--primary-dark);}
+.diary-entry{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;}
+.entry-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.entry-title{font-weight:800;font-size:0.9rem;}
+.entry-date{font-size:0.72rem;color:var(--text-muted);}
+.entry-words{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;}
+.word-tag{background:var(--accent-light);color:#2a6a7a;padding:3px 9px;border-radius:20px;font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.word-tag:hover{background:var(--accent);color:white;}
+.entry-del{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:4px;}
+.entry-del:hover{background:#ffe0e0;color:#c0392b;}
 
-  /* WEEKLY TRACKER */
-  .week-tracker{display:flex;gap:6px;justify-content:center;margin-bottom:4px;}
-  .week-day{flex:1;text-align:center;}
-  .week-day-name{font-size:0.62rem;color:var(--text-muted);font-weight:700;margin-bottom:4px;}
-  .week-day-dot{width:100%;aspect-ratio:1;border-radius:50%;border:2px solid var(--border);background:var(--bg);margin:0 auto;max-width:32px;}
-  .week-day-dot.done{background:var(--green);border-color:var(--green);}
-  .week-day-dot.today{border-color:var(--primary);border-width:3px;}
-  .week-day-dot.done.today{background:var(--primary);border-color:var(--primary-dark);}
+/* MIGUEL */
+.miguel-cat-title{font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:10px;}
+.phrase-card{background:var(--card);border:1.5px solid var(--purple-light);border-radius:var(--radius-sm);
+  padding:12px 14px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;}
+.phrase-text{flex:1;}
+.phrase-en{font-weight:800;color:var(--purple);font-size:0.92rem;}
+.phrase-pt{font-size:0.8rem;color:var(--text-soft);margin-top:2px;}
+.phrase-pron{font-size:0.7rem;background:var(--purple-light);color:var(--purple);padding:2px 7px;border-radius:20px;font-weight:700;display:inline-block;margin-top:4px;}
+.phrase-speak{width:30px;height:30px;border-radius:50%;border:none;background:var(--purple-light);color:var(--purple);
+  cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;margin-top:2px;}
+.phrase-speak:hover{background:var(--purple);color:white;}
+.phrase-speak.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
+
+/* RECS */
+.rec-intro{background:linear-gradient(135deg,var(--pink-light),white);border:2px solid var(--pink-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
+.rec-intro p{font-size:0.88rem;color:var(--text-soft);line-height:1.5;}
+.rec-intro strong{color:var(--pink);}
+.rec-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;}
+.rec-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+.rec-emoji{font-size:2rem;flex-shrink:0;margin-top:2px;}
+.rec-body{flex:1;}
+.rec-title{font-weight:900;font-size:0.95rem;color:var(--text);margin-bottom:3px;}
+.rec-platform{font-size:0.67rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:5px;}
+.rec-platform.netflix{background:#ffe0e0;color:#c0392b;}
+.rec-platform.amazon{background:#fff0cc;color:#a06000;}
+.rec-platform.apple{background:#e0e8ff;color:#2040c0;}
+.rec-platform.multi{background:#e8e0ff;color:#5020c0;}
+.rec-desc{font-size:0.8rem;color:var(--text-soft);line-height:1.4;}
+.rec-why{font-size:0.75rem;background:var(--green-light);color:#2e7a44;padding:4px 9px;border-radius:6px;margin-top:6px;font-weight:700;display:inline-block;}
+.rec-tip-card{background:var(--yellow-light);border:1.5px solid var(--yellow);border-radius:var(--radius-sm);padding:14px 16px;margin-top:4px;}
+.rec-tip-card p{font-size:0.83rem;color:#6a5000;line-height:1.5;}
+
+/* WEDDING BONUS */
+.wedding-hero{background:linear-gradient(135deg,#f7c5d8 0%,#fde8c0 50%,#f7c5d8 100%);border-radius:var(--radius);padding:28px 20px;margin-bottom:16px;text-align:center;position:relative;overflow:hidden;}
+.wedding-hero::before{content:'💍';position:absolute;right:16px;top:16px;font-size:2.5rem;opacity:0.25;}
+.wedding-hero::after{content:'🌸';position:absolute;left:16px;bottom:12px;font-size:2rem;opacity:0.2;}
+.wedding-hero h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:#8a3060;margin-bottom:6px;}
+.wedding-hero p{font-size:0.85rem;color:#a04070;line-height:1.5;}
+.wedding-date-badge{display:inline-block;background:white;border-radius:50px;padding:5px 16px;font-size:0.78rem;font-weight:800;color:#8a3060;margin-top:10px;box-shadow:0 2px 10px rgba(138,48,96,0.15);}
+
+/* WEDDING COUPLE PHRASES */
+.couple-phrase-card{background:var(--card);border:2px solid #f7c5d8;border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;transition:all 0.2s;}
+.couple-phrase-card:hover{box-shadow:var(--shadow);transform:translateX(3px);}
+.couple-phrase-en{font-weight:900;font-size:0.95rem;color:#c0508a;}
+.couple-phrase-pt{font-size:0.82rem;color:var(--text-soft);margin-top:3px;}
+.couple-phrase-tip{font-size:0.72rem;background:#fde8f0;color:#8a3060;padding:3px 8px;border-radius:6px;display:inline-block;margin-top:5px;font-weight:700;}
+
+/* WEDDING QUIZ */
+.wedding-quiz-card{background:linear-gradient(135deg,#fde8f0,white);border:2px solid #f7c5d8;border-radius:var(--radius);padding:24px 20px;text-align:center;margin-bottom:16px;}
+.wedding-quiz-q{font-family:'Playfair Display',serif;font-size:1.1rem;color:#8a3060;margin-bottom:20px;line-height:1.4;}
+.wedding-opt{padding:12px 16px;border:2px solid #f0c0d8;border-radius:var(--radius-sm);background:white;font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.2s;color:var(--text);width:100%;margin-bottom:8px;text-align:left;}
+.wedding-opt:hover{border-color:#c0508a;background:#fde8f0;}
+.wedding-opt.correct{border-color:var(--green);background:var(--green-light);color:#2e7a44;}
+.wedding-opt.wrong{border-color:#e86a6a;background:#ffd5d5;color:#8b2020;}
+
+/* WEDDING 7-DAY CHALLENGE */
+.challenge-day{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;transition:all 0.2s;}
+.challenge-day.done{background:linear-gradient(to right,#fde8f0,white);border-color:#f7c5d8;}
+.challenge-day.locked{opacity:0.45;}
+.challenge-day-num{width:32px;height:32px;border-radius:50%;background:#f7c5d8;color:#8a3060;font-weight:900;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.challenge-day.done .challenge-day-num{background:var(--green);color:white;}
+.challenge-day-body{flex:1;}
+.challenge-day-title{font-weight:800;font-size:0.88rem;color:var(--text);}
+.challenge-day-desc{font-size:0.76rem;color:var(--text-soft);margin-top:3px;line-height:1.4;}
+.challenge-day-btn{padding:5px 14px;border-radius:20px;border:1.5px solid #f7c5d8;background:white;font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;cursor:pointer;color:#c0508a;transition:all 0.2s;margin-top:6px;}
+.challenge-day-btn:hover{background:#fde8f0;}
+.challenge-day-btn.done{background:var(--green-light);border-color:var(--green);color:#2e7a44;}
+.challenge-progress-bar{height:10px;background:var(--border);border-radius:50px;overflow:hidden;margin-top:6px;}
+.challenge-progress-fill{height:100%;background:linear-gradient(90deg,#f7c5d8,#c0508a);border-radius:50px;transition:width 0.5s ease;}
+
+/* TOAST */
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);
+  color:white;padding:10px 20px;border-radius:50px;font-size:0.85rem;font-weight:700;opacity:0;transition:all 0.3s;z-index:999;white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+@media(max-width:360px){.pack-grid,.quiz-options{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -281,12 +374,14 @@
   <button class="nav-btn active" onclick="showSection('home',this)">🏠 Início</button>
   <button class="nav-btn" onclick="showSection('vocab',this)">📚 Vocabulário</button>
   <button class="nav-btn" onclick="showSection('tasks',this)">✏️ Tarefas</button>
+  <button class="nav-btn" onclick="showSection('pronouns',this)">🧩 Pronomes</button>
   <button class="nav-btn" onclick="showSection('quiz',this)">🃏 Quiz</button>
+  <button class="nav-btn" onclick="showSection('exercises',this)">✍️ Exercícios</button>
+  <button class="nav-btn" onclick="showSection('wedding',this)">💍 Nosso Amor</button>
   <button class="nav-btn" onclick="showSection('diary',this)">🎬 Diário</button>
   <button class="nav-btn" onclick="showSection('miguel',this)">👶 Miguel</button>
   <button class="nav-btn" onclick="showSection('pron',this)">🗣️ Pronúncia R</button>
   <button class="nav-btn" onclick="showSection('recs',this)">🎥 Séries</button>
-  <button class="nav-btn" onclick="showSection('admin',this)">⚙️ Admin</button>
 </nav>
 
 <div class="main">
@@ -297,15 +392,17 @@
       <h2 id="welcomeMsg">Olá, Andressa! 👋</h2>
       <p>Cada palavra nova é um passo a mais. Vamos lá! 💪</p>
     </div>
+
     <div class="frase-card">
-      <div class="card-title">✨ Frase do Dia</div>
-      <div class="frase-en" id="homePhrase">Good morning, how are you?</div>
-      <div class="frase-pt" id="homePhrasePt">Bom dia, como você está?</div>
-      <div class="frase-tip" id="homePhraseTip">💡 Pronúncia: "gud môr-nin, hau ar yu?"</div>
+      <div class="frase-label">✨ Frase de hoje</div>
+      <div class="frase-en" id="homePhrase"></div>
+      <div class="frase-pt" id="homePhrasePt"></div>
+      <div class="frase-structure" id="homePhraseTip"></div>
       <button class="frase-speak-btn" onclick="speakText(document.getElementById('homePhrase').textContent,this)">🔊 Ouvir</button>
     </div>
+
     <div class="progress-row">
-      <div class="stat-box"><div class="stat-num" id="statMastered">0</div><div class="stat-label">Palavras ⭐ dominadas</div></div>
+      <div class="stat-box"><div class="stat-num" id="statMastered">0</div><div class="stat-label">Palavras ⭐</div></div>
       <div class="stat-box"><div class="stat-num" id="statTasks">0</div><div class="stat-label">Tarefas feitas</div></div>
       <div class="stat-box"><div class="stat-num" id="statQuiz">0</div><div class="stat-label">Quiz acertos</div></div>
     </div>
@@ -317,20 +414,15 @@
     </div>
 
     <div class="card">
-      <div class="card-title">🃏 Meta de Quiz do Dia</div>
-      <div class="quiz-daily-goal">
-        <div class="quiz-goal-top">
-          <div class="quiz-goal-label">🎯 Meta: <span id="goalTarget">3</span> quiz por dia</div>
-          <div class="quiz-goal-count"><span id="goalDone">0</span>/<span id="goalTarget2">3</span></div>
-        </div>
-        <div class="quiz-goal-bar-wrap"><div class="quiz-goal-bar" id="goalBar" style="width:0%"></div></div>
-      </div>
+      <div class="card-title">🎯 Meta do Dia</div>
+      <div id="dailyGoalsContainer"></div>
     </div>
 
     <div class="card">
       <div class="card-title">🏅 Conquistas</div>
       <div class="badges-grid" id="badgesGrid"></div>
     </div>
+
     <div class="card">
       <div class="card-title">📋 Tarefas de hoje</div>
       <div id="homeTaskList"></div>
@@ -355,8 +447,40 @@
     </div>
   </div>
 
+  <!-- PRONOMES -->
+  <div id="section-pronouns" class="section">
+    <div class="pronouns-intro">
+      <div class="card-title" style="color:var(--teal);">🧩 Pronomes e Estrutura de Frases</div>
+      <p>Antes de montar frases, você precisa conhecer os <strong>pronomes</strong> — as palavras que substituem os nomes (eu, você, ele...). Depois aprende como montar frases simples em inglês! 🌸</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">👤 Pronomes Pessoais</div>
+      <table class="pronoun-table">
+        <thead><tr><th>Inglês</th><th>Português</th><th>Exemplo</th><th></th></tr></thead>
+        <tbody id="pronounTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔨 Como montar uma frase simples</div>
+      <p style="font-size:0.82rem;color:var(--text-soft);margin-bottom:14px;">Em inglês, a ordem das palavras é sempre: <strong>Sujeito → Verbo → Complemento</strong></p>
+      <div id="structureExamples"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Verbos essenciais para começar</div>
+      <div id="basicVerbsTable"></div>
+    </div>
+  </div>
+
   <!-- QUIZ -->
   <div id="section-quiz" class="section">
+    <div class="quiz-type-tabs">
+      <div class="quiz-type-tab active" onclick="setQuizType('vocab',this)">📚 Vocabulário</div>
+      <div class="quiz-type-tab" onclick="setQuizType('pronouns',this)">🧩 Pronomes</div>
+      <div class="quiz-type-tab" onclick="setQuizType('mixed',this)">🎲 Misturado</div>
+    </div>
     <div class="mastered-banner" id="masteredBanner"></div>
     <div class="quiz-score-bar" id="quizScoreBar"></div>
     <div class="quiz-card" id="quizCard">
@@ -364,13 +488,69 @@
         <div class="quiz-question" id="quizWord">—</div>
         <button class="quiz-speak-btn" id="quizSpeakBtn" onclick="speakQuizWord()">🔊</button>
       </div>
-      <div class="quiz-sub">O que significa em português?</div>
+      <div class="quiz-sub" id="quizSub">O que significa em português?</div>
       <div class="quiz-options" id="quizOptions"></div>
       <div class="quiz-result" id="quizResult"></div>
       <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuiz()">Próxima ➜</button>
     </div>
     <div style="text-align:center;">
       <button onclick="startQuiz()" style="padding:12px 28px;background:var(--accent);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">🔄 Novo Quiz</button>
+    </div>
+  </div>
+
+  <!-- EXERCÍCIOS -->
+  <div id="section-exercises" class="section">
+    <div class="ex-type-tabs">
+      <div class="ex-type-tab active" onclick="setExType('fill',this)">✍️ Complete a Frase</div>
+      <div class="ex-type-tab" onclick="setExType('listen',this)">🎧 Ouça e Complete</div>
+    </div>
+    <div id="exContent"></div>
+  </div>
+
+  <!-- WEDDING BONUS 💍 -->
+  <div id="section-wedding" class="section">
+    <div class="wedding-hero">
+      <h2>💍 Nosso Amor em Inglês</h2>
+      <p>Uma seção especial para celebrar o nosso casamento — aprenda inglês com a nossa história! 🌸</p>
+      <div class="wedding-date-badge">💒 30 de março de 2026</div>
+    </div>
+
+    <!-- TABS -->
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+      <button class="ex-type-tab active" id="wtab-phrases" onclick="showWeddingTab('phrases',this)">💬 Frases de Casal</button>
+      <button class="ex-type-tab" id="wtab-quiz" onclick="showWeddingTab('quiz',this)">❓ Nossa História</button>
+      <button class="ex-type-tab" id="wtab-challenge" onclick="showWeddingTab('challenge',this)">🗓️ Desafio 7 Dias</button>
+    </div>
+
+    <!-- PHRASES TAB -->
+    <div id="wtab-content-phrases">
+      <div class="card" style="background:linear-gradient(135deg,#fde8f0,white);border-color:#f7c5d8;margin-bottom:12px;">
+        <div class="card-title" style="color:#c0508a;">💬 Frases para usar com o Vinicius</div>
+        <p style="font-size:0.82rem;color:var(--text-soft);">Toque em 🔊 para ouvir cada frase!</p>
+      </div>
+      <div id="couplePhrasesList"></div>
+    </div>
+
+    <!-- QUIZ TAB -->
+    <div id="wtab-content-quiz" style="display:none;">
+      <div class="card" style="background:linear-gradient(135deg,#fde8f0,white);border-color:#f7c5d8;margin-bottom:12px;">
+        <div class="card-title" style="color:#c0508a;">❓ Quiz — Nossa História</div>
+        <p style="font-size:0.82rem;color:var(--text-soft);">Perguntas sobre a nossa história em inglês! 💕</p>
+      </div>
+      <div id="weddingQuizContainer"></div>
+    </div>
+
+    <!-- CHALLENGE TAB -->
+    <div id="wtab-content-challenge" style="display:none;">
+      <div class="card" style="background:linear-gradient(135deg,#fde8f0,white);border-color:#f7c5d8;">
+        <div class="card-title" style="color:#c0508a;">🗓️ Desafio dos 7 dias — Semana do Casamento</div>
+        <p style="font-size:0.82rem;color:var(--text-soft);margin-bottom:12px;">Uma tarefa especial por dia para celebrar nosso amor aprendendo inglês! 💍</p>
+        <div class="challenge-progress-bar">
+          <div class="challenge-progress-fill" id="challengeProgressBar" style="width:0%"></div>
+        </div>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-top:5px;"><span id="challengeDoneCount">0</span>/7 dias completados</p>
+      </div>
+      <div id="challengeDaysList"></div>
     </div>
   </div>
 
@@ -400,78 +580,11 @@
     <div id="miguelContent"></div>
   </div>
 
-  <!-- RECOMENDAÇÕES -->
-  <div id="section-recs" class="section">
-    <div class="rec-intro">
-      <div class="card-title" style="color:var(--pink);">🎥 Escolhidas especialmente para você, Andressa</div>
-      <p>O Vinicius escolheu estas séries e filmes <strong>especialmente para te ajudar a aprender inglês</strong> — linguagem simples, episódios curtos e histórias que você vai adorar! 🌸</p>
-    </div>
-
-    <div style="font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:10px;">📺 Séries recomendadas</div>
-
-    <div class="rec-card">
-      <div class="rec-emoji">🕵️</div>
-      <div class="rec-body">
-        <div class="rec-title">Monk</div>
-        <span class="rec-platform amazon">Amazon Prime</span>
-        <div class="rec-desc">Um detetive muito especial e engraçado resolve crimes de um jeito único. Cada episódio é uma história completa — perfeito para assistir um por um!</div>
-        <div class="rec-why">✅ Fala devagar e bem clara — ótimo para iniciantes</div>
-      </div>
-    </div>
-
-    <div class="rec-card">
-      <div class="rec-emoji">🔮</div>
-      <div class="rec-body">
-        <div class="rec-title">Psych</div>
-        <span class="rec-platform amazon">Amazon Prime</span>
-        <div class="rec-desc">Dois amigos fingem ser psíquicos para ajudar a polícia. Muito engraçado e com bastante ação — tem o mesmo clima divertido do Brooklyn 99!</div>
-        <div class="rec-why">✅ Linguagem leve e episódios independentes</div>
-      </div>
-    </div>
-
-    <div class="rec-card">
-      <div class="rec-emoji">🏢</div>
-      <div class="rec-body">
-        <div class="rec-title">Only Murders in the Building</div>
-        <span class="rec-platform apple">Apple TV+</span>
-        <div class="rec-desc">Três vizinhos investigam um crime no próprio prédio. Episódios curtos, muito humor e diálogos bem naturais — quase como conversa do dia a dia.</div>
-        <div class="rec-why">✅ Episódios curtos (~30 min) e inglês bem natural</div>
-      </div>
-    </div>
-
-    <div class="rec-card">
-      <div class="rec-emoji">👵</div>
-      <div class="rec-body">
-        <div class="rec-title">Murder She Wrote</div>
-        <span class="rec-platform amazon">Amazon Prime</span>
-        <div class="rec-desc">Uma escritora apaixonada por mistérios resolve crimes na sua cidade. Clássico dos anos 80 com inglês clarinho e pausado — quase uma aula de vocabulário!</div>
-        <div class="rec-why">✅ A fala mais clara e pausada de todas</div>
-      </div>
-    </div>
-
-    <div style="font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin:16px 0 10px;">🎬 Filme para assistir juntos</div>
-
-    <div class="rec-card">
-      <div class="rec-emoji">🔪</div>
-      <div class="rec-body">
-        <div class="rec-title">Knives Out</div>
-        <span class="rec-platform multi">Netflix / Amazon</span>
-        <div class="rec-desc">Uma família rica se reúne e alguém acaba morto. Mistério, humor e reviravoltas! Perfeito para pausar e aprender palavras juntos com o Vinicius.</div>
-        <div class="rec-why">✅ Diálogos claros — ótimo para assistir a dois</div>
-      </div>
-    </div>
-
-    <div class="rec-tip-card">
-      <div class="card-title">💡 Dica do Vinicius</div>
-      <p>Comece com <strong>legendas em português</strong> para entender a história. Depois, tente colocar <strong>legendas em inglês</strong> — seu cérebro vai conectar o som com a palavra escrita muito mais rápido! 🧠✨</p>
-    </div>
-  </div>
-
   <!-- PRONÚNCIA R -->
   <div id="section-pron" class="section">
     <div class="pron-intro">
       <div class="card-title" style="color:var(--primary);">🗣️ Treino do R em inglês</div>
-      <p>O R em inglês é diferente do português! É um som mais <strong>suave e profundo</strong> — a língua vai ligeiramente para trás sem tocar o céu da boca. Ouça, repita e marque quando conseguir! 💪</p>
+      <p>O R em inglês é diferente do português! É um som mais <strong>suave e profundo</strong> — a língua vai levemente para trás sem tocar o céu da boca. Ouça, repita e marque quando conseguir! 💪</p>
     </div>
     <div class="card">
       <div class="card-title">📈 Progresso</div>
@@ -481,62 +594,22 @@
     <div id="pronContent"></div>
   </div>
 
-  <!-- ADMIN -->
-  <div id="section-admin" class="section">
-    <div class="admin-locked" id="adminLocked">
-      <div style="font-size:3rem;margin-bottom:12px;">🔒</div>
-      <h3>Área do Vinicius</h3>
-      <p>Digite o PIN para gerenciar tarefas e a frase do dia</p>
-      <div class="pin-input">
-        <input class="pin-digit" maxlength="1" id="p0" oninput="pinNext(this,'p1')" type="password">
-        <input class="pin-digit" maxlength="1" id="p1" oninput="pinNext(this,'p2')" type="password">
-        <input class="pin-digit" maxlength="1" id="p2" oninput="pinNext(this,'p3')" type="password">
-        <input class="pin-digit" maxlength="1" id="p3" oninput="checkPin()" type="password">
-      </div>
-      <div class="pin-error" id="pinError">❌ PIN incorreto. Tente de novo.</div>
+  <!-- RECOMENDAÇÕES -->
+  <div id="section-recs" class="section">
+    <div class="rec-intro">
+      <div class="card-title" style="color:var(--pink);">🎥 Escolhidas especialmente para você, Andressa</div>
+      <p>O Vinicius escolheu estas séries e filmes <strong>especialmente para te ajudar a aprender inglês</strong> — linguagem simples, episódios curtos e histórias que você vai adorar! 🌸</p>
     </div>
-    <div class="admin-panel" id="adminPanel">
-      <div class="card">
-        <div class="card-title">✨ Frase do Dia</div>
-        <div class="frase-admin">
-          <input class="input-field" id="adminPhraseEn" placeholder="Em inglês...">
-          <button class="btn-save" onclick="savePhrase()">✓</button>
-        </div>
-        <input class="input-field" id="adminPhrasePt" placeholder="Em português..." style="margin-top:8px;">
-        <input class="input-field" id="adminPhraseTip" placeholder="Dica de pronúncia (opcional)..." style="margin-top:8px;">
-        <div class="success-msg" id="phraseSaved">✅ Frase salva!</div>
-      </div>
-      <div class="card">
-        <div class="card-title">✏️ Adicionar Tarefa</div>
-        <div class="input-group"><input class="input-field" id="adminTaskTitle" placeholder="Título da tarefa..."></div>
-        <div class="task-row">
-          <input class="input-field" id="adminTaskDesc" placeholder="Descrição opcional...">
-          <button class="btn-add" onclick="addTask()">+ Adicionar</button>
-        </div>
-        <div class="success-msg" id="taskSaved">✅ Tarefa adicionada!</div>
-      </div>
-      <div class="card">
-        <div class="card-title">📋 Tarefas atuais</div>
-        <div id="adminTaskList"></div>
-        <button onclick="clearDoneTasks()" style="margin-top:8px;padding:9px 16px;background:#fff0e0;border:1.5px solid var(--yellow);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;color:#a07a00;">🧹 Limpar concluídas</button>
-      </div>
-      <div class="card">
-        <div class="card-title">🎯 Meta de Quiz Diária</div>
-        <div style="display:flex;gap:8px;align-items:center;">
-          <input class="input-field" id="adminQuizGoal" type="number" min="1" max="20" placeholder="Ex: 3" style="max-width:80px;">
-          <button class="btn-save" onclick="saveQuizGoal()">✓ Salvar</button>
-          <span style="font-size:0.82rem;color:var(--text-soft);">Atual: <strong id="currentGoalDisplay">3</strong>/dia</span>
-        </div>
-        <div class="success-msg" id="goalSaved">✅ Meta salva!</div>
-      </div>
-      <div class="card">
-        <div class="card-title">📊 Progresso da Andressa</div>
-        <p style="font-size:0.85rem;color:var(--text-soft);">⭐ Palavras dominadas: <strong id="adminStatMastered">0</strong></p>
-        <p style="font-size:0.85rem;color:var(--text-soft);margin-top:6px;">✅ Tarefas concluídas: <strong id="adminStatTasks">0</strong></p>
-        <p style="font-size:0.85rem;color:var(--text-soft);margin-top:6px;">🃏 Acertos no quiz: <strong id="adminStatQuiz">0</strong></p>
-        <button onclick="clearMastered()" style="margin-top:12px;padding:9px 16px;background:#fff0e0;border:1.5px solid var(--yellow);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;color:#a07a00;">🗑️ Limpar palavras dominadas</button>
-      </div>
-      <div style="text-align:center;"><button class="btn-logout" onclick="adminLogout()">🔒 Sair do Admin</button></div>
+    <div style="font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:10px;">📺 Séries recomendadas</div>
+    <div class="rec-card"><div class="rec-emoji">🕵️</div><div class="rec-body"><div class="rec-title">Monk</div><span class="rec-platform amazon">Amazon Prime</span><div class="rec-desc">Um detetive muito especial e engraçado resolve crimes de um jeito único. Cada episódio é uma história completa!</div><div class="rec-why">✅ Fala devagar e bem clara — ótimo para iniciantes</div></div></div>
+    <div class="rec-card"><div class="rec-emoji">🔮</div><div class="rec-body"><div class="rec-title">Psych</div><span class="rec-platform amazon">Amazon Prime</span><div class="rec-desc">Dois amigos fingem ser psíquicos para ajudar a polícia. Muito engraçado — tem o mesmo clima do Brooklyn 99!</div><div class="rec-why">✅ Linguagem leve e episódios independentes</div></div></div>
+    <div class="rec-card"><div class="rec-emoji">🏢</div><div class="rec-body"><div class="rec-title">Only Murders in the Building</div><span class="rec-platform apple">Apple TV+</span><div class="rec-desc">Três vizinhos investigam um crime no próprio prédio. Episódios curtos, muito humor e diálogos naturais.</div><div class="rec-why">✅ Episódios curtos (~30 min) e inglês bem natural</div></div></div>
+    <div class="rec-card"><div class="rec-emoji">👵</div><div class="rec-body"><div class="rec-title">Murder She Wrote</div><span class="rec-platform amazon">Amazon Prime</span><div class="rec-desc">Uma escritora apaixonada por mistérios resolve crimes na sua cidade. Inglês clarinho e pausado.</div><div class="rec-why">✅ A fala mais clara e pausada de todas</div></div></div>
+    <div style="font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin:16px 0 10px;">🎬 Filme para assistir juntos</div>
+    <div class="rec-card"><div class="rec-emoji">🔪</div><div class="rec-body"><div class="rec-title">Knives Out</div><span class="rec-platform multi">Netflix / Amazon</span><div class="rec-desc">Mistério, humor e reviravoltas! Perfeito para pausar e aprender palavras juntos com o Vinicius.</div><div class="rec-why">✅ Diálogos claros — ótimo para assistir a dois</div></div></div>
+    <div class="rec-tip-card">
+      <div class="card-title">💡 Dica do Vinicius</div>
+      <p>Comece com <strong>legendas em português</strong> para entender a história. Depois, tente colocar <strong>legendas em inglês</strong> — seu cérebro vai conectar o som com a palavra escrita muito mais rápido! 🧠✨</p>
     </div>
   </div>
 
@@ -544,50 +617,85 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ── DATA ──────────────────────────────────────────────
-const PRON_R_WORDS = [
-  { level: '🟢 Nível 1 — R no início (mais fácil)', words: [
-    { en:'remember', pt:'lembrar', tip:'Diga "ri-MÊM-ber" — o R inicial soa quase como um "r" suave, não como o "rr" forte do português.' },
-    { en:'red', pt:'vermelho', tip:'Diga "rred" com a língua levemente curvada para trás. Não é "hred"!' },
-    { en:'ready', pt:'pronto/a', tip:'"RÉ-di" — R bem suave no começo, sem vibrar a garganta.' },
-    { en:'really', pt:'realmente', tip:'"RÍ-li" — o R aqui é quase inaudível comparado ao português.' },
-    { en:'room', pt:'quarto/sala', tip:'"rrum" — boca arredondada, R suave como um sussurro.' },
-    { en:'right', pt:'certo/direita', tip:'"rait" — R rápido e suave antes do ditongo "ai".' },
-    { en:'run', pt:'correr', tip:'"rran" — R vibrante mas suave, língua curvada levemente.' },
-  ]},
-  { level: '🟡 Nível 2 — R no meio (atenção!)', words: [
-    { en:'sorry', pt:'desculpa', tip:'Diga "SÓ-ri" — o R do meio é quase imperceptível! Não "SÓ-ui".' },
-    { en:'very', pt:'muito', tip:'"VÉ-ri" — o R final é bem suave. Pense em "veri" não "veui".' },
-    { en:'carry', pt:'carregar', tip:'"KÉ-ri" — dois sons, o segundo R é quase um "i" rápido.' },
-    { en:'worry', pt:'preocupar', tip:'"UÓ-ri" — o R do meio precisa aparecer, não sumir!' },
-    { en:'story', pt:'história', tip:'"STÓH-ri" — termine com "ri", não "ui".' },
-    { en:'every', pt:'todo/cada', tip:'"É-vri" — R rápido entre o "v" e o "i".' },
-    { en:'orange', pt:'laranja', tip:'"ÓR-rinj" — o R depois do O é importante, não pule!' },
-    { en:'record', pt:'gravar/registro', tip:'"RÉ-cord" — R tanto no início quanto no meio!' },
-  ]},
-  { level: '🔴 Nível 3 — R no final (mais difícil)', words: [
-    { en:'better', pt:'melhor', tip:'"BÉ-ter" — o R final é quase um "er" com a língua curvada. Não "BÉ-tchi".' },
-    { en:'water', pt:'água', tip:'"UÓ-ter" — termine com o R suave, não corte a palavra.' },
-    { en:'teacher', pt:'professora', tip:'"TÍ-cher" — o R final é bem sutil, mas presente.' },
-    { en:'mother', pt:'mãe', tip:'"MÂ-der" — o R do final precisa aparecer suavemente.' },
-    { en:'sister', pt:'irmã', tip:'"SÍS-ter" — termine com o R, não com "tchi".' },
-    { en:'doctor', pt:'médico', tip:'"DÓK-ter" — R final suave, língua curvada ligeiramente.' },
-    { en:'butter', pt:'manteiga', tip:'"BÂ-ter" — preste atenção no R do fim, não deixe cair!' },
-    { en:'remember', pt:'lembrar', tip:'"ri-MÊM-ber" — R no início E no fim. Desafio duplo!' },
-  ]},
+// ══ DATA ══════════════════════════════════════════════
+
+// Auto daily phrases — one per day based on date
+const DAILY_PHRASES = [
+  {en:'Good morning! How are you today?', pt:'Bom dia! Como você está hoje?', tip:'📖 I + am + feeling → Sujeito + Verbo + Sentimento'},
+  {en:'I am hungry. Let\'s eat!', pt:'Estou com fome. Vamos comer!', tip:'📖 I + am + adjective → Eu + estou + adjetivo'},
+  {en:'Where is the supermarket?', pt:'Onde fica o supermercado?', tip:'📖 Where + is + lugar? → Onde fica + lugar?'},
+  {en:'He is sleeping right now.', pt:'Ele está dormindo agora.', tip:'📖 He + is + verb-ing → Ele + está + fazendo'},
+  {en:'Can you help me, please?', pt:'Você pode me ajudar, por favor?', tip:'📖 Can + you + verb? → Você pode + verbo?'},
+  {en:'I need water and bread.', pt:'Preciso de água e pão.', tip:'📖 I + need + noun → Eu + preciso de + substantivo'},
+  {en:'She is my sister.', pt:'Ela é minha irmã.', tip:'📖 She + is + noun → Ela + é + substantivo'},
+  {en:'We are learning English!', pt:'Estamos aprendendo inglês!', tip:'📖 We + are + verb-ing → Nós + estamos + fazendo'},
+  {en:'The baby is very happy today.', pt:'O bebê está muito feliz hoje.', tip:'📖 Subject + is + very + adjective'},
+  {en:'I don\'t understand. Can you repeat?', pt:'Não entendo. Pode repetir?', tip:'📖 I + don\'t + verb → Negativa simples'},
+  {en:'Thank you very much!', pt:'Muito obrigada!', tip:'📖 Uma das frases mais importantes do inglês 💛'},
+  {en:'How much does this cost?', pt:'Quanto custa isso?', tip:'📖 How much + does + subject + cost?'},
+  {en:'I love my family.', pt:'Eu amo minha família.', tip:'📖 I + love + noun → Eu + amo + substantivo'},
+  {en:'Miguel is a beautiful baby.', pt:'Miguel é um bebê lindo.', tip:'📖 Name + is + adjective + noun'},
+  {en:'I am tired but happy.', pt:'Estou cansada mas feliz.', tip:'📖 I + am + adj + but + adj → Dois sentimentos juntos'},
+  {en:'Let\'s go to the doctor.', pt:'Vamos ao médico.', tip:'📖 Let\'s + verb → Vamos + fazer algo'},
+  {en:'He has a little fever.', pt:'Ele está com um pouco de febre.', tip:'📖 He + has + noun → Ele + tem + substantivo'},
+  {en:'Good night, my love!', pt:'Boa noite, meu amor!', tip:'📖 Uma frase para usar todo dia! 🌙'},
+  {en:'I am learning every day.', pt:'Estou aprendendo todo dia.', tip:'📖 I + am + verb-ing + every day → rotina'},
+  {en:'You are doing great!', pt:'Você está indo muito bem!', tip:'📖 You + are + verb-ing + great → elogio'},
+  {en:'The train is late today.', pt:'O trem está atrasado hoje.', tip:'📖 Subject + is + adjective + today'},
+  {en:'I don\'t speak English well yet.', pt:'Ainda não falo inglês bem.', tip:'📖 I + don\'t + verb + well + yet → negativa com "ainda"'},
+  {en:'She is a very good teacher.', pt:'Ela é uma ótima professora.', tip:'📖 She + is + a + adjective + noun'},
+  {en:'We need to buy eggs and milk.', pt:'Precisamos comprar ovos e leite.', tip:'📖 We + need + to + verb → Precisamos + de fazer'},
+  {en:'I am so excited!', pt:'Estou tão animada!', tip:'📖 I + am + so + adjective → intensidade'},
+  {en:'Excuse me, where is the pharmacy?', pt:'Com licença, onde fica a farmácia?', tip:'📖 Excuse me → educação + Where is → onde fica'},
+  {en:'He cries when he is hungry.', pt:'Ele chora quando está com fome.', tip:'📖 Subject + verb + when + subject + is + adjective'},
+  {en:'I feel good today, thank you!', pt:'Me sinto bem hoje, obrigada!', tip:'📖 I + feel + adjective + today'},
 ];
 
-const BADGES_DEF = [
-  { id:'first_word',   emoji:'🌱', name:'Primeira Palavra',    desc:'Dominou sua 1ª palavra',        check: s => Object.keys(s.mastered).length >= 1 },
-  { id:'ten_words',    emoji:'⭐', name:'10 Palavras',          desc:'Dominou 10 palavras',           check: s => Object.keys(s.mastered).length >= 10 },
-  { id:'all_words',    emoji:'📚', name:'Vocabulário Completo', desc:'Dominou todas as palavras!',    check: s => Object.keys(s.mastered).length >= 60 },
-  { id:'first_quiz',   emoji:'🃏', name:'Primeiro Quiz',        desc:'Completou seu 1º quiz',         check: s => s.quizCorrect >= 1 },
-  { id:'quiz_50',      emoji:'🎯', name:'50 Acertos',           desc:'50 respostas certas no quiz',   check: s => s.quizCorrect >= 50 },
-  { id:'streak_3',     emoji:'🔥', name:'3 Dias Seguidos',      desc:'Praticou 3 dias consecutivos',  check: s => s.streak >= 3 },
-  { id:'streak_7',     emoji:'🏆', name:'1 Semana!',            desc:'7 dias consecutivos — incrível!', check: s => s.streak >= 7 },
-  { id:'pron_10',      emoji:'🗣️', name:'Treino do R',          desc:'Praticou 10 palavras com R',    check: s => Object.keys(s.pronPracticed||{}).length >= 10 },
-  { id:'quiz_goal_3',  emoji:'💎', name:'Meta do Dia',          desc:'3 quiz num único dia!',         check: s => (s.quizToday||0) >= 3 },
-  { id:'diary_5',      emoji:'🎬', name:'Cinéfila',             desc:'5 entradas no diário',          check: s => (s.diary||[]).length >= 5 },
+const PRONOUNS_DATA = [
+  {en:'I',       pt:'Eu',          pron:'ai',     ex:'I am happy.'},
+  {en:'You',     pt:'Você / Tu',   pron:'yu',     ex:'You are beautiful.'},
+  {en:'He',      pt:'Ele',         pron:'hi',     ex:'He is sleeping.'},
+  {en:'She',     pt:'Ela',         pron:'chi',    ex:'She is my friend.'},
+  {en:'It',      pt:'Isso / Ele/Ela (coisa)', pron:'it', ex:'It is cold today.'},
+  {en:'We',      pt:'Nós',         pron:'uî',     ex:'We are learning.'},
+  {en:'They',    pt:'Eles / Elas', pron:'déi',    ex:'They are here.'},
+];
+
+const STRUCTURES_DATA = [
+  {
+    formula:[{text:'Sujeito',type:'subject'},{text:'+',type:'plus'},{text:'Verbo to be',type:'verb'},{text:'+',type:'plus'},{text:'Adjetivo',type:'complement'}],
+    examples:[
+      {en:'I am happy.',pt:'Eu estou feliz.',speak:'I am happy'},
+      {en:'She is tired.',pt:'Ela está cansada.',speak:'She is tired'},
+      {en:'We are hungry.',pt:'Nós estamos com fome.',speak:'We are hungry'},
+    ]
+  },
+  {
+    formula:[{text:'Sujeito',type:'subject'},{text:'+',type:'plus'},{text:'Verbo',type:'verb'},{text:'+',type:'plus'},{text:'Complemento',type:'complement'}],
+    examples:[
+      {en:'I need water.',pt:'Eu preciso de água.',speak:'I need water'},
+      {en:'She likes bread.',pt:'Ela gosta de pão.',speak:'She likes bread'},
+      {en:'He wants milk.',pt:'Ele quer leite.',speak:'He wants milk'},
+    ]
+  },
+  {
+    formula:[{text:'Where',type:'subject'},{text:'+',type:'plus'},{text:'is',type:'verb'},{text:'+',type:'plus'},{text:'Lugar?',type:'complement'}],
+    examples:[
+      {en:'Where is the doctor?',pt:'Onde fica o médico?',speak:'Where is the doctor'},
+      {en:'Where is the pharmacy?',pt:'Onde fica a farmácia?',speak:'Where is the pharmacy'},
+    ]
+  },
+];
+
+const BASIC_VERBS = [
+  {en:'am / is / are', pt:'sou / estou / é / está', pron:'em / iz / ar'},
+  {en:'have',          pt:'tenho / tem',             pron:'hev'},
+  {en:'need',          pt:'precisar',                pron:'nîd'},
+  {en:'want',          pt:'querer',                  pron:'uont'},
+  {en:'like',          pt:'gostar',                  pron:'laik'},
+  {en:'go',            pt:'ir',                      pron:'gô'},
+  {en:'eat',           pt:'comer',                   pron:'ît'},
+  {en:'sleep',         pt:'dormir',                  pron:'slîp'},
 ];
 
 const VOCAB_PACKS=[
@@ -692,37 +800,189 @@ const MIGUEL_DATA=[
   ]},
 ];
 
-// ── STATE ─────────────────────────────────────────────
-const ADMIN_PIN='1994';
+const PRON_R_WORDS=[
+  {level:'🟢 Nível 1 — R no início (mais fácil)',words:[
+    {en:'remember',pt:'lembrar',tip:'Diga "ri-MÊM-ber" — o R inicial soa quase como um "r" suave, não como o "rr" forte do português.'},
+    {en:'red',pt:'vermelho',tip:'Diga "rred" com a língua levemente curvada para trás. Não é "hred"!'},
+    {en:'ready',pt:'pronto/a',tip:'"RÉ-di" — R bem suave no começo, sem vibrar a garganta.'},
+    {en:'really',pt:'realmente',tip:'"RÍ-li" — o R aqui é quase inaudível comparado ao português.'},
+    {en:'room',pt:'quarto/sala',tip:'"rrum" — boca arredondada, R suave como um sussurro.'},
+    {en:'right',pt:'certo/direita',tip:'"rait" — R rápido e suave antes do ditongo "ai".'},
+    {en:'run',pt:'correr',tip:'"rran" — R vibrante mas suave, língua curvada levemente.'},
+  ]},
+  {level:'🟡 Nível 2 — R no meio (atenção!)',words:[
+    {en:'sorry',pt:'desculpa',tip:'Diga "SÓ-ri" — o R do meio é quase imperceptível! Não "SÓ-ui".'},
+    {en:'very',pt:'muito',tip:'"VÉ-ri" — o R final é bem suave. Pense em "veri" não "veui".'},
+    {en:'carry',pt:'carregar',tip:'"KÉ-ri" — dois sons, o segundo R é quase um "i" rápido.'},
+    {en:'worry',pt:'preocupar',tip:'"UÓ-ri" — o R do meio precisa aparecer, não sumir!'},
+    {en:'story',pt:'história',tip:'"STÓH-ri" — termine com "ri", não "ui".'},
+    {en:'every',pt:'todo/cada',tip:'"É-vri" — R rápido entre o "v" e o "i".'},
+    {en:'orange',pt:'laranja',tip:'"ÓR-rinj" — o R depois do O é importante, não pule!'},
+    {en:'record',pt:'gravar/registro',tip:'"RÉ-cord" — R tanto no início quanto no meio!'},
+  ]},
+  {level:'🔴 Nível 3 — R no final (mais difícil)',words:[
+    {en:'better',pt:'melhor',tip:'"BÉ-ter" — o R final é quase um "er" com a língua curvada. Não "BÉ-tchi".'},
+    {en:'water',pt:'água',tip:'"UÓ-ter" — termine com o R suave, não corte a palavra.'},
+    {en:'teacher',pt:'professora',tip:'"TÍ-cher" — o R final é bem sutil, mas presente.'},
+    {en:'mother',pt:'mãe',tip:'"MÂ-der" — o R do final precisa aparecer suavemente.'},
+    {en:'sister',pt:'irmã',tip:'"SÍS-ter" — termine com o R, não com "tchi".'},
+    {en:'doctor',pt:'médico',tip:'"DÓK-ter" — R final suave, língua curvada ligeiramente.'},
+    {en:'butter',pt:'manteiga',tip:'"BÂ-ter" — preste atenção no R do fim, não deixe cair!'},
+    {en:'remember',pt:'lembrar',tip:'"ri-MÊM-ber" — R no início E no fim. Desafio duplo!'},
+  ]},
+];
+
+const BADGES_DEF=[
+  {id:'first_word',    emoji:'🌱',name:'Primeira Palavra',    desc:'Dominou sua 1ª palavra',        check:s=>Object.keys(s.mastered).length>=1},
+  {id:'ten_words',     emoji:'⭐',name:'10 Palavras',          desc:'Dominou 10 palavras',           check:s=>Object.keys(s.mastered).length>=10},
+  {id:'all_words',     emoji:'📚',name:'Vocabulário Completo', desc:'Dominou todas as palavras!',    check:s=>Object.keys(s.mastered).length>=60},
+  {id:'first_quiz',    emoji:'🃏',name:'Primeiro Quiz',        desc:'Completou seu 1º quiz',         check:s=>s.quizCorrect>=1},
+  {id:'quiz_50',       emoji:'🎯',name:'50 Acertos',           desc:'50 respostas certas no quiz',   check:s=>s.quizCorrect>=50},
+  {id:'quiz_100',      emoji:'🔥',name:'100 Acertos',          desc:'100 respostas certas!',         check:s=>s.quizCorrect>=100},
+  {id:'streak_3',      emoji:'📅',name:'3 Dias Seguidos',      desc:'Praticou 3 dias consecutivos',  check:s=>s.streak>=3},
+  {id:'streak_7',      emoji:'🏆',name:'1 Semana!',            desc:'7 dias seguidos — incrível!',   check:s=>s.streak>=7},
+  {id:'streak_14',     emoji:'💫',name:'2 Semanas!',           desc:'14 dias seguidos — você é demais!', check:s=>s.streak>=14},
+  {id:'streak_30',     emoji:'👑',name:'1 Mês!',               desc:'30 dias — dedicação total!',    check:s=>s.streak>=30},
+  {id:'pron_10',       emoji:'🗣️',name:'Treino do R',          desc:'Praticou 10 palavras com R',    check:s=>Object.keys(s.pronPracticed||{}).length>=10},
+  {id:'pron_all',      emoji:'🎤',name:'Mestre do R',          desc:'Praticou todas as palavras R!', check:s=>Object.keys(s.pronPracticed||{}).length>=23},
+  {id:'quiz_goal',     emoji:'💎',name:'Meta do Dia',          desc:'Completou todas as metas hoje!',check:s=>(s.quizToday||0)>=(s.quizGoal||3)&&(s.exToday||0)>=1},
+  {id:'diary_5',       emoji:'🎬',name:'Cinéfila',             desc:'5 entradas no diário',          check:s=>(s.diary||[]).length>=5},
+  {id:'exercises_5',   emoji:'✍️',name:'Praticante',           desc:'5 exercícios completados',      check:s=>(s.exDone||0)>=5},
+  {id:'pronouns',      emoji:'🧩',name:'Pronomes',             desc:'Explorou os pronomes',          check:s=>s.visitedPronouns||false},
+  {id:'wedding_quiz',  emoji:'💕',name:'Nossa História',       desc:'Completou o quiz do casal',     check:s=>s.weddingQuizDone||false},
+  {id:'wedding_7days', emoji:'💍',name:'Recém-casada!',        desc:'Completou o desafio dos 7 dias!',check:s=>(s.challengeDays||[]).length>=7},
+  {id:'days_10',       emoji:'🌟',name:'10 Dias Acessados',    desc:'Acessou o app 10 dias no total',check:s=>Object.keys(s.weekDays||{}).length>=10},
+  {id:'days_30',       emoji:'🌺',name:'30 Dias Acessados',    desc:'Acessou o app 30 dias no total',check:s=>Object.keys(s.weekDays||{}).length>=30},
+];
+
+const COUPLE_PHRASES=[
+  {en:"I love you so much.",         pt:"Eu te amo muito.",              tip:"Use todo dia! 💕"},
+  {en:"You are my favorite person.", pt:"Você é minha pessoa favorita.", tip:"Frase linda para o Vinicius 🥰"},
+  {en:"Thank you for everything.",   pt:"Obrigada por tudo.",            tip:"'Everything' = tudo"},
+  {en:"You make me so happy.",       pt:"Você me faz muito feliz.",      tip:"'Make' = fazer"},
+  {en:"I miss you.",                 pt:"Sinto sua falta.",              tip:"Uma das frases mais usadas em inglês"},
+  {en:"Let's cook dinner together.", pt:"Vamos cozinhar o jantar juntos.",tip:"'Together' = juntos"},
+  {en:"Good morning, my love.",      pt:"Bom dia, meu amor.",            tip:"Perfeita para começar o dia 🌅"},
+  {en:"I am proud of you.",          pt:"Tenho orgulho de você.",        tip:"'Proud' = orgulhoso/a"},
+  {en:"We are a great team.",        pt:"Somos uma ótima equipe.",       tip:"'Team' = equipe"},
+  {en:"You are the best husband.",   pt:"Você é o melhor marido.",       tip:"'Husband' = marido 💍"},
+  {en:"I can't wait to see you.",    pt:"Mal posso esperar para te ver.",tip:"'Can't wait' = mal posso esperar"},
+  {en:"Our family is everything.",   pt:"Nossa família é tudo.",         tip:"Family = família 👨‍👩‍👦"},
+  {en:"One more kiss, please!",      pt:"Mais um beijo, por favor!",     tip:"'Kiss' = beijo 😘"},
+  {en:"I believe in us.",            pt:"Eu acredito em nós.",           tip:"'Believe' = acreditar"},
+  {en:"Every day with you is special.", pt:"Todo dia com você é especial.", tip:"'Every day' = todo dia"},
+];
+
+const WEDDING_QUIZ=[
+  {q:"Where did Vinicius and Andressa meet for the first time?",
+   opts:["In Amsterdam","At Viracopos Airport in Campinas, Brazil","In Hoek, Zeeland","Online"],
+   correct:"At Viracopos Airport in Campinas, Brazil",
+   fun:"Foi um encontro de cinema — ele foi te buscar no aeroporto! ✈️💕"},
+  {q:"In which city do Vinicius, Andressa and Miguel live in the Netherlands?",
+   opts:["Amsterdam","Rotterdam","Hoek, Zeeland","Den Haag"],
+   correct:"Hoek, Zeeland",
+   fun:"Hoek é uma cidadezinha linda em Zeeland! 🌊🏡"},
+  {q:"What is the name of their son?",
+   opts:["Martin","Lucas","Miguel","Gabriel"],
+   correct:"Miguel",
+   fun:"O nosso Miguelzinho! 👶💛"},
+  {q:"When did Vinicius pick up Andressa at the airport?",
+   opts:["January 15, 2025","January 27, 2025","March 30, 2025","December 1, 2024"],
+   correct:"January 27, 2025",
+   fun:"O começo de tudo! 🥹"},
+  {q:"Which musician does Vinicius love that Andressa also knows?",
+   opts:["The Beatles","Elvis Presley","Bob Marley","Michael Jackson"],
+   correct:"Bob Marley",
+   fun:"'One love, one heart...' 🎵🌿"},
+  {q:"What is today's special date?",
+   opts:["Their first date","Miguel's birthday","Their wedding day","Vinicius's birthday"],
+   correct:"Their wedding day",
+   fun:"Hoje é o dia mais especial! Parabéns, casal! 💍🥂"},
+  {q:"How do you say 'marido' in English?",
+   opts:["Brother","Friend","Husband","Father"],
+   correct:"Husband",
+   fun:"And Vinicius is the best husband! 💕"},
+  {q:"How do you say 'I love you' in English?",
+   opts:["I miss you","I love you","I need you","I like you"],
+   correct:"I love you",
+   fun:"As três palavras mais importantes! ❤️"},
+];
+
+const CHALLENGE_7DAYS=[
+  {day:1, title:"Diga 'I love you' de 3 formas",       desc:"Aprenda: 'I love you', 'You are my everything', 'I adore you'. Diga para o Vinicius hoje! 💕",      en:"I love you, I adore you, you are my everything"},
+  {day:2, title:"Bob Marley em inglês",                desc:"Ouça 'Three Little Birds' do Bob Marley e encontre 3 palavras em inglês que você reconhece. Escreva no diário! 🎵", en:"Three little birds"},
+  {day:3, title:"Escreva uma frase para o Vinicius",   desc:"Em inglês! Pode ser curta: 'You are the best'. Mostre para ele e peça para ele avaliar sua pronúncia. 😄", en:"You are the best"},
+  {day:4, title:"Aprenda sobre a nossa cidade",        desc:"Como se diz 'We live in Hoek, in the Netherlands'? Pratique dizendo em voz alta 5 vezes! 🏡🌊",           en:"We live in Hoek in the Netherlands"},
+  {day:5, title:"Família em inglês",                   desc:"Aprenda: husband, wife, son, baby, family. Use numa frase: 'My family is my everything!' 👨‍👩‍👦",             en:"My family is my everything"},
+  {day:6, title:"Quiz da nossa história",              desc:"Vá na aba 'Nossa História' e complete o quiz sobre nós dois. Veja quantas você acerta! ❓💕",              en:"Our love story"},
+  {day:7, title:"Carta para o futuro",                 desc:"Escreva 3 frases em inglês sobre o que você deseja para a nossa família. Ex: 'I want us to be happy.' 🌸", en:"I want us to be happy together"},
+];
+
+
+// Fill-in exercises
+const FILL_EXERCISES=[
+  {sentence:['I','am','_____','.'],      blank:'happy',      options:['happy','bread','doctor','run'],  pt:'Eu estou feliz.',     speak:'I am happy'},
+  {sentence:['She','is','a','_____','.'],blank:'nurse',      options:['nurse','sorry','milk','left'],   pt:'Ela é uma enfermeira.',speak:'She is a nurse'},
+  {sentence:['We','need','_____','.'],   blank:'water',      options:['water','tired','ready','bus'],   pt:'Nós precisamos de água.',speak:'We need water'},
+  {sentence:['He','is','very','_____','.'],blank:'tired',    options:['tired','train','egg','run'],     pt:'Ele está muito cansado.',speak:'He is very tired'},
+  {sentence:['I','want','_____','.'],    blank:'bread',      options:['bread','sorry','room','she'],    pt:'Eu quero pão.',        speak:'I want bread'},
+  {sentence:['_____','is','sleeping','.'],blank:'He',        options:['He','bread','very','lost'],      pt:'Ele está dormindo.',   speak:'He is sleeping'},
+  {sentence:['The','train','is','_____','.'],blank:'late',   options:['late','hungry','we','milk'],     pt:'O trem está atrasado.',speak:'The train is late'},
+  {sentence:['I','am','_____','.'],      blank:'hungry',     options:['hungry','ticket','she','red'],   pt:'Estou com fome.',      speak:'I am hungry'},
+  {sentence:['Where','is','the','_____','?'],blank:'doctor', options:['doctor','happy','we','room'],    pt:'Onde está o médico?',  speak:'Where is the doctor'},
+  {sentence:['She','has','a','_____','.'],blank:'fever',     options:['fever','left','we','really'],    pt:'Ela está com febre.',  speak:'She has a fever'},
+  {sentence:['_____','are','learning','.'],blank:'We',       options:['We','bread','sorry','tired'],    pt:'Nós estamos aprendendo.',speak:'We are learning'},
+  {sentence:['I','need','a','_____','.'],blank:'bag',        options:['bag','happy','she','run'],       pt:'Preciso de uma sacola.',speak:'I need a bag'},
+];
+
+// Listen exercises
+const LISTEN_EXERCISES=[
+  {speak:'I am happy',    sentence:['I','am','_____','.'],    blank:'happy',   options:['happy','tired','sad','cold'],       pt:'Eu estou feliz.'},
+  {speak:'She needs help',sentence:['She','needs','_____','.'],blank:'help',   options:['help','run','bread','left'],        pt:'Ela precisa de ajuda.'},
+  {speak:'We are hungry', sentence:['We','are','_____','.'],  blank:'hungry',  options:['hungry','sorry','train','red'],     pt:'Estamos com fome.'},
+  {speak:'He is tired',   sentence:['He','is','_____','.'],   blank:'tired',   options:['tired','milk','happy','right'],     pt:'Ele está cansado.'},
+  {speak:'I need water',  sentence:['I','need','_____','.'],  blank:'water',   options:['water','eggs','sorry','late'],      pt:'Preciso de água.'},
+  {speak:'She is ready',  sentence:['She','is','_____','.'],  blank:'ready',   options:['ready','bus','hungry','we'],        pt:'Ela está pronta.'},
+  {speak:'I am cold',     sentence:['I','am','_____','.'],    blank:'cold',    options:['cold','bread','doctor','run'],      pt:'Estou com frio.'},
+  {speak:'They are lost', sentence:['They','are','_____','.'],blank:'lost',    options:['lost','milk','happy','ticket'],     pt:'Eles estão perdidos.'},
+];
+
+// ══ STATE ══════════════════════════════════════════════
 function load(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch{return d;}}
 function save(k,v){localStorage.setItem(k,JSON.stringify(v));}
 
 let state={
-  tasks:       load('ae_tasks',[]),
-  diary:       load('ae_diary',[]),
-  streak:      load('ae_streak',0),
-  lastVisit:   load('ae_lastVisit',''),
-  quizCorrect: load('ae_quizCorrect',0),
-  mastered:    load('ae_mastered',{}),
-  pronPracticed: load('ae_pron',{}),
-  quizToday:   load('ae_quizToday',0),
-  quizTodayDate: load('ae_quizTodayDate',''),
-  quizGoal:    load('ae_quizGoal',3),
-  weekDays:    load('ae_weekDays',{}),
-  phrasePack:  load('ae_phrase',{en:'Good morning, how are you?',pt:'Bom dia, como você está?',tip:'💡 Pronúncia: "gud môr-nin, hau ar yu?"'}),
+  tasks:           load('ae_tasks',[]),
+  diary:           load('ae_diary',[]),
+  streak:          load('ae_streak',0),
+  lastVisit:       load('ae_lastVisit',''),
+  quizCorrect:     load('ae_quizCorrect',0),
+  mastered:        load('ae_mastered',{}),
+  pronPracticed:   load('ae_pron',{}),
+  quizToday:       load('ae_quizToday',0),
+  quizTodayDate:   load('ae_quizTodayDate',''),
+  quizGoal:        load('ae_quizGoal',3),
+  exToday:         load('ae_exToday',0),
+  exTodayDate:     load('ae_exTodayDate',''),
+  weekDays:        load('ae_weekDays',{}),
+  exDone:          load('ae_exDone',0),
+  visitedPronouns: load('ae_visitedPronouns',false),
+  challengeDays:   load('ae_challengeDays',[]),
+  weddingQuizDone: load('ae_weddingQuizDone',false),
+  weddingQuizIdx:  load('ae_weddingQuizIdx',0),
 };
 
-// ── SPEECH ────────────────────────────────────────────
+// ══ SPEECH ═════════════════════════════════════════════
 let currentSpeakBtn=null;
 function speakText(text,btn){
   if(!window.speechSynthesis){showToast('⚠️ Áudio não suportado neste navegador');return;}
   window.speechSynthesis.cancel();
   if(currentSpeakBtn) currentSpeakBtn.classList.remove('speaking');
   const u=new SpeechSynthesisUtterance(text);
-  u.lang='en-US'; u.rate=0.85; u.pitch=1;
+  u.lang='en-US';u.rate=0.85;u.pitch=1;
   currentSpeakBtn=btn;
   if(btn) btn.classList.add('speaking');
-  u.onend=u.onerror=()=>{if(btn) btn.classList.remove('speaking'); currentSpeakBtn=null;};
+  u.onend=u.onerror=()=>{if(btn)btn.classList.remove('speaking');currentSpeakBtn=null;};
   window.speechSynthesis.speak(u);
 }
 function speakQuizWord(){
@@ -730,7 +990,7 @@ function speakQuizWord(){
   if(w&&w!=='—') speakText(w,document.getElementById('quizSpeakBtn'));
 }
 
-// ── INIT ──────────────────────────────────────────────
+// ══ INIT ═══════════════════════════════════════════════
 function init(){
   const today=new Date().toDateString();
   const yesterday=new Date(Date.now()-86400000).toDateString();
@@ -738,13 +998,10 @@ function init(){
   else if(state.lastVisit!==today&&state.lastVisit) state.streak=1;
   else if(!state.lastVisit) state.streak=1;
   state.lastVisit=today;
-  save('ae_streak',state.streak); save('ae_lastVisit',state.lastVisit);
-
-  // Reset daily quiz count if new day
-  if(state.quizTodayDate !== today){ state.quizToday=0; state.quizTodayDate=today; save('ae_quizToday',0); save('ae_quizTodayDate',today); }
-
-  // Mark today as active in weekdays
-  state.weekDays[today]=true; save('ae_weekDays',state.weekDays);
+  save('ae_streak',state.streak);save('ae_lastVisit',state.lastVisit);
+  if(state.quizTodayDate!==today){state.quizToday=0;state.quizTodayDate=today;save('ae_quizToday',0);save('ae_quizTodayDate',today);}
+  if(state.exTodayDate!==today){state.exToday=0;state.exTodayDate=today;save('ae_exToday',0);save('ae_exTodayDate',today);}
+  state.weekDays[today]=true;save('ae_weekDays',state.weekDays);
 
   document.getElementById('streakCount').textContent=state.streak;
   const days=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
@@ -752,24 +1009,177 @@ function init(){
   const now=new Date();
   document.getElementById('headerDate').textContent=`${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]}`;
   const h=now.getHours();
-  document.getElementById('welcomeMsg').textContent=`${h<12?'Bom dia':h<18?'Boa tarde':'Boa noite'}, Andressa! 👋`;
-  renderHome(); renderTasks(); renderVocab(); renderDiary(); renderMiguel(); renderPron(); startQuiz(); updateStats();
+  document.getElementById('welcomeMsg').textContent=`${h<5?'Boa madrugada':h<12?'Bom dia':h<18?'Boa tarde':'Boa noite'}, Andressa! 👋`;
+
+  renderDailyPhrase();
+  renderHome();
+  renderTasks();
+  renderVocab();
+  renderPronouns();
+  renderWedding();
+  renderDiary();
+  renderMiguel();
+  renderPron();
+  renderExercises('fill');
+  startQuiz();
+  updateStats();
 }
 
-// ── NAV ───────────────────────────────────────────────
+// ══ DAILY PHRASE (auto) ════════════════════════════════
+function renderDailyPhrase(){
+  const dayOfYear=Math.floor((new Date()-new Date(new Date().getFullYear(),0,0))/(1000*60*60*24));
+  const phrase=DAILY_PHRASES[dayOfYear%DAILY_PHRASES.length];
+  document.getElementById('homePhrase').textContent=phrase.en;
+  document.getElementById('homePhrasePt').textContent=phrase.pt;
+  document.getElementById('homePhraseTip').textContent=phrase.tip;
+}
+
+// ══ NAV ════════════════════════════════════════════════
 function showSection(id,btn){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('section-'+id).classList.add('active');
   btn.classList.add('active');
+  if(id==='pronouns'&&!state.visitedPronouns){state.visitedPronouns=true;save('ae_visitedPronouns',true);checkBadges();}
 }
 
-// ── HOME ──────────────────────────────────────────────
+// ══ WEDDING ════════════════════════════════════════════
+function renderWedding(){
+  renderCouplePhrases();
+  renderWeddingQuiz();
+  renderChallenge();
+}
+
+function showWeddingTab(tab,btn){
+  ['phrases','quiz','challenge'].forEach(t=>{
+    document.getElementById('wtab-content-'+t).style.display=t===tab?'block':'none';
+    document.getElementById('wtab-'+t).classList.toggle('active',t===tab);
+  });
+}
+
+function renderCouplePhrases(){
+  const el=document.getElementById('couplePhrasesList');if(!el)return;
+  el.innerHTML=COUPLE_PHRASES.map(p=>`
+    <div class="couple-phrase-card">
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div style="flex:1;">
+          <div class="couple-phrase-en">${p.en}</div>
+          <div class="couple-phrase-pt">${p.pt}</div>
+          <div class="couple-phrase-tip">💡 ${p.tip}</div>
+        </div>
+        <button class="speak-btn" style="background:#fde8f0;color:#c0508a;flex-shrink:0;" onclick="speakText('${p.en.replace(/'/g,"\\'")}',this)">🔊</button>
+      </div>
+    </div>`).join('');
+}
+
+let weddingQuizAnswered=false;
+
+function renderWeddingQuiz(){
+  const container=document.getElementById('weddingQuizContainer');if(!container)return;
+  if(state.weddingQuizDone){
+    container.innerHTML=`
+      <div class="wedding-quiz-card">
+        <div style="font-size:3rem;margin-bottom:12px;">💕</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;color:#8a3060;margin-bottom:8px;">Parabéns! Quiz concluído!</div>
+        <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:16px;">Você conhece muito bem a nossa história! 🥹</div>
+        <button onclick="resetWeddingQuiz()" style="padding:10px 22px;background:#f7c5d8;color:#8a3060;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;">🔄 Jogar de novo</button>
+      </div>`;
+    return;
+  }
+  const idx=state.weddingQuizIdx||0;
+  if(idx>=WEDDING_QUIZ.length){state.weddingQuizDone=true;save('ae_weddingQuizDone',true);checkBadges();renderWeddingQuiz();return;}
+  const q=WEDDING_QUIZ[idx];
+  container.innerHTML=`
+    <div class="wedding-quiz-card">
+      <div style="font-size:0.72rem;color:#c0508a;font-weight:800;margin-bottom:12px;">❓ Pergunta ${idx+1}/${WEDDING_QUIZ.length}</div>
+      <div class="wedding-quiz-q">${q.q}</div>
+      <div id="weddingOpts">
+        ${q.opts.map(o=>`<button class="wedding-opt" onclick="answerWeddingQuiz(this,'${o.replace(/'/g,"\\'")}','${q.correct.replace(/'/g,"\\'")}','${q.fun.replace(/'/g,"\\'").replace(/"/g,"&quot;")}')">${o}</button>`).join('')}
+      </div>
+      <div id="weddingFeedback" style="display:none;margin-top:12px;font-size:0.85rem;font-weight:700;line-height:1.4;"></div>
+      <button id="weddingNextBtn" onclick="nextWeddingQuiz()" style="display:none;margin-top:12px;padding:10px 24px;background:#c0508a;color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;">Próxima 💕</button>
+    </div>`;
+  weddingQuizAnswered=false;
+}
+
+function answerWeddingQuiz(btn,selected,correct,fun){
+  if(weddingQuizAnswered)return;
+  weddingQuizAnswered=true;
+  const ok=selected===correct;
+  document.querySelectorAll('.wedding-opt').forEach(b=>{b.onclick=null;if(b.textContent.trim()===correct)b.classList.add('correct');});
+  if(!ok)btn.classList.add('wrong');
+  const fb=document.getElementById('weddingFeedback');
+  fb.innerHTML=(ok?'✅ Correto! ':'❌ Era: <strong>'+correct+'</strong>. ')+'<em>'+fun+'</em>';
+  fb.style.color=ok?'var(--green)':'#c0392b';fb.style.display='block';
+  document.getElementById('weddingNextBtn').style.display='inline-block';
+}
+
+function nextWeddingQuiz(){
+  state.weddingQuizIdx=(state.weddingQuizIdx||0)+1;
+  save('ae_weddingQuizIdx',state.weddingQuizIdx);
+  renderWeddingQuiz();
+}
+
+function resetWeddingQuiz(){
+  state.weddingQuizDone=false;state.weddingQuizIdx=0;
+  save('ae_weddingQuizDone',false);save('ae_weddingQuizIdx',0);
+  renderWeddingQuiz();
+}
+
+function getTodayChallengeDayNum(){
+  const weddingDate=new Date('2026-03-30');
+  const today=new Date();today.setHours(0,0,0,0);weddingDate.setHours(0,0,0,0);
+  const diff=Math.floor((today-weddingDate)/(1000*60*60*24));
+  return diff>=0&&diff<7?diff+1:-1;
+}
+
+function renderChallenge(){
+  const container=document.getElementById('challengeDaysList');if(!container)return;
+  const today=new Date();today.setHours(0,0,0,0);
+  const weddingDate=new Date('2026-03-30');weddingDate.setHours(0,0,0,0);
+  const doneDays=state.challengeDays||[];
+  const pct=Math.min(100,Math.round(doneDays.length/7*100));
+  const pb=document.getElementById('challengeProgressBar');if(pb)pb.style.width=pct+'%';
+  const dc=document.getElementById('challengeDoneCount');if(dc)dc.textContent=doneDays.length;
+
+  container.innerHTML=CHALLENGE_7DAYS.map(d=>{
+    const dayDate=new Date(weddingDate);dayDate.setDate(dayDate.getDate()+d.day-1);
+    const isPast=today>=dayDate;
+    const isDone=doneDays.includes(d.day);
+    const isToday=today.getTime()===dayDate.getTime();
+    const dateStr=dayDate.toLocaleDateString('pt-BR',{day:'numeric',month:'short'});
+    return `<div class="challenge-day ${isDone?'done':''} ${!isPast&&!isToday?'locked':''}">
+      <div class="challenge-day-num">${isDone?'✓':d.day}</div>
+      <div class="challenge-day-body">
+        <div class="challenge-day-title">${isToday?'⭐ Hoje! ':''}<strong>Dia ${d.day}</strong> — ${d.title}</div>
+        <div style="font-size:0.68rem;color:var(--text-muted);margin-bottom:3px;">${dateStr}</div>
+        <div class="challenge-day-desc">${d.desc}</div>
+        ${(isPast||isToday)?`
+          <div style="display:flex;gap:8px;align-items:center;margin-top:6px;">
+            <button class="challenge-day-btn ${isDone?'done':''}" onclick="toggleChallengeDay(${d.day},this)">
+              ${isDone?'✅ Feita!':'☐ Marcar como feita'}
+            </button>
+            <button class="speak-btn" style="width:28px;height:28px;font-size:0.85rem;" onclick="speakText('${d.en.replace(/'/g,"\\'")}',this)">🔊</button>
+          </div>`:
+          `<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">🔒 Disponível em ${dateStr}</div>`}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleChallengeDay(day,btn){
+  let days=state.challengeDays||[];
+  if(days.includes(day))days=days.filter(d=>d!==day);
+  else days.push(day);
+  state.challengeDays=days;save('ae_challengeDays',days);
+  const isDone=days.includes(day);
+  btn.classList.toggle('done',isDone);btn.textContent=isDone?'✅ Feita!':'☐ Marcar como feita';
+  renderChallenge();updateStats();checkBadges();
+  if(isDone)showToast('💍 Desafio do dia concluído! Incrível!');
+}
+
+// ══ HOME ═══════════════════════════════════════════════
 function renderHome(){
-  const p=state.phrasePack;
-  document.getElementById('homePhrase').textContent=p.en;
-  document.getElementById('homePhrasePt').textContent=p.pt;
-  document.getElementById('homePhraseTip').textContent=p.tip||'';
   const c=document.getElementById('homeTaskList');
   if(!state.tasks.length){c.innerHTML='<p style="font-size:0.82rem;color:var(--text-muted);text-align:center;padding:10px 0;">Sem tarefas hoje ainda 😊</p>';return;}
   c.innerHTML=state.tasks.map((t,i)=>`
@@ -781,21 +1191,18 @@ function renderHome(){
       </div>
     </div>`).join('');
   renderWeekTracker();
-  renderQuizGoal();
+  renderDailyGoals();
   renderBadges();
 }
 
 function renderWeekTracker(){
   const dayNames=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
-  const today=new Date();
-  const todayStr=today.toDateString();
-  // Get last 7 days
+  const today=new Date();const todayStr=today.toDateString();
   const days=[];
-  for(let i=6;i>=0;i--){
-    const d=new Date(today); d.setDate(d.getDate()-i);
-    days.push({str:d.toDateString(),name:dayNames[d.getDay()],isToday:d.toDateString()===todayStr});
-  }
-  document.getElementById('weekTracker').innerHTML=days.map(d=>`
+  for(let i=6;i>=0;i--){const d=new Date(today);d.setDate(d.getDate()-i);days.push({str:d.toDateString(),name:dayNames[d.getDay()],isToday:d.toDateString()===todayStr});}
+  const el=document.getElementById('weekTracker');
+  if(!el)return;
+  el.innerHTML=days.map(d=>`
     <div class="week-day">
       <div class="week-day-name">${d.name}</div>
       <div class="week-day-dot ${state.weekDays[d.str]?'done':''} ${d.isToday?'today':''}"></div>
@@ -803,18 +1210,47 @@ function renderWeekTracker(){
 }
 
 function renderQuizGoal(){
-  const done=state.quizToday||0;
-  const goal=state.quizGoal||3;
-  const pct=Math.min(100,Math.round(done/goal*100));
-  document.getElementById('goalTarget').textContent=goal;
-  document.getElementById('goalTarget2').textContent=goal;
-  document.getElementById('goalDone').textContent=done;
-  document.getElementById('goalBar').style.width=pct+'%';
+  renderDailyGoals();
+}
+
+function renderDailyGoals(){
+  const container=document.getElementById('dailyGoalsContainer');
+  if(!container)return;
+  const quizDone=state.quizToday||0; const quizGoal=state.quizGoal||3;
+  const exDoneToday=state.exToday||0; const exGoal=1;
+  const challengeGoal=1;
+  const challengeDone=state.challengeDays&&state.challengeDays.includes(getTodayChallengeDayNum())?1:0;
+
+  const goals=[
+    {icon:'🃏',label:`Quiz`,done:quizDone,goal:quizGoal,color:'var(--accent)'},
+    {icon:'✍️',label:`Exercício`,done:exDoneToday,goal:exGoal,color:'var(--purple)'},
+    {icon:'💍',label:`Desafio do casal`,done:challengeDone,goal:challengeGoal,color:'#c0508a'},
+  ];
+
+  container.innerHTML=goals.map(g=>{
+    const pct=Math.min(100,Math.round(g.done/g.goal*100));
+    const allDone=g.done>=g.goal;
+    return `<div style="margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+        <div style="font-size:0.78rem;font-weight:800;color:${g.color};">${g.icon} ${g.label}</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--text-soft);">${allDone?'✅':g.done+'/'+g.goal}</div>
+      </div>
+      <div style="background:var(--border);border-radius:50px;height:8px;overflow:hidden;">
+        <div style="width:${pct}%;height:100%;background:${g.color};border-radius:50px;transition:width 0.5s ease;"></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function getTodayChallengeDayNum(){
+  const weddingDate=new Date('2026-03-30');
+  const today=new Date();
+  const diff=Math.floor((today-weddingDate)/(1000*60*60*24));
+  return diff>=0&&diff<7?diff+1:-1;
 }
 
 function renderBadges(){
-  const grid=document.getElementById('badgesGrid');
-  if(!grid) return;
+  const grid=document.getElementById('badgesGrid');if(!grid)return;
   grid.innerHTML=BADGES_DEF.map(b=>{
     const unlocked=b.check(state);
     return `<div class="badge-card ${unlocked?'unlocked':'locked'}">
@@ -826,53 +1262,7 @@ function renderBadges(){
   }).join('');
 }
 
-// ── PRONUNCIATION ──────────────────────────────────────
-function renderPron(){
-  const allWords=PRON_R_WORDS.flatMap(g=>g.words);
-  const practiced=Object.keys(state.pronPracticed).length;
-  const pct=Math.min(100,Math.round(practiced/allWords.length*100));
-  document.getElementById('pronProgBar').style.width=pct+'%';
-  document.getElementById('pronProgText').textContent=`${practiced} palavras praticadas`;
-  document.getElementById('pronProgPct').textContent=pct+'%';
-
-  document.getElementById('pronContent').innerHTML=PRON_R_WORDS.map(group=>`
-    <div class="pron-level-title">${group.level}</div>
-    ${group.words.map(w=>{
-      const key=w.en.replace(/\s/g,'_');
-      const done=!!state.pronPracticed[key];
-      // Highlight R letters
-      const highlighted=w.en.replace(/r/gi, m=>`<span class="pron-r-highlight">${m}</span>`);
-      return `<div class="pron-word-card ${done?'practiced':''}" id="pron-${key}">
-        <div class="pron-word-top">
-          <div class="pron-word-en">${highlighted}</div>
-          <div style="font-size:0.8rem;color:var(--text-soft);font-weight:600;">${w.pt}</div>
-          <button class="speak-btn" onclick="speakText('${w.en}',this)">🔊</button>
-        </div>
-        <div class="pron-word-tip">💡 <strong>Como pronunciar:</strong> ${w.tip}</div>
-        <div class="pron-actions">
-          <button class="pron-practiced-btn ${done?'done':''}" onclick="togglePronPracticed('${key}',this)">
-            ${done?'✅ Praticada!':'☐ Marcar como praticada'}
-          </button>
-        </div>
-      </div>`;
-    }).join('')}`).join('');
-}
-
-function togglePronPracticed(key,btn){
-  state.pronPracticed[key]=!state.pronPracticed[key];
-  if(!state.pronPracticed[key]) delete state.pronPracticed[key];
-  save('ae_pron',state.pronPracticed);
-  const done=!!state.pronPracticed[key];
-  btn.classList.toggle('done',done);
-  btn.textContent=done?'✅ Praticada!':'☐ Marcar como praticada';
-  const card=document.getElementById('pron-'+key);
-  if(card) card.classList.toggle('practiced',done);
-  renderPron();
-  checkBadges();
-  showToast(done?'💪 Boa! Continue praticando!':'↩️ Desmarcada');
-}
-
-// ── TASKS ─────────────────────────────────────────────
+// ══ TASKS ══════════════════════════════════════════════
 function renderTasks(){
   document.getElementById('noTasks').style.display=state.tasks.length?'none':'block';
   document.getElementById('taskList').innerHTML=state.tasks.map((t,i)=>`
@@ -885,13 +1275,63 @@ function renderTasks(){
     </div>`).join('');
 }
 function toggleTask(i){
-  state.tasks[i].done=!state.tasks[i].done;
-  save('ae_tasks',state.tasks);
-  renderTasks(); renderHome(); updateStats();
-  if(state.tasks[i].done) showToast('✅ Tarefa concluída! Ótimo trabalho!');
+  state.tasks[i].done=!state.tasks[i].done;save('ae_tasks',state.tasks);
+  renderTasks();renderHome();updateStats();
+  if(state.tasks[i].done)showToast('✅ Tarefa concluída! Ótimo trabalho!');
 }
 
-// ── VOCAB ─────────────────────────────────────────────
+// ══ PRONOUNS ═══════════════════════════════════════════
+function renderPronouns(){
+  // Table
+  document.getElementById('pronounTableBody').innerHTML=PRONOUNS_DATA.map(p=>`
+    <tr>
+      <td><span class="pronoun-en">${p.en}</span> <span style="font-size:0.7rem;color:var(--text-muted);">(${p.pron})</span></td>
+      <td style="color:var(--text-soft);font-weight:600;">${p.pt}</td>
+      <td style="font-style:italic;color:var(--text-muted);font-size:0.78rem;">${p.ex}</td>
+      <td><button class="pronoun-speak" onclick="speakText('${p.ex}',this)">🔊</button></td>
+    </tr>`).join('');
+
+  // Structures
+  document.getElementById('structureExamples').innerHTML=STRUCTURES_DATA.map(s=>`
+    <div class="structure-card">
+      <div class="structure-formula">
+        ${s.formula.map(f=>f.type==='plus'
+          ?`<span class="formula-plus">${f.text}</span>`
+          :`<span class="formula-block formula-${f.type}">${f.text}</span>`
+        ).join('')}
+      </div>
+      <div class="structure-examples">
+        ${s.examples.map(e=>`
+          <div class="struct-ex">
+            <div class="struct-ex-en">${e.en}</div>
+            <div class="struct-ex-pt">${e.pt}</div>
+            <button class="speak-btn" onclick="speakText('${e.speak}',this)" style="flex-shrink:0;">🔊</button>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+
+  // Basic verbs
+  document.getElementById('basicVerbsTable').innerHTML=`
+    <table style="width:100%;border-collapse:collapse;">
+      <thead><tr>
+        <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;border-radius:8px 0 0 0;">Verbo em inglês</th>
+        <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;">Significado</th>
+        <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;border-radius:0 8px 0 0;"></th>
+      </tr></thead>
+      <tbody>
+        ${BASIC_VERBS.map(v=>`
+          <tr>
+            <td style="padding:8px 10px;font-weight:900;color:var(--primary-dark);border-bottom:1px solid var(--border);">${v.en} <span style="font-size:0.68rem;color:var(--text-muted);font-weight:600;">(${v.pron})</span></td>
+            <td style="padding:8px 10px;color:var(--text-soft);font-size:0.83rem;border-bottom:1px solid var(--border);">${v.pt}</td>
+            <td style="padding:8px 10px;border-bottom:1px solid var(--border);">
+              <button class="speak-btn" onclick="speakText('${v.en.split(' ')[0]}',this)">🔊</button>
+            </td>
+          </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ══ VOCAB ══════════════════════════════════════════════
 function renderVocab(){
   document.getElementById('packGrid').innerHTML=VOCAB_PACKS.map(p=>{
     const mc=p.words.filter(w=>state.mastered[w.en]).length;
@@ -909,7 +1349,7 @@ function showPack(id,btn){
   const pack=VOCAB_PACKS.find(p=>p.id===id);
   document.getElementById('vocabListContainer').innerHTML=`
     <div class="card">
-      <div class="card-title">${pack.emoji} ${pack.name} — 🔊 ouvir  |  ⭐ marcar como aprendida</div>
+      <div class="card-title">${pack.emoji} ${pack.name} — 🔊 ouvir | ⭐ marcar como aprendida</div>
       ${pack.words.map(w=>`
         <div class="vocab-card ${state.mastered[w.en]?'mastered':''}" id="vc-${w.en.replace(/\s/g,'_')}">
           <div class="vocab-en">${w.en}</div>
@@ -926,19 +1366,40 @@ function showPack(id,btn){
 function toggleMastered(enKey,btn){
   const en=enKey.replace(/_/g,' ');
   state.mastered[en]=!state.mastered[en];
-  if(!state.mastered[en]) delete state.mastered[en];
+  if(!state.mastered[en])delete state.mastered[en];
   save('ae_mastered',state.mastered);
   btn.classList.toggle('on',!!state.mastered[en]);
   const card=document.getElementById('vc-'+enKey);
-  if(card) card.classList.toggle('mastered',!!state.mastered[en]);
-  renderVocab(); updateStats(); checkBadges();
+  if(card)card.classList.toggle('mastered',!!state.mastered[en]);
+  renderVocab();updateStats();checkBadges();
   showToast(state.mastered[en]?'⭐ Palavra dominada! Incrível!':'↩️ Removida das dominadas');
 }
 
-// ── QUIZ ──────────────────────────────────────────────
-let quizPool=[],quizIndex=0,quizHistory=[];
+// ══ QUIZ ═══════════════════════════════════════════════
+let quizPool=[],quizIndex=0,quizHistory=[],quizType='vocab';
 function getAllWords(){return VOCAB_PACKS.flatMap(p=>p.words);}
 function shuffle(a){return[...a].sort(()=>Math.random()-0.5);}
+
+function setQuizType(type,btn){
+  quizType=type;
+  document.querySelectorAll('.quiz-type-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  startQuiz();
+}
+
+function buildQuizPool(){
+  if(quizType==='pronouns'){
+    return PRONOUNS_DATA.map(p=>({en:p.en,pt:p.pt,isPronoun:true,allPts:PRONOUNS_DATA.map(x=>x.pt)}));
+  }
+  const all=getAllWords();
+  const unmastered=all.filter(w=>!state.mastered[w.en]);
+  const base=unmastered.length>=6?unmastered:all;
+  if(quizType==='mixed'){
+    const pronounItems=PRONOUNS_DATA.map(p=>({en:p.en,pt:p.pt,isPronoun:true}));
+    return shuffle([...base,...pronounItems]).slice(0,10);
+  }
+  return shuffle(base).slice(0,10);
+}
 
 function rebuildQuizHTML(){
   document.getElementById('quizCard').innerHTML=`
@@ -946,22 +1407,19 @@ function rebuildQuizHTML(){
       <div class="quiz-question" id="quizWord">—</div>
       <button class="quiz-speak-btn" id="quizSpeakBtn" onclick="speakQuizWord()">🔊</button>
     </div>
-    <div class="quiz-sub">O que significa em português?</div>
+    <div class="quiz-sub" id="quizSub">O que significa em português?</div>
     <div class="quiz-options" id="quizOptions"></div>
     <div class="quiz-result" id="quizResult"></div>
     <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuiz()">Próxima ➜</button>`;
 }
 
 function startQuiz(){
-  const all=getAllWords();
-  const unmastered=all.filter(w=>!state.mastered[w.en]);
-  quizPool=shuffle(unmastered.length>=6?unmastered:all).slice(0,10);
-  quizIndex=0; quizHistory=[];
+  quizPool=buildQuizPool();quizIndex=0;quizHistory=[];
   document.getElementById('quizScoreBar').innerHTML=quizPool.map(()=>'<div class="score-dot"></div>').join('');
   rebuildQuizHTML();
   const mc=Object.keys(state.mastered).length;
   const banner=document.getElementById('masteredBanner');
-  if(mc>0){banner.textContent=`⭐ Você já dominou ${mc} palavra${mc>1?'s':''}! O quiz prioriza as que ainda está aprendendo.`;banner.classList.add('show');}
+  if(mc>0&&quizType==='vocab'){banner.textContent=`⭐ Você já dominou ${mc} palavra${mc>1?'s':''}! O quiz foca nas que está aprendendo.`;banner.classList.add('show');}
   else banner.classList.remove('show');
   loadQuizQuestion();
 }
@@ -970,30 +1428,30 @@ function loadQuizQuestion(){
   if(quizIndex>=quizPool.length){
     const correct=quizHistory.filter(Boolean).length;
     state.quizCorrect+=correct;
-    // Track daily quiz completion
     state.quizToday=(state.quizToday||0)+1;
-    save('ae_quizToday',state.quizToday);
-    save('ae_quizCorrect',state.quizCorrect);
-    updateStats();
-    renderQuizGoal();
-    checkBadges();
-    if(state.quizToday===state.quizGoal) showToast('🎯 Meta do dia atingida! Incrível! 🌸');
+    save('ae_quizToday',state.quizToday);save('ae_quizCorrect',state.quizCorrect);
+    updateStats();renderDailyGoals();checkBadges();
+    if(state.quizToday===state.quizGoal)showToast('🎯 Meta do dia atingida! Incrível! 🌸');
     document.getElementById('quizCard').innerHTML=`
       <div style="text-align:center;padding:20px 0;">
         <div style="font-size:3.5rem;margin-bottom:12px;">${correct>=8?'🏆':correct>=5?'⭐':'💪'}</div>
         <div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--primary-dark);margin-bottom:8px;">${correct}/10 acertos!</div>
-        <div style="font-size:0.88rem;color:var(--text-soft);line-height:1.5;">
-          ${correct>=8?'Incrível! Você está arrasando! 🌸':correct>=5?'Bom trabalho! Continue assim! 😊':'Não desiste! Prática leva à perfeição! 💪'}
-        </div>
+        <div style="font-size:0.88rem;color:var(--text-soft);line-height:1.5;">${correct>=8?'Incrível! Você está arrasando! 🌸':correct>=5?'Bom trabalho! Continue assim! 😊':'Não desiste! Prática leva à perfeição! 💪'}</div>
         <div style="margin-top:10px;font-size:0.82rem;color:var(--accent);font-weight:800;">Quiz ${state.quizToday}/${state.quizGoal} de hoje ✓</div>
         <div style="margin-top:10px;font-size:0.8rem;color:var(--text-muted);">Clique em "🔄 Novo Quiz" para jogar de novo!</div>
       </div>`;
     return;
   }
   const q=quizPool[quizIndex];
-  const allPts=getAllWords().map(w=>w.pt).filter(p=>p!==q.pt);
+  let allPts;
+  if(q.isPronoun){
+    allPts=PRONOUNS_DATA.map(p=>p.pt).filter(p=>p!==q.pt);
+  } else {
+    allPts=getAllWords().map(w=>w.pt).filter(p=>p!==q.pt);
+  }
   const options=shuffle([q.pt,...shuffle(allPts).slice(0,3)]);
   document.getElementById('quizWord').textContent=q.en;
+  document.getElementById('quizSub').textContent=q.isPronoun?'Qual é o significado em português?':'O que significa em português?';
   document.getElementById('quizResult').className='quiz-result';
   document.getElementById('quizNextBtn').className='quiz-next-btn';
   document.getElementById('quizOptions').innerHTML=options.map(o=>`
@@ -1001,15 +1459,14 @@ function loadQuizQuestion(){
       ${o}
     </button>`).join('');
 }
-
 function answerQuiz(btn,selected,correct){
   const ok=selected===correct;
   document.querySelectorAll('.quiz-opt').forEach(b=>b.onclick=null);
   btn.classList.add(ok?'correct':'wrong');
-  if(!ok) document.querySelectorAll('.quiz-opt').forEach(b=>{if(b.textContent.trim()===correct)b.classList.add('correct');});
+  if(!ok)document.querySelectorAll('.quiz-opt').forEach(b=>{if(b.textContent.trim()===correct)b.classList.add('correct');});
   quizHistory.push(ok);
   const dots=document.querySelectorAll('.score-dot');
-  if(dots[quizIndex]) dots[quizIndex].classList.add(ok?'correct':'wrong');
+  if(dots[quizIndex])dots[quizIndex].classList.add(ok?'correct':'wrong');
   const res=document.getElementById('quizResult');
   res.textContent=ok?'✅ Correto! Muito bem!':`❌ A resposta certa é: ${correct}`;
   res.style.color=ok?'var(--green)':'#c0392b';
@@ -1019,7 +1476,119 @@ function answerQuiz(btn,selected,correct){
 }
 function nextQuiz(){loadQuizQuestion();}
 
-// ── DIARY ─────────────────────────────────────────────
+// ══ EXERCISES ══════════════════════════════════════════
+let exType='fill',exIndex=0,exPool=[],exAnswered=false;
+
+function setExType(type,btn){
+  exType=type;
+  document.querySelectorAll('.ex-type-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderExercises(type);
+}
+
+function renderExercises(type){
+  exType=type;
+  exPool=shuffle(type==='fill'?[...FILL_EXERCISES]:[...LISTEN_EXERCISES]);
+  exIndex=0;
+  renderCurrentExercise();
+}
+
+function renderCurrentExercise(){
+  const container=document.getElementById('exContent');
+  if(exIndex>=exPool.length){
+    state.exDone=(state.exDone||0)+exPool.length;
+    save('ae_exDone',state.exDone);checkBadges();
+    container.innerHTML=`
+      <div class="ex-card" style="text-align:center;padding:30px 20px;">
+        <div style="font-size:3rem;margin-bottom:12px;">🎉</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--primary-dark);margin-bottom:8px;">Exercícios concluídos!</div>
+        <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:20px;">Você completou todos os exercícios desta rodada. Incrível! 🌸</div>
+        <button onclick="renderExercises(exType)" style="padding:12px 28px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">🔄 Repetir</button>
+      </div>`;
+    return;
+  }
+  const ex=exPool[exIndex];
+  exAnswered=false;
+
+  // Build sentence with blank
+  const sentenceHTML=ex.sentence.map(w=>
+    w==='_____'?`<span class="ex-blank" id="exBlank">_____</span>`:
+    w==='.'?'.':w==='?'?'?':` ${w}`
+  ).join('');
+
+  const dotsHTML=exPool.map((_,i)=>`<div class="ex-dot ${i<exIndex?'done':''} ${i===exIndex?'current':''}"></div>`).join('');
+
+  if(exType==='listen'){
+    container.innerHTML=`
+      <div class="ex-listen-card">
+        <div class="card-title" style="color:var(--purple);">🎧 Ouça e complete a frase</div>
+        <button class="ex-listen-btn" id="listenBtn" onclick="speakText('${ex.speak}',this)">🔊 Ouvir a frase</button>
+        <div class="ex-listen-hint">Ouça com atenção e escolha a palavra que está faltando!</div>
+        <div class="ex-sentence">${sentenceHTML}</div>
+        <div class="ex-feedback" id="exFeedback"></div>
+        <div class="ex-options" id="exOptions">
+          ${ex.options.map(o=>`<button class="ex-opt" onclick="answerEx('${o.replace(/'/g,"\\'")}','${ex.blank.replace(/'/g,"\\'")}',this)">${o}</button>`).join('')}
+        </div>
+        <div style="text-align:center;margin-top:12px;">
+          <button id="exNextBtn" onclick="nextExercise()" style="display:none;padding:11px 26px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">Próximo ➜</button>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;padding:14px;">
+        <div class="ex-dots" style="justify-content:center;">${dotsHTML}</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);margin-top:6px;">${exIndex+1} de ${exPool.length}</div>
+      </div>`;
+  } else {
+    container.innerHTML=`
+      <div class="ex-card">
+        <div class="ex-progress">
+          <div class="ex-progress-label">✍️ Complete a frase</div>
+          <div class="ex-dots">${dotsHTML}</div>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-bottom:8px;">Tradução: <em>${ex.pt}</em></div>
+        <div class="ex-sentence">${sentenceHTML}</div>
+        <div class="ex-feedback" id="exFeedback"></div>
+        <div class="ex-options" id="exOptions">
+          ${ex.options.map(o=>`<button class="ex-opt" onclick="answerEx('${o.replace(/'/g,"\\'")}','${ex.blank.replace(/'/g,"\\'")}',this)">${o}</button>`).join('')}
+        </div>
+        <div style="text-align:center;margin-top:12px;">
+          <button class="speak-btn" onclick="speakText('${ex.speak}',this)" style="width:38px;height:38px;font-size:1.1rem;display:inline-flex;margin-right:10px;">🔊</button>
+          <button id="exNextBtn" onclick="nextExercise()" style="display:none;padding:11px 26px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">Próximo ➜</button>
+        </div>
+      </div>`;
+  }
+}
+
+function answerEx(selected,correct,btn){
+  if(exAnswered)return;
+  exAnswered=true;
+  const ok=selected===correct;
+  const blank=document.getElementById('exBlank');
+  if(blank){blank.textContent=selected;blank.classList.add(ok?'filled':'wrong-fill');}
+  document.querySelectorAll('.ex-opt').forEach(b=>{
+    b.onclick=null;
+    if(b.textContent.trim()===correct)b.classList.add('correct-opt');
+  });
+  if(!ok)btn.classList.add('wrong-opt');
+  const fb=document.getElementById('exFeedback');
+  if(fb){fb.textContent=ok?'✅ Correto! Muito bem!':'❌ A resposta certa é: '+correct;fb.style.color=ok?'var(--green)':'#c0392b';fb.classList.add('show');}
+  const nb=document.getElementById('exNextBtn');
+  if(nb)nb.style.display='inline-block';
+  if(ok)speakText(correct,null);
+}
+
+function nextExercise(){
+  exIndex++;
+  if(exIndex===1){
+    // First exercise completed — count toward daily goal
+    state.exToday=(state.exToday||0)+1;
+    save('ae_exToday',state.exToday);
+    renderDailyGoals();checkBadges();
+    if(state.exToday===1)showToast('✍️ Exercício do dia feito! 🌸');
+  }
+  renderCurrentExercise();
+}
+
+// ══ DIARY ══════════════════════════════════════════════
 function renderDiary(){
   const list=document.getElementById('diaryList');
   if(!state.diary.length){list.innerHTML='<p style="font-size:0.85rem;color:var(--text-muted);text-align:center;padding:20px;">Nenhuma entrada ainda. Assistam algo juntos! 🎬</p>';return;}
@@ -1046,13 +1615,12 @@ function saveDiary(){
   const now=new Date();
   state.diary.push({title,words,date:`${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`});
   save('ae_diary',state.diary);
-  document.getElementById('diaryTitle').value='';
-  document.getElementById('diaryWords').value='';
-  renderDiary(); showToast('🎬 Entrada salva!');
+  document.getElementById('diaryTitle').value='';document.getElementById('diaryWords').value='';
+  renderDiary();checkBadges();showToast('🎬 Entrada salva!');
 }
 function deleteDiary(i){state.diary.splice(i,1);save('ae_diary',state.diary);renderDiary();}
 
-// ── MIGUEL ────────────────────────────────────────────
+// ══ MIGUEL ═════════════════════════════════════════════
 function renderMiguel(){
   document.getElementById('miguelContent').innerHTML=MIGUEL_DATA.map(cat=>`
     <div class="card">
@@ -1069,105 +1637,69 @@ function renderMiguel(){
     </div>`).join('');
 }
 
-// ── BADGES ────────────────────────────────────────────
+// ══ PRONÚNCIA R ════════════════════════════════════════
+function renderPron(){
+  const allWords=PRON_R_WORDS.flatMap(g=>g.words);
+  const practiced=Object.keys(state.pronPracticed).length;
+  const pct=Math.min(100,Math.round(practiced/allWords.length*100));
+  document.getElementById('pronProgBar').style.width=pct+'%';
+  document.getElementById('pronProgText').textContent=`${practiced} palavras praticadas`;
+  document.getElementById('pronProgPct').textContent=pct+'%';
+  document.getElementById('pronContent').innerHTML=PRON_R_WORDS.map(group=>`
+    <div class="pron-level-title">${group.level}</div>
+    ${group.words.map(w=>{
+      const key=w.en.replace(/\s/g,'_');const done=!!state.pronPracticed[key];
+      const highlighted=w.en.replace(/r/gi,m=>`<span class="pron-r-highlight">${m}</span>`);
+      return `<div class="pron-word-card ${done?'practiced':''}" id="pron-${key}">
+        <div class="pron-word-top">
+          <div class="pron-word-en">${highlighted}</div>
+          <div style="font-size:0.8rem;color:var(--text-soft);font-weight:600;">${w.pt}</div>
+          <button class="speak-btn" onclick="speakText('${w.en}',this)">🔊</button>
+        </div>
+        <div class="pron-word-tip">💡 <strong>Como pronunciar:</strong> ${w.tip}</div>
+        <div class="pron-actions">
+          <button class="pron-practiced-btn ${done?'done':''}" onclick="togglePronPracticed('${key}',this)">
+            ${done?'✅ Praticada!':'☐ Marcar como praticada'}
+          </button>
+        </div>
+      </div>`;
+    }).join('')}`).join('');
+}
+function togglePronPracticed(key,btn){
+  state.pronPracticed[key]=!state.pronPracticed[key];
+  if(!state.pronPracticed[key])delete state.pronPracticed[key];
+  save('ae_pron',state.pronPracticed);
+  const done=!!state.pronPracticed[key];
+  btn.classList.toggle('done',done);btn.textContent=done?'✅ Praticada!':'☐ Marcar como praticada';
+  const card=document.getElementById('pron-'+key);
+  if(card)card.classList.toggle('practiced',done);
+  renderPron();checkBadges();
+  showToast(done?'💪 Boa! Continue praticando!':'↩️ Desmarcada');
+}
+
+// ══ BADGES ═════════════════════════════════════════════
 function checkBadges(){
   const prev=load('ae_unlockedBadges',{});
   BADGES_DEF.forEach(b=>{
     if(!prev[b.id]&&b.check(state)){
-      prev[b.id]=true;
-      save('ae_unlockedBadges',prev);
+      prev[b.id]=true;save('ae_unlockedBadges',prev);
       showToast(`🏅 Conquista desbloqueada: ${b.name} ${b.emoji}`);
     }
   });
   renderBadges();
 }
 
-// ── STATS ─────────────────────────────────────────────
+// ══ STATS ══════════════════════════════════════════════
 function updateStats(){
   const mc=Object.keys(state.mastered).length;
   document.getElementById('statMastered').textContent=mc;
   document.getElementById('statTasks').textContent=state.tasks.filter(t=>t.done).length;
   document.getElementById('statQuiz').textContent=state.quizCorrect;
-  renderWeekTracker();
-  renderQuizGoal();
-  renderBadges();
+  renderWeekTracker();renderDailyGoals();renderBadges();
 }
 
-// ── ADMIN ─────────────────────────────────────────────
-let adminUnlocked=false;
-function pinNext(el,nid){if(el.value) document.getElementById(nid)?.focus();}
-function checkPin(){
-  const pin=['p0','p1','p2','p3'].map(id=>document.getElementById(id).value).join('');
-  if(pin.length<4) return;
-  if(pin===ADMIN_PIN){
-    adminUnlocked=true;
-    document.getElementById('adminLocked').style.display='none';
-    document.getElementById('adminPanel').classList.add('unlocked');
-    renderAdminTasks(); updateAdminStats();
-    document.getElementById('adminPhraseEn').value=state.phrasePack.en;
-    document.getElementById('adminPhrasePt').value=state.phrasePack.pt;
-    document.getElementById('adminPhraseTip').value=state.phrasePack.tip||'';
-    document.getElementById('adminQuizGoal').value=state.quizGoal||3;
-    document.getElementById('currentGoalDisplay').textContent=state.quizGoal||3;
-  } else {
-    document.getElementById('pinError').style.display='block';
-    ['p0','p1','p2','p3'].forEach(id=>document.getElementById(id).value='');
-    document.getElementById('p0').focus();
-    setTimeout(()=>document.getElementById('pinError').style.display='none',2000);
-  }
-}
-function saveQuizGoal(){
-  const v=parseInt(document.getElementById('adminQuizGoal').value);
-  if(!v||v<1){showToast('⚠️ Meta inválida!');return;}
-  state.quizGoal=v; save('ae_quizGoal',v);
-  document.getElementById('currentGoalDisplay').textContent=v;
-  renderQuizGoal();
-  const m=document.getElementById('goalSaved'); m.classList.add('show'); setTimeout(()=>m.classList.remove('show'),2000);
-}
-function adminLogout(){
-  adminUnlocked=false;
-  document.getElementById('adminLocked').style.display='block';
-  document.getElementById('adminPanel').classList.remove('unlocked');
-  ['p0','p1','p2','p3'].forEach(id=>document.getElementById(id).value='');
-}
-function savePhrase(){
-  const en=document.getElementById('adminPhraseEn').value.trim();
-  const pt=document.getElementById('adminPhrasePt').value.trim();
-  const tip=document.getElementById('adminPhraseTip').value.trim();
-  if(!en||!pt){showToast('⚠️ Preencha inglês e português!');return;}
-  state.phrasePack={en,pt,tip}; save('ae_phrase',state.phrasePack); renderHome();
-  const m=document.getElementById('phraseSaved'); m.classList.add('show'); setTimeout(()=>m.classList.remove('show'),2000);
-}
-function addTask(){
-  const title=document.getElementById('adminTaskTitle').value.trim();
-  const desc=document.getElementById('adminTaskDesc').value.trim();
-  if(!title){showToast('⚠️ Digite o título!');return;}
-  state.tasks.push({title,desc,done:false}); save('ae_tasks',state.tasks);
-  document.getElementById('adminTaskTitle').value='';
-  document.getElementById('adminTaskDesc').value='';
-  renderAdminTasks(); renderTasks(); renderHome();
-  const m=document.getElementById('taskSaved'); m.classList.add('show'); setTimeout(()=>m.classList.remove('show'),2000);
-}
-function renderAdminTasks(){
-  const c=document.getElementById('adminTaskList');
-  if(!state.tasks.length){c.innerHTML='<p style="font-size:0.82rem;color:var(--text-muted);">Nenhuma tarefa ainda.</p>';return;}
-  c.innerHTML=state.tasks.map((t,i)=>`
-    <div class="admin-task-item">
-      <div class="admin-task-text">${t.done?'✅':'⏳'} ${t.title}</div>
-      <button class="btn-del-task" onclick="deleteTask(${i})">Remover</button>
-    </div>`).join('');
-}
-function deleteTask(i){state.tasks.splice(i,1);save('ae_tasks',state.tasks);renderAdminTasks();renderTasks();renderHome();}
-function clearDoneTasks(){state.tasks=state.tasks.filter(t=>!t.done);save('ae_tasks',state.tasks);renderAdminTasks();renderTasks();renderHome();showToast('🧹 Tarefas concluídas removidas!');}
-function clearMastered(){state.mastered={};save('ae_mastered',state.mastered);updateStats();renderVocab();updateAdminStats();showToast('🗑️ Palavras dominadas limpas.');}
-function updateAdminStats(){
-  document.getElementById('adminStatMastered').textContent=Object.keys(state.mastered).length;
-  document.getElementById('adminStatTasks').textContent=state.tasks.filter(t=>t.done).length;
-  document.getElementById('adminStatQuiz').textContent=state.quizCorrect;
-}
-
-// ── TOAST ─────────────────────────────────────────────
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+// ══ TOAST ══════════════════════════════════════════════
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
 
 init();
 </script>

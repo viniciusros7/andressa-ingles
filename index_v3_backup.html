@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inglês da Andressa 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#fdf6f0; --card:#fff; --primary:#e8856a; --primary-light:#f5b8a8; --primary-dark:#c96a50;
+    --accent:#6ab5c9; --accent-light:#b8e0ed; --green:#7bbf8e; --green-light:#c5e8cf;
+    --yellow:#f5c842; --yellow-light:#fdedb8; --purple:#9b7ec8; --purple-light:#d9ccef;
+    --pink:#e87aaa; --pink-light:#fad5e8;
+    --text:#3a2e28; --text-soft:#7a6a60; --text-muted:#b0a098; --border:#ecddd5;
+    --shadow:0 4px 20px rgba(58,46,40,0.08); --radius:18px; --radius-sm:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;
+    background-image:radial-gradient(circle at 20% 20%,#fce8e0 0%,transparent 50%),
+                     radial-gradient(circle at 80% 80%,#e0f0f8 0%,transparent 50%);}
+
+  /* HEADER */
+  .header{background:var(--card);border-bottom:2px solid var(--border);padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+  .header-left h1{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--primary-dark);}
+  .header-left span{font-size:0.75rem;color:var(--text-soft);font-weight:600;}
+  .streak-badge{background:var(--yellow-light);border:2px solid var(--yellow);border-radius:50px;padding:6px 14px;
+    font-size:0.85rem;font-weight:800;color:#a07a00;display:flex;align-items:center;gap:5px;}
+
+  /* NAV */
+  .nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav-btn{flex:0 0 auto;padding:11px 16px;border:none;background:transparent;color:var(--text-soft);
+    font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;
+    border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;display:flex;align-items:center;gap:4px;}
+  .nav-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+  .nav-btn:hover:not(.active){color:var(--text);background:var(--bg);}
+
+  /* MAIN */
+  .main{padding:20px 16px 100px;max-width:600px;margin:0 auto;}
+  .section{display:none;}
+  .section.active{display:block;animation:fadeIn 0.3s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  /* CARDS */
+  .card{background:var(--card);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:var(--shadow);border:1.5px solid var(--border);}
+  .card-title{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:12px;}
+
+  /* HOME */
+  .welcome-card{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:white;
+    border-radius:var(--radius);padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden;}
+  .welcome-card::before{content:'🌸';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:3.5rem;opacity:0.3;}
+  .welcome-card h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:4px;}
+  .welcome-card p{font-size:0.88rem;opacity:0.9;}
+  .frase-card{background:linear-gradient(135deg,var(--accent-light),#e8f7fc);border:2px solid var(--accent);
+    border-radius:var(--radius);padding:20px;margin-bottom:16px;text-align:center;}
+  .frase-en{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--accent);margin-bottom:6px;font-style:italic;}
+  .frase-pt{font-size:0.9rem;color:var(--text-soft);font-weight:600;}
+  .frase-tip{font-size:0.75rem;color:var(--text-muted);margin-top:8px;background:white;border-radius:8px;padding:6px 10px;}
+  .frase-speak-btn{margin-top:10px;padding:8px 18px;background:var(--accent);color:white;border:none;
+    border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;cursor:pointer;
+    transition:all 0.2s;display:inline-flex;align-items:center;gap:5px;}
+  .frase-speak-btn:hover{background:#4a9ab5;}
+  .frase-speak-btn.speaking{background:var(--primary);animation:pulse 0.8s infinite;}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+
+  .progress-row{display:flex;gap:10px;margin-bottom:16px;}
+  .stat-box{flex:1;background:var(--card);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;box-shadow:var(--shadow);border:1.5px solid var(--border);}
+  .stat-num{font-size:1.6rem;font-weight:900;color:var(--primary);}
+  .stat-label{font-size:0.67rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.4px;}
+
+  /* TASKS */
+  .task-item{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:var(--radius-sm);
+    border:1.5px solid var(--border);margin-bottom:10px;background:var(--bg);transition:all 0.2s;}
+  .task-item.done{background:var(--green-light);border-color:var(--green);}
+  .task-check{width:24px;height:24px;border-radius:50%;border:2.5px solid var(--border);background:white;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;font-size:0.8rem;}
+  .task-item.done .task-check{background:var(--green);border-color:var(--green);color:white;}
+  .task-text{flex:1;}
+  .task-title{font-weight:700;font-size:0.9rem;}
+  .task-desc{font-size:0.78rem;color:var(--text-soft);margin-top:2px;}
+  .task-item.done .task-title{text-decoration:line-through;color:var(--text-muted);}
+
+  /* VOCAB */
+  .pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+  .pack-btn{background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);
+    padding:16px 12px;text-align:center;cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;position:relative;}
+  .pack-btn:hover,.pack-btn.active{border-color:var(--primary);background:#fff5f2;transform:translateY(-2px);box-shadow:var(--shadow);}
+  .pack-emoji{font-size:1.8rem;margin-bottom:6px;}
+  .pack-name{font-size:0.82rem;font-weight:800;color:var(--text);}
+  .pack-count{font-size:0.7rem;color:var(--text-muted);margin-top:2px;}
+  .pack-mastered{position:absolute;top:6px;right:8px;font-size:0.63rem;background:var(--green-light);color:#2e7a44;padding:2px 6px;border-radius:20px;font-weight:800;}
+  .vocab-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);
+    padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;transition:all 0.2s;}
+  .vocab-card:hover{box-shadow:var(--shadow);transform:translateX(3px);}
+  .vocab-card.mastered{border-color:var(--green);background:linear-gradient(to right,var(--green-light),white);}
+  .vocab-en{font-weight:800;font-size:0.95rem;color:var(--primary-dark);min-width:80px;}
+  .vocab-mid{flex:1;}
+  .vocab-pt{font-size:0.85rem;color:var(--text-soft);font-weight:600;}
+  .vocab-ex{font-size:0.72rem;color:var(--text-muted);font-style:italic;margin-top:2px;}
+  .vocab-pron{font-size:0.67rem;background:var(--primary-light);color:var(--primary-dark);padding:2px 7px;border-radius:20px;font-weight:700;white-space:nowrap;}
+  .speak-btn{width:32px;height:32px;border-radius:50%;border:none;background:var(--accent-light);color:var(--accent);
+    cursor:pointer;font-size:0.95rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+  .speak-btn:hover{background:var(--accent);color:white;transform:scale(1.1);}
+  .speak-btn.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
+  .mastered-star{width:28px;height:28px;border-radius:50%;border:none;background:transparent;
+    cursor:pointer;font-size:1.1rem;flex-shrink:0;transition:all 0.2s;opacity:0.35;}
+  .mastered-star.on{opacity:1;}
+  .mastered-star:hover{transform:scale(1.2);opacity:1;}
+
+  /* QUIZ */
+  .quiz-score-bar{display:flex;gap:6px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
+  .score-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--border);background:var(--bg);transition:all 0.3s;}
+  .score-dot.correct{background:var(--green);border-color:var(--green);}
+  .score-dot.wrong{background:#e86a6a;border-color:#e86a6a;}
+  .quiz-card{background:linear-gradient(135deg,#fff5f2,white);border:2px solid var(--primary-light);
+    border-radius:var(--radius);padding:26px 20px;text-align:center;margin-bottom:16px;}
+  .quiz-word-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;}
+  .quiz-question{font-size:1.6rem;font-weight:900;color:var(--primary-dark);font-family:'Playfair Display',serif;}
+  .quiz-speak-btn{width:36px;height:36px;border-radius:50%;border:none;background:var(--accent-light);color:var(--accent);
+    cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+  .quiz-speak-btn:hover{background:var(--accent);color:white;}
+  .quiz-speak-btn.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
+  .quiz-sub{font-size:0.82rem;color:var(--text-muted);margin-bottom:22px;}
+  .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .quiz-opt{padding:14px 10px;border:2.5px solid var(--border);border-radius:var(--radius-sm);background:white;
+    font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.2s;color:var(--text);}
+  .quiz-opt:hover{border-color:var(--primary);background:#fff5f2;}
+  .quiz-opt.correct{border-color:var(--green);background:var(--green-light);color:#2e7a44;}
+  .quiz-opt.wrong{border-color:#e86a6a;background:#ffd5d5;color:#8b2020;}
+  .quiz-result{margin-top:14px;font-size:1rem;font-weight:800;display:none;}
+  .quiz-result.show{display:block;}
+  .quiz-next-btn{margin-top:12px;padding:11px 26px;background:var(--primary);color:white;border:none;
+    border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;display:none;transition:all 0.2s;}
+  .quiz-next-btn.show{display:inline-block;}
+  .quiz-next-btn:hover{background:var(--primary-dark);transform:translateY(-1px);}
+  .mastered-banner{background:var(--green-light);border:1.5px solid var(--green);border-radius:var(--radius-sm);
+    padding:10px 14px;margin-bottom:12px;font-size:0.82rem;color:#2e7a44;font-weight:700;display:none;}
+  .mastered-banner.show{display:block;}
+
+  /* DIARY */
+  .input-group{margin-bottom:12px;}
+  .input-label{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-soft);margin-bottom:5px;display:block;}
+  .input-field{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);
+    font-family:'Nunito',sans-serif;font-size:0.9rem;background:white;color:var(--text);transition:border-color 0.2s;outline:none;}
+  .input-field:focus{border-color:var(--primary);}
+  .btn-primary{padding:12px 24px;background:var(--primary);color:white;border:none;border-radius:50px;
+    font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;transition:all 0.2s;width:100%;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .diary-entry{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;}
+  .entry-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .entry-title{font-weight:800;font-size:0.9rem;}
+  .entry-date{font-size:0.72rem;color:var(--text-muted);}
+  .entry-words{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;}
+  .word-tag{background:var(--accent-light);color:#2a6a7a;padding:3px 9px;border-radius:20px;font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.2s;}
+  .word-tag:hover{background:var(--accent);color:white;}
+  .entry-del{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:4px;}
+  .entry-del:hover{background:#ffe0e0;color:#c0392b;}
+
+  /* MIGUEL */
+  .miguel-cat-title{font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:10px;}
+  .phrase-card{background:var(--card);border:1.5px solid var(--purple-light);border-radius:var(--radius-sm);
+    padding:12px 14px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;}
+  .phrase-text{flex:1;}
+  .phrase-en{font-weight:800;color:var(--purple);font-size:0.92rem;}
+  .phrase-pt{font-size:0.8rem;color:var(--text-soft);margin-top:2px;}
+  .phrase-pron{font-size:0.7rem;background:var(--purple-light);color:var(--purple);padding:2px 7px;border-radius:20px;font-weight:700;display:inline-block;margin-top:4px;}
+  .phrase-speak{width:30px;height:30px;border-radius:50%;border:none;background:var(--purple-light);color:var(--purple);
+    cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;margin-top:2px;}
+  .phrase-speak:hover{background:var(--purple);color:white;}
+  .phrase-speak.speaking{background:var(--primary);color:white;animation:pulse 0.6s infinite;}
+
+  /* RECS */
+  .rec-intro{background:linear-gradient(135deg,var(--pink-light),white);border:2px solid var(--pink-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
+  .rec-intro p{font-size:0.88rem;color:var(--text-soft);line-height:1.5;}
+  .rec-intro strong{color:var(--pink);}
+  .rec-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;}
+  .rec-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+  .rec-emoji{font-size:2rem;flex-shrink:0;margin-top:2px;}
+  .rec-body{flex:1;}
+  .rec-title{font-weight:900;font-size:0.95rem;color:var(--text);margin-bottom:3px;}
+  .rec-platform{font-size:0.67rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:5px;}
+  .rec-platform.netflix{background:#ffe0e0;color:#c0392b;}
+  .rec-platform.amazon{background:#fff0cc;color:#a06000;}
+  .rec-platform.apple{background:#e0e8ff;color:#2040c0;}
+  .rec-platform.multi{background:#e8e0ff;color:#5020c0;}
+  .rec-desc{font-size:0.8rem;color:var(--text-soft);line-height:1.4;}
+  .rec-why{font-size:0.75rem;background:var(--green-light);color:#2e7a44;padding:4px 9px;border-radius:6px;margin-top:6px;font-weight:700;display:inline-block;}
+  .rec-tip-card{background:var(--yellow-light);border:1.5px solid var(--yellow);border-radius:var(--radius-sm);padding:14px 16px;margin-top:4px;}
+  .rec-tip-card p{font-size:0.83rem;color:#6a5000;line-height:1.5;}
+
+  /* ADMIN */
+  .admin-locked{text-align:center;padding:30px 20px;}
+  .admin-locked h3{font-size:1.1rem;font-weight:800;margin-bottom:8px;}
+  .admin-locked p{font-size:0.85rem;color:var(--text-soft);margin-bottom:20px;}
+  .pin-input{display:flex;gap:8px;justify-content:center;margin-bottom:16px;}
+  .pin-digit{width:48px;height:56px;border:2.5px solid var(--border);border-radius:var(--radius-sm);text-align:center;
+    font-size:1.4rem;font-weight:900;font-family:'Nunito',sans-serif;outline:none;transition:border-color 0.2s;background:white;}
+  .pin-digit:focus{border-color:var(--primary);}
+  .pin-error{color:#c0392b;font-size:0.82rem;font-weight:700;display:none;}
+  .admin-panel{display:none;}
+  .admin-panel.unlocked{display:block;}
+  .task-row{display:flex;gap:8px;margin-bottom:8px;}
+  .task-row .input-field{flex:1;}
+  .btn-add{padding:11px 16px;background:var(--green);color:white;border:none;border-radius:var(--radius-sm);font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;font-size:0.85rem;white-space:nowrap;}
+  .btn-del-task{padding:6px 10px;background:#ffe0e0;color:#c0392b;border:none;border-radius:6px;cursor:pointer;font-size:0.8rem;font-weight:700;}
+  .admin-task-item{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:6px;}
+  .admin-task-text{font-size:0.85rem;font-weight:700;}
+  .frase-admin{display:flex;gap:8px;}
+  .frase-admin .input-field{flex:1;}
+  .btn-save{padding:11px 16px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;font-size:0.85rem;}
+  .btn-logout{margin-top:20px;padding:10px 20px;background:var(--bg);border:1.5px solid var(--border);border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;color:var(--text-soft);}
+  .success-msg{color:var(--green);font-size:0.82rem;font-weight:700;margin-top:6px;display:none;}
+  .success-msg.show{display:block;}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);
+    color:white;padding:10px 20px;border-radius:50px;font-size:0.85rem;font-weight:700;opacity:0;transition:all 0.3s;z-index:999;white-space:nowrap;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  @media(max-width:360px){.pack-grid,.quiz-options{grid-template-columns:1fr;}}
+
+  /* PRONUNCIATION */
+  .pron-intro{background:linear-gradient(135deg,#fff0e8,white);border:2px solid var(--primary-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
+  .pron-intro p{font-size:0.85rem;color:var(--text-soft);line-height:1.5;}
+  .pron-level-title{font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin:16px 0 8px;display:flex;align-items:center;gap:6px;}
+  .pron-word-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;transition:all 0.2s;}
+  .pron-word-card:hover{box-shadow:var(--shadow);}
+  .pron-word-card.practiced{border-color:var(--green);background:linear-gradient(to right,var(--green-light),white);}
+  .pron-word-top{display:flex;align-items:center;gap:10px;}
+  .pron-word-en{font-size:1.1rem;font-weight:900;color:var(--primary-dark);flex:1;}
+  .pron-r-highlight{color:var(--primary);text-decoration:underline;text-underline-offset:3px;}
+  .pron-word-tip{font-size:0.75rem;color:var(--text-soft);margin-top:5px;background:var(--bg);border-radius:6px;padding:5px 9px;line-height:1.4;}
+  .pron-word-tip strong{color:var(--primary-dark);}
+  .pron-actions{display:flex;gap:8px;margin-top:8px;align-items:center;}
+  .pron-practiced-btn{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:white;font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;cursor:pointer;transition:all 0.2s;color:var(--text-muted);}
+  .pron-practiced-btn.done{background:var(--green-light);border-color:var(--green);color:#2e7a44;}
+  .pron-prog-bar-wrap{background:var(--border);border-radius:50px;height:10px;overflow:hidden;margin-top:6px;}
+  .pron-prog-bar{background:linear-gradient(90deg,var(--primary),var(--primary-dark));height:100%;border-radius:50px;transition:width 0.5s ease;}
+  .pron-prog-label{font-size:0.75rem;color:var(--text-muted);font-weight:700;display:flex;justify-content:space-between;margin-top:4px;}
+
+  /* BADGES */
+  .badges-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+  .badge-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;text-align:center;transition:all 0.2s;position:relative;overflow:hidden;}
+  .badge-card.unlocked{border-color:var(--yellow);background:linear-gradient(135deg,var(--yellow-light),white);}
+  .badge-card.locked{opacity:0.5;filter:grayscale(0.6);}
+  .badge-emoji{font-size:2rem;margin-bottom:6px;}
+  .badge-name{font-size:0.78rem;font-weight:800;color:var(--text);}
+  .badge-desc{font-size:0.68rem;color:var(--text-muted);margin-top:3px;}
+  .badge-unlocked-tag{position:absolute;top:6px;right:6px;font-size:0.6rem;background:var(--yellow);color:#6a4a00;padding:2px 6px;border-radius:20px;font-weight:800;}
+
+  /* QUIZ DAILY GOAL */
+  .quiz-daily-goal{background:linear-gradient(135deg,var(--accent-light),white);border:2px solid var(--accent);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;}
+  .quiz-goal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .quiz-goal-label{font-size:0.78rem;font-weight:800;color:var(--accent);}
+  .quiz-goal-count{font-size:0.78rem;font-weight:800;color:var(--text-soft);}
+  .quiz-goal-bar-wrap{background:var(--border);border-radius:50px;height:8px;overflow:hidden;}
+  .quiz-goal-bar{background:linear-gradient(90deg,var(--accent),#4a9ab5);height:100%;border-radius:50px;transition:width 0.5s ease;}
+
+  /* WEEKLY TRACKER */
+  .week-tracker{display:flex;gap:6px;justify-content:center;margin-bottom:4px;}
+  .week-day{flex:1;text-align:center;}
+  .week-day-name{font-size:0.62rem;color:var(--text-muted);font-weight:700;margin-bottom:4px;}
+  .week-day-dot{width:100%;aspect-ratio:1;border-radius:50%;border:2px solid var(--border);background:var(--bg);margin:0 auto;max-width:32px;}
+  .week-day-dot.done{background:var(--green);border-color:var(--green);}
+  .week-day-dot.today{border-color:var(--primary);border-width:3px;}
+  .week-day-dot.done.today{background:var(--primary);border-color:var(--primary-dark);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Inglês da Andressa 🌸</h1>
+    <span id="headerDate"></span>
+  </div>
+  <div class="streak-badge">🔥 <span id="streakCount">0</span> dias</div>
+</div>
+
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('home',this)">🏠 Início</button>
+  <button class="nav-btn" onclick="showSection('vocab',this)">📚 Vocabulário</button>
+  <button class="nav-btn" onclick="showSection('tasks',this)">✏️ Tarefas</button>
+  <button class="nav-btn" onclick="showSection('quiz',this)">🃏 Quiz</button>
+  <button class="nav-btn" onclick="showSection('diary',this)">🎬 Diário</button>
+  <button class="nav-btn" onclick="showSection('miguel',this)">👶 Miguel</button>
+  <button class="nav-btn" onclick="showSection('pron',this)">🗣️ Pronúncia R</button>
+  <button class="nav-btn" onclick="showSection('recs',this)">🎥 Séries</button>
+  <button class="nav-btn" onclick="showSection('admin',this)">⚙️ Admin</button>
+</nav>
+
+<div class="main">
+
+  <!-- HOME -->
+  <div id="section-home" class="section active">
+    <div class="welcome-card">
+      <h2 id="welcomeMsg">Olá, Andressa! 👋</h2>
+      <p>Cada palavra nova é um passo a mais. Vamos lá! 💪</p>
+    </div>
+    <div class="frase-card">
+      <div class="card-title">✨ Frase do Dia</div>
+      <div class="frase-en" id="homePhrase">Good morning, how are you?</div>
+      <div class="frase-pt" id="homePhrasePt">Bom dia, como você está?</div>
+      <div class="frase-tip" id="homePhraseTip">💡 Pronúncia: "gud môr-nin, hau ar yu?"</div>
+      <button class="frase-speak-btn" onclick="speakText(document.getElementById('homePhrase').textContent,this)">🔊 Ouvir</button>
+    </div>
+    <div class="progress-row">
+      <div class="stat-box"><div class="stat-num" id="statMastered">0</div><div class="stat-label">Palavras ⭐ dominadas</div></div>
+      <div class="stat-box"><div class="stat-num" id="statTasks">0</div><div class="stat-label">Tarefas feitas</div></div>
+      <div class="stat-box"><div class="stat-num" id="statQuiz">0</div><div class="stat-label">Quiz acertos</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📅 Semana atual</div>
+      <div class="week-tracker" id="weekTracker"></div>
+      <div style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:6px;">🟢 dias que você praticou</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🃏 Meta de Quiz do Dia</div>
+      <div class="quiz-daily-goal">
+        <div class="quiz-goal-top">
+          <div class="quiz-goal-label">🎯 Meta: <span id="goalTarget">3</span> quiz por dia</div>
+          <div class="quiz-goal-count"><span id="goalDone">0</span>/<span id="goalTarget2">3</span></div>
+        </div>
+        <div class="quiz-goal-bar-wrap"><div class="quiz-goal-bar" id="goalBar" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏅 Conquistas</div>
+      <div class="badges-grid" id="badgesGrid"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">📋 Tarefas de hoje</div>
+      <div id="homeTaskList"></div>
+    </div>
+  </div>
+
+  <!-- VOCAB -->
+  <div id="section-vocab" class="section">
+    <div class="card">
+      <div class="card-title">📚 Escolha um tema — toque ⭐ para salvar palavras aprendidas!</div>
+      <div class="pack-grid" id="packGrid"></div>
+    </div>
+    <div id="vocabListContainer"></div>
+  </div>
+
+  <!-- TASKS -->
+  <div id="section-tasks" class="section">
+    <div class="card">
+      <div class="card-title">✏️ Suas Tarefas de Hoje</div>
+      <div id="taskList"></div>
+      <p id="noTasks" style="font-size:0.85rem;color:var(--text-muted);text-align:center;padding:20px 0;">Nenhuma tarefa por hoje ainda.<br>O Vinicius vai adicionar em breve! 😊</p>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="section-quiz" class="section">
+    <div class="mastered-banner" id="masteredBanner"></div>
+    <div class="quiz-score-bar" id="quizScoreBar"></div>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-word-row">
+        <div class="quiz-question" id="quizWord">—</div>
+        <button class="quiz-speak-btn" id="quizSpeakBtn" onclick="speakQuizWord()">🔊</button>
+      </div>
+      <div class="quiz-sub">O que significa em português?</div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-result" id="quizResult"></div>
+      <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuiz()">Próxima ➜</button>
+    </div>
+    <div style="text-align:center;">
+      <button onclick="startQuiz()" style="padding:12px 28px;background:var(--accent);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">🔄 Novo Quiz</button>
+    </div>
+  </div>
+
+  <!-- DIARY -->
+  <div id="section-diary" class="section">
+    <div class="card">
+      <div class="card-title">🎬 Registrar o que assistimos</div>
+      <div class="input-group">
+        <label class="input-label">Título (série ou filme)</label>
+        <input class="input-field" id="diaryTitle" placeholder="Ex: Monk, Knives Out...">
+      </div>
+      <div class="input-group">
+        <label class="input-label">Palavras aprendidas (separadas por vírgula)</label>
+        <input class="input-field" id="diaryWords" placeholder="Ex: hello, goodbye, please">
+      </div>
+      <button class="btn-primary" onclick="saveDiary()">💾 Salvar</button>
+    </div>
+    <div id="diaryList"></div>
+  </div>
+
+  <!-- MIGUEL -->
+  <div id="section-miguel" class="section">
+    <div class="card" style="background:linear-gradient(135deg,var(--purple-light),white);border-color:var(--purple-light);">
+      <div class="card-title" style="color:var(--purple);">👶 Frases para o dia a dia com o Miguel</div>
+      <p style="font-size:0.82rem;color:var(--text-soft);">Frases para médico, escola e rotina. Toque em 🔊 para ouvir!</p>
+    </div>
+    <div id="miguelContent"></div>
+  </div>
+
+  <!-- RECOMENDAÇÕES -->
+  <div id="section-recs" class="section">
+    <div class="rec-intro">
+      <div class="card-title" style="color:var(--pink);">🎥 Escolhidas especialmente para você, Andressa</div>
+      <p>O Vinicius escolheu estas séries e filmes <strong>especialmente para te ajudar a aprender inglês</strong> — linguagem simples, episódios curtos e histórias que você vai adorar! 🌸</p>
+    </div>
+
+    <div style="font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:10px;">📺 Séries recomendadas</div>
+
+    <div class="rec-card">
+      <div class="rec-emoji">🕵️</div>
+      <div class="rec-body">
+        <div class="rec-title">Monk</div>
+        <span class="rec-platform amazon">Amazon Prime</span>
+        <div class="rec-desc">Um detetive muito especial e engraçado resolve crimes de um jeito único. Cada episódio é uma história completa — perfeito para assistir um por um!</div>
+        <div class="rec-why">✅ Fala devagar e bem clara — ótimo para iniciantes</div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-emoji">🔮</div>
+      <div class="rec-body">
+        <div class="rec-title">Psych</div>
+        <span class="rec-platform amazon">Amazon Prime</span>
+        <div class="rec-desc">Dois amigos fingem ser psíquicos para ajudar a polícia. Muito engraçado e com bastante ação — tem o mesmo clima divertido do Brooklyn 99!</div>
+        <div class="rec-why">✅ Linguagem leve e episódios independentes</div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-emoji">🏢</div>
+      <div class="rec-body">
+        <div class="rec-title">Only Murders in the Building</div>
+        <span class="rec-platform apple">Apple TV+</span>
+        <div class="rec-desc">Três vizinhos investigam um crime no próprio prédio. Episódios curtos, muito humor e diálogos bem naturais — quase como conversa do dia a dia.</div>
+        <div class="rec-why">✅ Episódios curtos (~30 min) e inglês bem natural</div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-emoji">👵</div>
+      <div class="rec-body">
+        <div class="rec-title">Murder She Wrote</div>
+        <span class="rec-platform amazon">Amazon Prime</span>
+        <div class="rec-desc">Uma escritora apaixonada por mistérios resolve crimes na sua cidade. Clássico dos anos 80 com inglês clarinho e pausado — quase uma aula de vocabulário!</div>
+        <div class="rec-why">✅ A fala mais clara e pausada de todas</div>
+      </div>
+    </div>
+
+    <div style="font-size:0.73rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin:16px 0 10px;">🎬 Filme para assistir juntos</div>
+
+    <div class="rec-card">
+      <div class="rec-emoji">🔪</div>
+      <div class="rec-body">
+        <div class="rec-title">Knives Out</div>
+        <span class="rec-platform multi">Netflix / Amazon</span>
+        <div class="rec-desc">Uma família rica se reúne e alguém acaba morto. Mistério, humor e reviravoltas! Perfeito para pausar e aprender palavras juntos com o Vinicius.</div>
+        <div class="rec-why">✅ Diálogos claros — ótimo para assistir a dois</div>
+      </div>
+    </div>
+
+    <div class="rec-tip-card">
+      <div class="card-title">💡 Dica do Vinicius</div>
+      <p>Comece com <strong>legendas em português</strong> para entender a história. Depois, tente colocar <strong>legendas em inglês</strong> — seu cérebro vai conectar o som com a palavra escrita muito mais rápido! 🧠✨</p>
+    </div>
+  </div>
+
+  <!-- PRONÚNCIA R -->
+  <div id="section-pron" class="section">
+    <div class="pron-intro">
+      <div class="card-title" style="color:var(--primary);">🗣️ Treino do R em inglês</div>
+      <p>O R em inglês é diferente do português! É um som mais <strong>suave e profundo</strong> — a língua vai ligeiramente para trás sem tocar o céu da boca. Ouça, repita e marque quando conseguir! 💪</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 Progresso</div>
+      <div class="pron-prog-bar-wrap"><div class="pron-prog-bar" id="pronProgBar" style="width:0%"></div></div>
+      <div class="pron-prog-label"><span id="pronProgText">0 palavras praticadas</span><span id="pronProgPct">0%</span></div>
+    </div>
+    <div id="pronContent"></div>
+  </div>
+
+  <!-- ADMIN -->
+  <div id="section-admin" class="section">
+    <div class="admin-locked" id="adminLocked">
+      <div style="font-size:3rem;margin-bottom:12px;">🔒</div>
+      <h3>Área do Vinicius</h3>
+      <p>Digite o PIN para gerenciar tarefas e a frase do dia</p>
+      <div class="pin-input">
+        <input class="pin-digit" maxlength="1" id="p0" oninput="pinNext(this,'p1')" type="password">
+        <input class="pin-digit" maxlength="1" id="p1" oninput="pinNext(this,'p2')" type="password">
+        <input class="pin-digit" maxlength="1" id="p2" oninput="pinNext(this,'p3')" type="password">
+        <input class="pin-digit" maxlength="1" id="p3" oninput="checkPin()" type="password">
+      </div>
+      <div class="pin-error" id="pinError">❌ PIN incorreto. Tente de novo.</div>
+    </div>
+    <div class="admin-panel" id="adminPanel">
+      <div class="card">
+        <div class="card-title">✨ Frase do Dia</div>
+        <div class="frase-admin">
+          <input class="input-field" id="adminPhraseEn" placeholder="Em inglês...">
+          <button class="btn-save" onclick="savePhrase()">✓</button>
+        </div>
+        <input class="input-field" id="adminPhrasePt" placeholder="Em português..." style="margin-top:8px;">
+        <input class="input-field" id="adminPhraseTip" placeholder="Dica de pronúncia (opcional)..." style="margin-top:8px;">
+        <div class="success-msg" id="phraseSaved">✅ Frase salva!</div>
+      </div>
+      <div class="card">
+        <div class="card-title">✏️ Adicionar Tarefa</div>
+        <div class="input-group"><input class="input-field" id="adminTaskTitle" placeholder="Título da tarefa..."></div>
+        <div class="task-row">
+          <input class="input-field" id="adminTaskDesc" placeholder="Descrição opcional...">
+          <button class="btn-add" onclick="addTask()">+ Adicionar</button>
+        </div>
+        <div class="success-msg" id="taskSaved">✅ Tarefa adicionada!</div>
+      </div>
+      <div class="card">
+        <div class="card-title">📋 Tarefas atuais</div>
+        <div id="adminTaskList"></div>
+        <button onclick="clearDoneTasks()" style="margin-top:8px;padding:9px 16px;background:#fff0e0;border:1.5px solid var(--yellow);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;color:#a07a00;">🧹 Limpar concluídas</button>
+      </div>
+      <div class="card">
+        <div class="card-title">🎯 Meta de Quiz Diária</div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input class="input-field" id="adminQuizGoal" type="number" min="1" max="20" placeholder="Ex: 3" style="max-width:80px;">
+          <button class="btn-save" onclick="saveQuizGoal()">✓ Salvar</button>
+          <span style="font-size:0.82rem;color:var(--text-soft);">Atual: <strong id="currentGoalDisplay">3</strong>/dia</span>
+        </div>
+        <div class="success-msg" id="goalSaved">✅ Meta salva!</div>
+      </div>
+      <div class="card">
+        <div class="card-title">📊 Progresso da Andressa</div>
+        <p style="font-size:0.85rem;color:var(--text-soft);">⭐ Palavras dominadas: <strong id="adminStatMastered">0</strong></p>
+        <p style="font-size:0.85rem;color:var(--text-soft);margin-top:6px;">✅ Tarefas concluídas: <strong id="adminStatTasks">0</strong></p>
+        <p style="font-size:0.85rem;color:var(--text-soft);margin-top:6px;">🃏 Acertos no quiz: <strong id="adminStatQuiz">0</strong></p>
+        <button onclick="clearMastered()" style="margin-top:12px;padding:9px 16px;background:#fff0e0;border:1.5px solid var(--yellow);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;color:#a07a00;">🗑️ Limpar palavras dominadas</button>
+      </div>
+      <div style="text-align:center;"><button class="btn-logout" onclick="adminLogout()">🔒 Sair do Admin</button></div>
+    </div>
+  </div>
+
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────
+const PRON_R_WORDS = [
+  { level: '🟢 Nível 1 — R no início (mais fácil)', words: [
+    { en:'remember', pt:'lembrar', tip:'Diga "ri-MÊM-ber" — o R inicial soa quase como um "r" suave, não como o "rr" forte do português.' },
+    { en:'red', pt:'vermelho', tip:'Diga "rred" com a língua levemente curvada para trás. Não é "hred"!' },
+    { en:'ready', pt:'pronto/a', tip:'"RÉ-di" — R bem suave no começo, sem vibrar a garganta.' },
+    { en:'really', pt:'realmente', tip:'"RÍ-li" — o R aqui é quase inaudível comparado ao português.' },
+    { en:'room', pt:'quarto/sala', tip:'"rrum" — boca arredondada, R suave como um sussurro.' },
+    { en:'right', pt:'certo/direita', tip:'"rait" — R rápido e suave antes do ditongo "ai".' },
+    { en:'run', pt:'correr', tip:'"rran" — R vibrante mas suave, língua curvada levemente.' },
+  ]},
+  { level: '🟡 Nível 2 — R no meio (atenção!)', words: [
+    { en:'sorry', pt:'desculpa', tip:'Diga "SÓ-ri" — o R do meio é quase imperceptível! Não "SÓ-ui".' },
+    { en:'very', pt:'muito', tip:'"VÉ-ri" — o R final é bem suave. Pense em "veri" não "veui".' },
+    { en:'carry', pt:'carregar', tip:'"KÉ-ri" — dois sons, o segundo R é quase um "i" rápido.' },
+    { en:'worry', pt:'preocupar', tip:'"UÓ-ri" — o R do meio precisa aparecer, não sumir!' },
+    { en:'story', pt:'história', tip:'"STÓH-ri" — termine com "ri", não "ui".' },
+    { en:'every', pt:'todo/cada', tip:'"É-vri" — R rápido entre o "v" e o "i".' },
+    { en:'orange', pt:'laranja', tip:'"ÓR-rinj" — o R depois do O é importante, não pule!' },
+    { en:'record', pt:'gravar/registro', tip:'"RÉ-cord" — R tanto no início quanto no meio!' },
+  ]},
+  { level: '🔴 Nível 3 — R no final (mais difícil)', words: [
+    { en:'better', pt:'melhor', tip:'"BÉ-ter" — o R final é quase um "er" com a língua curvada. Não "BÉ-tchi".' },
+    { en:'water', pt:'água', tip:'"UÓ-ter" — termine com o R suave, não corte a palavra.' },
+    { en:'teacher', pt:'professora', tip:'"TÍ-cher" — o R final é bem sutil, mas presente.' },
+    { en:'mother', pt:'mãe', tip:'"MÂ-der" — o R do final precisa aparecer suavemente.' },
+    { en:'sister', pt:'irmã', tip:'"SÍS-ter" — termine com o R, não com "tchi".' },
+    { en:'doctor', pt:'médico', tip:'"DÓK-ter" — R final suave, língua curvada ligeiramente.' },
+    { en:'butter', pt:'manteiga', tip:'"BÂ-ter" — preste atenção no R do fim, não deixe cair!' },
+    { en:'remember', pt:'lembrar', tip:'"ri-MÊM-ber" — R no início E no fim. Desafio duplo!' },
+  ]},
+];
+
+const BADGES_DEF = [
+  { id:'first_word',   emoji:'🌱', name:'Primeira Palavra',    desc:'Dominou sua 1ª palavra',        check: s => Object.keys(s.mastered).length >= 1 },
+  { id:'ten_words',    emoji:'⭐', name:'10 Palavras',          desc:'Dominou 10 palavras',           check: s => Object.keys(s.mastered).length >= 10 },
+  { id:'all_words',    emoji:'📚', name:'Vocabulário Completo', desc:'Dominou todas as palavras!',    check: s => Object.keys(s.mastered).length >= 60 },
+  { id:'first_quiz',   emoji:'🃏', name:'Primeiro Quiz',        desc:'Completou seu 1º quiz',         check: s => s.quizCorrect >= 1 },
+  { id:'quiz_50',      emoji:'🎯', name:'50 Acertos',           desc:'50 respostas certas no quiz',   check: s => s.quizCorrect >= 50 },
+  { id:'streak_3',     emoji:'🔥', name:'3 Dias Seguidos',      desc:'Praticou 3 dias consecutivos',  check: s => s.streak >= 3 },
+  { id:'streak_7',     emoji:'🏆', name:'1 Semana!',            desc:'7 dias consecutivos — incrível!', check: s => s.streak >= 7 },
+  { id:'pron_10',      emoji:'🗣️', name:'Treino do R',          desc:'Praticou 10 palavras com R',    check: s => Object.keys(s.pronPracticed||{}).length >= 10 },
+  { id:'quiz_goal_3',  emoji:'💎', name:'Meta do Dia',          desc:'3 quiz num único dia!',         check: s => (s.quizToday||0) >= 3 },
+  { id:'diary_5',      emoji:'🎬', name:'Cinéfila',             desc:'5 entradas no diário',          check: s => (s.diary||[]).length >= 5 },
+];
+
+const VOCAB_PACKS=[
+  {id:'supermarket',name:'Supermercado',emoji:'🛒',words:[
+    {en:'bread',pt:'pão',pron:'bred',ex:'"Can I have some bread?"'},
+    {en:'milk',pt:'leite',pron:'milk',ex:'"I need milk for Miguel."'},
+    {en:'water',pt:'água',pron:'uô-ter',ex:'"Where is the water?"'},
+    {en:'chicken',pt:'frango',pron:'tchi-ken',ex:'"I want chicken for dinner."'},
+    {en:'eggs',pt:'ovos',pron:'egz',ex:'"Six eggs, please."'},
+    {en:'cheese',pt:'queijo',pron:'tchîz',ex:'"This cheese is delicious."'},
+    {en:'fruit',pt:'fruta',pron:'frût',ex:'"I like fruit."'},
+    {en:'vegetables',pt:'legumes',pron:'vé-dji-ta-bôls',ex:'"Fresh vegetables."'},
+    {en:'price',pt:'preço',pron:'praiss',ex:'"What is the price?"'},
+    {en:'bag',pt:'sacola',pron:'beg',ex:'"Do you have a bag?"'},
+    {en:'cashier',pt:'caixa',pron:'ká-xier',ex:'"Where is the cashier?"'},
+    {en:'receipt',pt:'recibo',pron:'ri-sît',ex:'"Can I have the receipt?"'},
+  ]},
+  {id:'doctor',name:'Médico',emoji:'🏥',words:[
+    {en:'doctor',pt:'médico',pron:'dók-ter',ex:'"I need a doctor."'},
+    {en:'appointment',pt:'consulta',pron:'a-pôint-ment',ex:'"I have an appointment."'},
+    {en:'pain',pt:'dor',pron:'pein',ex:'"I have pain here."'},
+    {en:'fever',pt:'febre',pron:'fî-ver',ex:'"He has a fever."'},
+    {en:'medicine',pt:'remédio',pron:'mé-di-sin',ex:'"What medicine do I take?"'},
+    {en:'hospital',pt:'hospital',pron:'hós-pi-tal',ex:'"Is this a hospital?"'},
+    {en:'pharmacy',pt:'farmácia',pron:'fár-ma-si',ex:'"Where is the pharmacy?"'},
+    {en:'insurance',pt:'seguro',pron:'in-shú-rans',ex:'"I have insurance."'},
+    {en:'allergy',pt:'alergia',pron:'a-lér-dji',ex:'"I have an allergy."'},
+    {en:'nurse',pt:'enfermeira',pron:'nêrs',ex:'"The nurse is nice."'},
+  ]},
+  {id:'home',name:'Casa & Rotina',emoji:'🏠',words:[
+    {en:'breakfast',pt:'café da manhã',pron:'brék-fest',ex:'"Breakfast is ready!"'},
+    {en:'lunch',pt:'almoço',pron:'lantch',ex:'"What\'s for lunch?"'},
+    {en:'dinner',pt:'jantar',pron:'dî-ner',ex:'"Dinner is at 7."'},
+    {en:'bedroom',pt:'quarto',pron:'béd-rum',ex:'"The bedroom is clean."'},
+    {en:'kitchen',pt:'cozinha',pron:'kít-chen',ex:'"I\'m in the kitchen."'},
+    {en:'bathroom',pt:'banheiro',pron:'béth-rum',ex:'"Where is the bathroom?"'},
+    {en:'sleep',pt:'dormir',pron:'slîp',ex:'"I need to sleep."'},
+    {en:'tired',pt:'cansado/a',pron:'taí-erd',ex:'"I\'m very tired."'},
+    {en:'clean',pt:'limpo/limpar',pron:'klîn',ex:'"The house is clean."'},
+    {en:'laundry',pt:'roupa/lavanderia',pron:'lôn-dri',ex:'"I\'m doing laundry."'},
+  ]},
+  {id:'transport',name:'Transporte',emoji:'🚆',words:[
+    {en:'bus',pt:'ônibus',pron:'bâs',ex:'"I take the bus."'},
+    {en:'train',pt:'trem',pron:'trein',ex:'"The train is late."'},
+    {en:'ticket',pt:'bilhete',pron:'tí-ket',ex:'"One ticket, please."'},
+    {en:'station',pt:'estação',pron:'stéi-shon',ex:'"Where is the station?"'},
+    {en:'stop',pt:'parada',pron:'stop',ex:'"This is my stop."'},
+    {en:'late',pt:'atrasado',pron:'leit',ex:'"I\'m late!"'},
+    {en:'left',pt:'esquerda',pron:'left',ex:'"Turn left here."'},
+    {en:'right',pt:'direita',pron:'rait',ex:'"Turn right."'},
+    {en:'straight',pt:'em frente',pron:'streit',ex:'"Go straight."'},
+    {en:'lost',pt:'perdido/a',pron:'lost',ex:'"I\'m lost."'},
+  ]},
+  {id:'greetings',name:'Cumprimentos',emoji:'👋',words:[
+    {en:'hello',pt:'olá',pron:'he-lô',ex:'"Hello! How are you?"'},
+    {en:'goodbye',pt:'tchau',pron:'gud-bai',ex:'"Goodbye, see you soon!"'},
+    {en:'please',pt:'por favor',pron:'plîz',ex:'"One coffee, please."'},
+    {en:'thank you',pt:'obrigada',pron:'thênk-yu',ex:'"Thank you very much!"'},
+    {en:'sorry',pt:'desculpa',pron:'só-ri',ex:'"I\'m sorry!"'},
+    {en:'yes',pt:'sim',pron:'yes',ex:'"Yes, please."'},
+    {en:'no',pt:'não',pron:'nô',ex:'"No, thank you."'},
+    {en:'help',pt:'ajuda',pron:'help',ex:'"Can you help me?"'},
+    {en:'excuse me',pt:'com licença',pron:'ex-kyûz mî',ex:'"Excuse me, where is...?"'},
+    {en:'how much',pt:'quanto custa',pron:'hau mâtch',ex:'"How much is this?"'},
+  ]},
+  {id:'feelings',name:'Sentimentos',emoji:'💛',words:[
+    {en:'happy',pt:'feliz',pron:'hé-pi',ex:'"I am happy!"'},
+    {en:'sad',pt:'triste',pron:'sed',ex:'"I feel sad today."'},
+    {en:'hungry',pt:'com fome',pron:'hân-gri',ex:'"I\'m hungry!"'},
+    {en:'thirsty',pt:'com sede',pron:'thêr-sti',ex:'"I\'m very thirsty."'},
+    {en:'hot',pt:'calor',pron:'hot',ex:'"I\'m hot."'},
+    {en:'cold',pt:'frio/fria',pron:'kôld',ex:'"I\'m cold!"'},
+    {en:'good',pt:'bem/bom',pron:'gud',ex:'"I feel good."'},
+    {en:'scared',pt:'com medo',pron:'skerd',ex:'"I\'m a little scared."'},
+    {en:'excited',pt:'animada',pron:'ex-sái-ted',ex:'"I\'m so excited!"'},
+    {en:'okay',pt:'tudo bem',pron:'o-kéi',ex:'"Everything is okay."'},
+  ]},
+];
+
+const MIGUEL_DATA=[
+  {category:'🏥 Na consulta médica',phrases:[
+    {en:'He has a fever.',pt:'Ele está com febre.',pron:'Hi haz a fî-ver'},
+    {en:'He is not eating well.',pt:'Ele não está comendo bem.',pron:'Hi iz not î-ting wel'},
+    {en:'How many times a day?',pt:'Quantas vezes por dia?',pron:'Hau mé-ni taimz a dei'},
+    {en:'Is it serious?',pt:'É grave?',pron:'Iz it sî-ri-os'},
+    {en:'He is breastfed.',pt:'Ele é amamentado.',pron:'Hi iz brest-fed'},
+    {en:'He cries a lot at night.',pt:'Ele chora muito à noite.',pron:'Hi kraiz a lot et nait'},
+  ]},
+  {category:'🍼 Rotina do bebê',phrases:[
+    {en:'Time to eat!',pt:'Hora de comer!',pron:'Taim tu-ît'},
+    {en:"Let's change the diaper.",pt:'Vamos trocar a fralda.',pron:'Lets tcheinj de dái-per'},
+    {en:'Good night, my love.',pt:'Boa noite, meu amor.',pron:'Gud nait mai lâv'},
+    {en:'He is sleeping.',pt:'Ele está dormindo.',pron:'Hi iz slî-ping'},
+    {en:'He is hungry.',pt:'Ele está com fome.',pron:'Hi iz hân-gri'},
+    {en:'Bath time!',pt:'Hora do banho!',pron:'Beth taim'},
+  ]},
+  {category:'🏫 Na escola / creche',phrases:[
+    {en:'He had a good day.',pt:'Ele teve um bom dia.',pron:'Hi hed a gud dei'},
+    {en:'What time should I pick him up?',pt:'Que horas devo buscá-lo?',pron:'Uot taim shood ai pik him âp'},
+    {en:'He is a little sick today.',pt:'Ele está um pouco doente hoje.',pron:'Hi iz a lí-tel sik tu-dei'},
+    {en:'Thank you for taking care of him.',pt:'Obrigada por cuidar dele.',pron:'Thênk yu for téi-king ker ov him'},
+  ]},
+];
+
+// ── STATE ─────────────────────────────────────────────
+const ADMIN_PIN='1994';
+function load(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch{return d;}}
+function save(k,v){localStorage.setItem(k,JSON.stringify(v));}
+
+let state={
+  tasks:       load('ae_tasks',[]),
+  diary:       load('ae_diary',[]),
+  streak:      load('ae_streak',0),
+  lastVisit:   load('ae_lastVisit',''),
+  quizCorrect: load('ae_quizCorrect',0),
+  mastered:    load('ae_mastered',{}),
+  pronPracticed: load('ae_pron',{}),
+  quizToday:   load('ae_quizToday',0),
+  quizTodayDate: load('ae_quizTodayDate',''),
+  quizGoal:    load('ae_quizGoal',3),
+  weekDays:    load('ae_weekDays',{}),
+  phrasePack:  load('ae_phrase',{en:'Good morning, how are you?',pt:'Bom dia, como você está?',tip:'💡 Pronúncia: "gud môr-nin, hau ar yu?"'}),
+};
+
+// ── SPEECH ────────────────────────────────────────────
+let currentSpeakBtn=null;
+function speakText(text,btn){
+  if(!window.speechSynthesis){showToast('⚠️ Áudio não suportado neste navegador');return;}
+  window.speechSynthesis.cancel();
+  if(currentSpeakBtn) currentSpeakBtn.classList.remove('speaking');
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US'; u.rate=0.85; u.pitch=1;
+  currentSpeakBtn=btn;
+  if(btn) btn.classList.add('speaking');
+  u.onend=u.onerror=()=>{if(btn) btn.classList.remove('speaking'); currentSpeakBtn=null;};
+  window.speechSynthesis.speak(u);
+}
+function speakQuizWord(){
+  const w=document.getElementById('quizWord').textContent;
+  if(w&&w!=='—') speakText(w,document.getElementById('quizSpeakBtn'));
+}
+
+// ── INIT ──────────────────────────────────────────────
+function init(){
+  const today=new Date().toDateString();
+  const yesterday=new Date(Date.now()-86400000).toDateString();
+  if(state.lastVisit===yesterday) state.streak++;
+  else if(state.lastVisit!==today&&state.lastVisit) state.streak=1;
+  else if(!state.lastVisit) state.streak=1;
+  state.lastVisit=today;
+  save('ae_streak',state.streak); save('ae_lastVisit',state.lastVisit);
+
+  // Reset daily quiz count if new day
+  if(state.quizTodayDate !== today){ state.quizToday=0; state.quizTodayDate=today; save('ae_quizToday',0); save('ae_quizTodayDate',today); }
+
+  // Mark today as active in weekdays
+  state.weekDays[today]=true; save('ae_weekDays',state.weekDays);
+
+  document.getElementById('streakCount').textContent=state.streak;
+  const days=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const months=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+  const now=new Date();
+  document.getElementById('headerDate').textContent=`${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]}`;
+  const h=now.getHours();
+  document.getElementById('welcomeMsg').textContent=`${h<12?'Bom dia':h<18?'Boa tarde':'Boa noite'}, Andressa! 👋`;
+  renderHome(); renderTasks(); renderVocab(); renderDiary(); renderMiguel(); renderPron(); startQuiz(); updateStats();
+}
+
+// ── NAV ───────────────────────────────────────────────
+function showSection(id,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('section-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── HOME ──────────────────────────────────────────────
+function renderHome(){
+  const p=state.phrasePack;
+  document.getElementById('homePhrase').textContent=p.en;
+  document.getElementById('homePhrasePt').textContent=p.pt;
+  document.getElementById('homePhraseTip').textContent=p.tip||'';
+  const c=document.getElementById('homeTaskList');
+  if(!state.tasks.length){c.innerHTML='<p style="font-size:0.82rem;color:var(--text-muted);text-align:center;padding:10px 0;">Sem tarefas hoje ainda 😊</p>';return;}
+  c.innerHTML=state.tasks.map((t,i)=>`
+    <div class="task-item ${t.done?'done':''}">
+      <div class="task-check" onclick="toggleTask(${i})">${t.done?'✓':''}</div>
+      <div class="task-text">
+        <div class="task-title">${t.title}</div>
+        ${t.desc?`<div class="task-desc">${t.desc}</div>`:''}
+      </div>
+    </div>`).join('');
+  renderWeekTracker();
+  renderQuizGoal();
+  renderBadges();
+}
+
+function renderWeekTracker(){
+  const dayNames=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  const today=new Date();
+  const todayStr=today.toDateString();
+  // Get last 7 days
+  const days=[];
+  for(let i=6;i>=0;i--){
+    const d=new Date(today); d.setDate(d.getDate()-i);
+    days.push({str:d.toDateString(),name:dayNames[d.getDay()],isToday:d.toDateString()===todayStr});
+  }
+  document.getElementById('weekTracker').innerHTML=days.map(d=>`
+    <div class="week-day">
+      <div class="week-day-name">${d.name}</div>
+      <div class="week-day-dot ${state.weekDays[d.str]?'done':''} ${d.isToday?'today':''}"></div>
+    </div>`).join('');
+}
+
+function renderQuizGoal(){
+  const done=state.quizToday||0;
+  const goal=state.quizGoal||3;
+  const pct=Math.min(100,Math.round(done/goal*100));
+  document.getElementById('goalTarget').textContent=goal;
+  document.getElementById('goalTarget2').textContent=goal;
+  document.getElementById('goalDone').textContent=done;
+  document.getElementById('goalBar').style.width=pct+'%';
+}
+
+function renderBadges(){
+  const grid=document.getElementById('badgesGrid');
+  if(!grid) return;
+  grid.innerHTML=BADGES_DEF.map(b=>{
+    const unlocked=b.check(state);
+    return `<div class="badge-card ${unlocked?'unlocked':'locked'}">
+      ${unlocked?'<div class="badge-unlocked-tag">✓ Conquistada</div>':''}
+      <div class="badge-emoji">${b.emoji}</div>
+      <div class="badge-name">${b.name}</div>
+      <div class="badge-desc">${b.desc}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── PRONUNCIATION ──────────────────────────────────────
+function renderPron(){
+  const allWords=PRON_R_WORDS.flatMap(g=>g.words);
+  const practiced=Object.keys(state.pronPracticed).length;
+  const pct=Math.min(100,Math.round(practiced/allWords.length*100));
+  document.getElementById('pronProgBar').style.width=pct+'%';
+  document.getElementById('pronProgText').textContent=`${practiced} palavras praticadas`;
+  document.getElementById('pronProgPct').textContent=pct+'%';
+
+  document.getElementById('pronContent').innerHTML=PRON_R_WORDS.map(group=>`
+    <div class="pron-level-title">${group.level}</div>
+    ${group.words.map(w=>{
+      const key=w.en.replace(/\s/g,'_');
+      const done=!!state.pronPracticed[key];
+      // Highlight R letters
+      const highlighted=w.en.replace(/r/gi, m=>`<span class="pron-r-highlight">${m}</span>`);
+      return `<div class="pron-word-card ${done?'practiced':''}" id="pron-${key}">
+        <div class="pron-word-top">
+          <div class="pron-word-en">${highlighted}</div>
+          <div style="font-size:0.8rem;color:var(--text-soft);font-weight:600;">${w.pt}</div>
+          <button class="speak-btn" onclick="speakText('${w.en}',this)">🔊</button>
+        </div>
+        <div class="pron-word-tip">💡 <strong>Como pronunciar:</strong> ${w.tip}</div>
+        <div class="pron-actions">
+          <button class="pron-practiced-btn ${done?'done':''}" onclick="togglePronPracticed('${key}',this)">
+            ${done?'✅ Praticada!':'☐ Marcar como praticada'}
+          </button>
+        </div>
+      </div>`;
+    }).join('')}`).join('');
+}
+
+function togglePronPracticed(key,btn){
+  state.pronPracticed[key]=!state.pronPracticed[key];
+  if(!state.pronPracticed[key]) delete state.pronPracticed[key];
+  save('ae_pron',state.pronPracticed);
+  const done=!!state.pronPracticed[key];
+  btn.classList.toggle('done',done);
+  btn.textContent=done?'✅ Praticada!':'☐ Marcar como praticada';
+  const card=document.getElementById('pron-'+key);
+  if(card) card.classList.toggle('practiced',done);
+  renderPron();
+  checkBadges();
+  showToast(done?'💪 Boa! Continue praticando!':'↩️ Desmarcada');
+}
+
+// ── TASKS ─────────────────────────────────────────────
+function renderTasks(){
+  document.getElementById('noTasks').style.display=state.tasks.length?'none':'block';
+  document.getElementById('taskList').innerHTML=state.tasks.map((t,i)=>`
+    <div class="task-item ${t.done?'done':''}">
+      <div class="task-check" onclick="toggleTask(${i})">${t.done?'✓':''}</div>
+      <div class="task-text">
+        <div class="task-title">${t.title}</div>
+        ${t.desc?`<div class="task-desc">${t.desc}</div>`:''}
+      </div>
+    </div>`).join('');
+}
+function toggleTask(i){
+  state.tasks[i].done=!state.tasks[i].done;
+  save('ae_tasks',state.tasks);
+  renderTasks(); renderHome(); updateStats();
+  if(state.tasks[i].done) showToast('✅ Tarefa concluída! Ótimo trabalho!');
+}
+
+// ── VOCAB ─────────────────────────────────────────────
+function renderVocab(){
+  document.getElementById('packGrid').innerHTML=VOCAB_PACKS.map(p=>{
+    const mc=p.words.filter(w=>state.mastered[w.en]).length;
+    return `<div class="pack-btn" onclick="showPack('${p.id}',this)">
+      ${mc>0?`<div class="pack-mastered">⭐${mc}/${p.words.length}</div>`:''}
+      <div class="pack-emoji">${p.emoji}</div>
+      <div class="pack-name">${p.name}</div>
+      <div class="pack-count">${p.words.length} palavras</div>
+    </div>`;
+  }).join('');
+}
+function showPack(id,btn){
+  document.querySelectorAll('.pack-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const pack=VOCAB_PACKS.find(p=>p.id===id);
+  document.getElementById('vocabListContainer').innerHTML=`
+    <div class="card">
+      <div class="card-title">${pack.emoji} ${pack.name} — 🔊 ouvir  |  ⭐ marcar como aprendida</div>
+      ${pack.words.map(w=>`
+        <div class="vocab-card ${state.mastered[w.en]?'mastered':''}" id="vc-${w.en.replace(/\s/g,'_')}">
+          <div class="vocab-en">${w.en}</div>
+          <div class="vocab-mid">
+            <div class="vocab-pt">${w.pt}</div>
+            <div class="vocab-ex">${w.ex}</div>
+            <div class="vocab-pron">${w.pron}</div>
+          </div>
+          <button class="speak-btn" onclick="speakText('${w.en.replace(/'/g,"\\'")}',this)">🔊</button>
+          <button class="mastered-star ${state.mastered[w.en]?'on':''}" onclick="toggleMastered('${w.en.replace(/\s/g,'_').replace(/'/g,"\\'")}',this)">⭐</button>
+        </div>`).join('')}
+    </div>`;
+}
+function toggleMastered(enKey,btn){
+  const en=enKey.replace(/_/g,' ');
+  state.mastered[en]=!state.mastered[en];
+  if(!state.mastered[en]) delete state.mastered[en];
+  save('ae_mastered',state.mastered);
+  btn.classList.toggle('on',!!state.mastered[en]);
+  const card=document.getElementById('vc-'+enKey);
+  if(card) card.classList.toggle('mastered',!!state.mastered[en]);
+  renderVocab(); updateStats(); checkBadges();
+  showToast(state.mastered[en]?'⭐ Palavra dominada! Incrível!':'↩️ Removida das dominadas');
+}
+
+// ── QUIZ ──────────────────────────────────────────────
+let quizPool=[],quizIndex=0,quizHistory=[];
+function getAllWords(){return VOCAB_PACKS.flatMap(p=>p.words);}
+function shuffle(a){return[...a].sort(()=>Math.random()-0.5);}
+
+function rebuildQuizHTML(){
+  document.getElementById('quizCard').innerHTML=`
+    <div class="quiz-word-row">
+      <div class="quiz-question" id="quizWord">—</div>
+      <button class="quiz-speak-btn" id="quizSpeakBtn" onclick="speakQuizWord()">🔊</button>
+    </div>
+    <div class="quiz-sub">O que significa em português?</div>
+    <div class="quiz-options" id="quizOptions"></div>
+    <div class="quiz-result" id="quizResult"></div>
+    <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuiz()">Próxima ➜</button>`;
+}
+
+function startQuiz(){
+  const all=getAllWords();
+  const unmastered=all.filter(w=>!state.mastered[w.en]);
+  quizPool=shuffle(unmastered.length>=6?unmastered:all).slice(0,10);
+  quizIndex=0; quizHistory=[];
+  document.getElementById('quizScoreBar').innerHTML=quizPool.map(()=>'<div class="score-dot"></div>').join('');
+  rebuildQuizHTML();
+  const mc=Object.keys(state.mastered).length;
+  const banner=document.getElementById('masteredBanner');
+  if(mc>0){banner.textContent=`⭐ Você já dominou ${mc} palavra${mc>1?'s':''}! O quiz prioriza as que ainda está aprendendo.`;banner.classList.add('show');}
+  else banner.classList.remove('show');
+  loadQuizQuestion();
+}
+
+function loadQuizQuestion(){
+  if(quizIndex>=quizPool.length){
+    const correct=quizHistory.filter(Boolean).length;
+    state.quizCorrect+=correct;
+    // Track daily quiz completion
+    state.quizToday=(state.quizToday||0)+1;
+    save('ae_quizToday',state.quizToday);
+    save('ae_quizCorrect',state.quizCorrect);
+    updateStats();
+    renderQuizGoal();
+    checkBadges();
+    if(state.quizToday===state.quizGoal) showToast('🎯 Meta do dia atingida! Incrível! 🌸');
+    document.getElementById('quizCard').innerHTML=`
+      <div style="text-align:center;padding:20px 0;">
+        <div style="font-size:3.5rem;margin-bottom:12px;">${correct>=8?'🏆':correct>=5?'⭐':'💪'}</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--primary-dark);margin-bottom:8px;">${correct}/10 acertos!</div>
+        <div style="font-size:0.88rem;color:var(--text-soft);line-height:1.5;">
+          ${correct>=8?'Incrível! Você está arrasando! 🌸':correct>=5?'Bom trabalho! Continue assim! 😊':'Não desiste! Prática leva à perfeição! 💪'}
+        </div>
+        <div style="margin-top:10px;font-size:0.82rem;color:var(--accent);font-weight:800;">Quiz ${state.quizToday}/${state.quizGoal} de hoje ✓</div>
+        <div style="margin-top:10px;font-size:0.8rem;color:var(--text-muted);">Clique em "🔄 Novo Quiz" para jogar de novo!</div>
+      </div>`;
+    return;
+  }
+  const q=quizPool[quizIndex];
+  const allPts=getAllWords().map(w=>w.pt).filter(p=>p!==q.pt);
+  const options=shuffle([q.pt,...shuffle(allPts).slice(0,3)]);
+  document.getElementById('quizWord').textContent=q.en;
+  document.getElementById('quizResult').className='quiz-result';
+  document.getElementById('quizNextBtn').className='quiz-next-btn';
+  document.getElementById('quizOptions').innerHTML=options.map(o=>`
+    <button class="quiz-opt" onclick="answerQuiz(this,'${o.replace(/'/g,"\\'")}','${q.pt.replace(/'/g,"\\'")}')">
+      ${o}
+    </button>`).join('');
+}
+
+function answerQuiz(btn,selected,correct){
+  const ok=selected===correct;
+  document.querySelectorAll('.quiz-opt').forEach(b=>b.onclick=null);
+  btn.classList.add(ok?'correct':'wrong');
+  if(!ok) document.querySelectorAll('.quiz-opt').forEach(b=>{if(b.textContent.trim()===correct)b.classList.add('correct');});
+  quizHistory.push(ok);
+  const dots=document.querySelectorAll('.score-dot');
+  if(dots[quizIndex]) dots[quizIndex].classList.add(ok?'correct':'wrong');
+  const res=document.getElementById('quizResult');
+  res.textContent=ok?'✅ Correto! Muito bem!':`❌ A resposta certa é: ${correct}`;
+  res.style.color=ok?'var(--green)':'#c0392b';
+  res.classList.add('show');
+  document.getElementById('quizNextBtn').classList.add('show');
+  quizIndex++;
+}
+function nextQuiz(){loadQuizQuestion();}
+
+// ── DIARY ─────────────────────────────────────────────
+function renderDiary(){
+  const list=document.getElementById('diaryList');
+  if(!state.diary.length){list.innerHTML='<p style="font-size:0.85rem;color:var(--text-muted);text-align:center;padding:20px;">Nenhuma entrada ainda. Assistam algo juntos! 🎬</p>';return;}
+  list.innerHTML=state.diary.slice().reverse().map((e,ri)=>{
+    const i=state.diary.length-1-ri;
+    return `<div class="diary-entry">
+      <div class="entry-top">
+        <div class="entry-title">🎬 ${e.title}</div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div class="entry-date">${e.date}</div>
+          <button class="entry-del" onclick="deleteDiary(${i})">×</button>
+        </div>
+      </div>
+      <div class="entry-words">
+        ${e.words.map(w=>`<span class="word-tag" onclick="speakText('${w.replace(/'/g,"\\'")}',null)">${w} 🔊</span>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+function saveDiary(){
+  const title=document.getElementById('diaryTitle').value.trim();
+  if(!title){showToast('⚠️ Digite o título!');return;}
+  const words=(document.getElementById('diaryWords').value||'').split(',').map(w=>w.trim()).filter(Boolean);
+  const now=new Date();
+  state.diary.push({title,words,date:`${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`});
+  save('ae_diary',state.diary);
+  document.getElementById('diaryTitle').value='';
+  document.getElementById('diaryWords').value='';
+  renderDiary(); showToast('🎬 Entrada salva!');
+}
+function deleteDiary(i){state.diary.splice(i,1);save('ae_diary',state.diary);renderDiary();}
+
+// ── MIGUEL ────────────────────────────────────────────
+function renderMiguel(){
+  document.getElementById('miguelContent').innerHTML=MIGUEL_DATA.map(cat=>`
+    <div class="card">
+      <div class="miguel-cat-title">${cat.category}</div>
+      ${cat.phrases.map(p=>`
+        <div class="phrase-card">
+          <div class="phrase-text">
+            <div class="phrase-en">${p.en}</div>
+            <div class="phrase-pt">${p.pt}</div>
+            <div class="phrase-pron">🔊 ${p.pron}</div>
+          </div>
+          <button class="phrase-speak" onclick="speakText('${p.en.replace(/'/g,"\\'")}',this)">🔊</button>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+// ── BADGES ────────────────────────────────────────────
+function checkBadges(){
+  const prev=load('ae_unlockedBadges',{});
+  BADGES_DEF.forEach(b=>{
+    if(!prev[b.id]&&b.check(state)){
+      prev[b.id]=true;
+      save('ae_unlockedBadges',prev);
+      showToast(`🏅 Conquista desbloqueada: ${b.name} ${b.emoji}`);
+    }
+  });
+  renderBadges();
+}
+
+// ── STATS ─────────────────────────────────────────────
+function updateStats(){
+  const mc=Object.keys(state.mastered).length;
+  document.getElementById('statMastered').textContent=mc;
+  document.getElementById('statTasks').textContent=state.tasks.filter(t=>t.done).length;
+  document.getElementById('statQuiz').textContent=state.quizCorrect;
+  renderWeekTracker();
+  renderQuizGoal();
+  renderBadges();
+}
+
+// ── ADMIN ─────────────────────────────────────────────
+let adminUnlocked=false;
+function pinNext(el,nid){if(el.value) document.getElementById(nid)?.focus();}
+function checkPin(){
+  const pin=['p0','p1','p2','p3'].map(id=>document.getElementById(id).value).join('');
+  if(pin.length<4) return;
+  if(pin===ADMIN_PIN){
+    adminUnlocked=true;
+    document.getElementById('adminLocked').style.display='none';
+    document.getElementById('adminPanel').classList.add('unlocked');
+    renderAdminTasks(); updateAdminStats();
+    document.getElementById('adminPhraseEn').value=state.phrasePack.en;
+    document.getElementById('adminPhrasePt').value=state.phrasePack.pt;
+    document.getElementById('adminPhraseTip').value=state.phrasePack.tip||'';
+    document.getElementById('adminQuizGoal').value=state.quizGoal||3;
+    document.getElementById('currentGoalDisplay').textContent=state.quizGoal||3;
+  } else {
+    document.getElementById('pinError').style.display='block';
+    ['p0','p1','p2','p3'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('p0').focus();
+    setTimeout(()=>document.getElementById('pinError').style.display='none',2000);
+  }
+}
+function saveQuizGoal(){
+  const v=parseInt(document.getElementById('adminQuizGoal').value);
+  if(!v||v<1){showToast('⚠️ Meta inválida!');return;}
+  state.quizGoal=v; save('ae_quizGoal',v);
+  document.getElementById('currentGoalDisplay').textContent=v;
+  renderQuizGoal();
+  const m=document.getElementById('goalSaved'); m.classList.add('show'); setTimeout(()=>m.classList.remove('show'),2000);
+}
+function adminLogout(){
+  adminUnlocked=false;
+  document.getElementById('adminLocked').style.display='block';
+  document.getElementById('adminPanel').classList.remove('unlocked');
+  ['p0','p1','p2','p3'].forEach(id=>document.getElementById(id).value='');
+}
+function savePhrase(){
+  const en=document.getElementById('adminPhraseEn').value.trim();
+  const pt=document.getElementById('adminPhrasePt').value.trim();
+  const tip=document.getElementById('adminPhraseTip').value.trim();
+  if(!en||!pt){showToast('⚠️ Preencha inglês e português!');return;}
+  state.phrasePack={en,pt,tip}; save('ae_phrase',state.phrasePack); renderHome();
+  const m=document.getElementById('phraseSaved'); m.classList.add('show'); setTimeout(()=>m.classList.remove('show'),2000);
+}
+function addTask(){
+  const title=document.getElementById('adminTaskTitle').value.trim();
+  const desc=document.getElementById('adminTaskDesc').value.trim();
+  if(!title){showToast('⚠️ Digite o título!');return;}
+  state.tasks.push({title,desc,done:false}); save('ae_tasks',state.tasks);
+  document.getElementById('adminTaskTitle').value='';
+  document.getElementById('adminTaskDesc').value='';
+  renderAdminTasks(); renderTasks(); renderHome();
+  const m=document.getElementById('taskSaved'); m.classList.add('show'); setTimeout(()=>m.classList.remove('show'),2000);
+}
+function renderAdminTasks(){
+  const c=document.getElementById('adminTaskList');
+  if(!state.tasks.length){c.innerHTML='<p style="font-size:0.82rem;color:var(--text-muted);">Nenhuma tarefa ainda.</p>';return;}
+  c.innerHTML=state.tasks.map((t,i)=>`
+    <div class="admin-task-item">
+      <div class="admin-task-text">${t.done?'✅':'⏳'} ${t.title}</div>
+      <button class="btn-del-task" onclick="deleteTask(${i})">Remover</button>
+    </div>`).join('');
+}
+function deleteTask(i){state.tasks.splice(i,1);save('ae_tasks',state.tasks);renderAdminTasks();renderTasks();renderHome();}
+function clearDoneTasks(){state.tasks=state.tasks.filter(t=>!t.done);save('ae_tasks',state.tasks);renderAdminTasks();renderTasks();renderHome();showToast('🧹 Tarefas concluídas removidas!');}
+function clearMastered(){state.mastered={};save('ae_mastered',state.mastered);updateStats();renderVocab();updateAdminStats();showToast('🗑️ Palavras dominadas limpas.');}
+function updateAdminStats(){
+  document.getElementById('adminStatMastered').textContent=Object.keys(state.mastered).length;
+  document.getElementById('adminStatTasks').textContent=state.tasks.filter(t=>t.done).length;
+  document.getElementById('adminStatQuiz').textContent=state.quizCorrect;
+}
+
+// ── TOAST ─────────────────────────────────────────────
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+
+init();
+</script>
+</body>
+</html>
