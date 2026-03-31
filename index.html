@@ -314,44 +314,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 .rec-tip-card{background:var(--yellow-light);border:1.5px solid var(--yellow);border-radius:var(--radius-sm);padding:14px 16px;margin-top:4px;}
 .rec-tip-card p{font-size:0.83rem;color:#6a5000;line-height:1.5;}
 
-/* WEDDING BONUS */
-.wedding-hero{background:linear-gradient(135deg,#f7c5d8 0%,#fde8c0 50%,#f7c5d8 100%);border-radius:var(--radius);padding:28px 20px;margin-bottom:16px;text-align:center;position:relative;overflow:hidden;}
-.wedding-hero::before{content:'💍';position:absolute;right:16px;top:16px;font-size:2.5rem;opacity:0.25;}
-.wedding-hero::after{content:'🌸';position:absolute;left:16px;bottom:12px;font-size:2rem;opacity:0.2;}
-.wedding-hero h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:#8a3060;margin-bottom:6px;}
-.wedding-hero p{font-size:0.85rem;color:#a04070;line-height:1.5;}
-.wedding-date-badge{display:inline-block;background:white;border-radius:50px;padding:5px 16px;font-size:0.78rem;font-weight:800;color:#8a3060;margin-top:10px;box-shadow:0 2px 10px rgba(138,48,96,0.15);}
-
-/* WEDDING COUPLE PHRASES */
-.couple-phrase-card{background:var(--card);border:2px solid #f7c5d8;border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;transition:all 0.2s;}
-.couple-phrase-card:hover{box-shadow:var(--shadow);transform:translateX(3px);}
-.couple-phrase-en{font-weight:900;font-size:0.95rem;color:#c0508a;}
-.couple-phrase-pt{font-size:0.82rem;color:var(--text-soft);margin-top:3px;}
-.couple-phrase-tip{font-size:0.72rem;background:#fde8f0;color:#8a3060;padding:3px 8px;border-radius:6px;display:inline-block;margin-top:5px;font-weight:700;}
-
-/* WEDDING QUIZ */
-.wedding-quiz-card{background:linear-gradient(135deg,#fde8f0,white);border:2px solid #f7c5d8;border-radius:var(--radius);padding:24px 20px;text-align:center;margin-bottom:16px;}
-.wedding-quiz-q{font-family:'Playfair Display',serif;font-size:1.1rem;color:#8a3060;margin-bottom:20px;line-height:1.4;}
-.wedding-opt{padding:12px 16px;border:2px solid #f0c0d8;border-radius:var(--radius-sm);background:white;font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;transition:all 0.2s;color:var(--text);width:100%;margin-bottom:8px;text-align:left;}
-.wedding-opt:hover{border-color:#c0508a;background:#fde8f0;}
-.wedding-opt.correct{border-color:var(--green);background:var(--green-light);color:#2e7a44;}
-.wedding-opt.wrong{border-color:#e86a6a;background:#ffd5d5;color:#8b2020;}
-
-/* WEDDING 7-DAY CHALLENGE */
-.challenge-day{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;transition:all 0.2s;}
-.challenge-day.done{background:linear-gradient(to right,#fde8f0,white);border-color:#f7c5d8;}
-.challenge-day.locked{opacity:0.45;}
-.challenge-day-num{width:32px;height:32px;border-radius:50%;background:#f7c5d8;color:#8a3060;font-weight:900;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.challenge-day.done .challenge-day-num{background:var(--green);color:white;}
-.challenge-day-body{flex:1;}
-.challenge-day-title{font-weight:800;font-size:0.88rem;color:var(--text);}
-.challenge-day-desc{font-size:0.76rem;color:var(--text-soft);margin-top:3px;line-height:1.4;}
-.challenge-day-btn{padding:5px 14px;border-radius:20px;border:1.5px solid #f7c5d8;background:white;font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;cursor:pointer;color:#c0508a;transition:all 0.2s;margin-top:6px;}
-.challenge-day-btn:hover{background:#fde8f0;}
-.challenge-day-btn.done{background:var(--green-light);border-color:var(--green);color:#2e7a44;}
-.challenge-progress-bar{height:10px;background:var(--border);border-radius:50px;overflow:hidden;margin-top:6px;}
-.challenge-progress-fill{height:100%;background:linear-gradient(90deg,#f7c5d8,#c0508a);border-radius:50px;transition:width 0.5s ease;}
-
 /* TOAST */
 .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);
   color:white;padding:10px 20px;border-radius:50px;font-size:0.85rem;font-weight:700;opacity:0;transition:all 0.3s;z-index:999;white-space:nowrap;}
@@ -375,10 +337,10 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
   <button class="nav-btn" onclick="showSection('vocab',this)">📚 Vocabulário</button>
   <button class="nav-btn" onclick="showSection('quiz',this)">🃏 Quiz</button>
   <button class="nav-btn" onclick="showSection('exercises',this)">✍️ Exercícios</button>
-  <button class="nav-btn" onclick="showSection('wedding',this)">💍 Nosso Amor</button>
   <button class="nav-btn" onclick="showSection('miguel',this)">👶 Miguel</button>
   <button class="nav-btn" onclick="showSection('pron',this)">🗣️ Pronúncia R</button>
   <button class="nav-btn" onclick="showSection('recs',this)">🎥 Séries</button>
+  <button class="nav-btn" onclick="showAdminLogin()">⚙️ Admin</button>
 </nav>
 
 <div class="main">
@@ -465,50 +427,67 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
     <div id="exContent"></div>
   </div>
 
-  <!-- WEDDING BONUS 💍 -->
-  <div id="section-wedding" class="section">
-    <div class="wedding-hero">
-      <h2>💍 Nosso Amor em Inglês</h2>
-      <p>Uma seção especial para celebrar o nosso casamento — aprenda inglês com a nossa história! 🌸</p>
-      <div class="wedding-date-badge">💒 30 de março de 2026</div>
-    </div>
-
-    <!-- TABS -->
-    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
-      <button class="ex-type-tab active" id="wtab-phrases" onclick="showWeddingTab('phrases',this)">💬 Frases de Casal</button>
-      <button class="ex-type-tab" id="wtab-quiz" onclick="showWeddingTab('quiz',this)">❓ Nossa História</button>
-      <button class="ex-type-tab" id="wtab-challenge" onclick="showWeddingTab('challenge',this)">🗓️ Desafio 7 Dias</button>
-    </div>
-
-    <!-- PHRASES TAB -->
-    <div id="wtab-content-phrases">
-      <div class="card" style="background:linear-gradient(135deg,#fde8f0,white);border-color:#f7c5d8;margin-bottom:12px;">
-        <div class="card-title" style="color:#c0508a;">💬 Frases para usar com o Vinicius</div>
-        <p style="font-size:0.82rem;color:var(--text-soft);">Toque em 🔊 para ouvir cada frase!</p>
+  <!-- ADMIN SECTION -->
+  <div id="section-admin" class="section">
+    <div id="adminLoginPanel">
+      <div class="card" style="text-align:center;padding:30px 20px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">🔐</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--primary-dark);margin-bottom:6px;">Área Admin</div>
+        <div style="font-size:0.82rem;color:var(--text-soft);margin-bottom:20px;">Só para o Vinicius! 😊</div>
+        <input type="password" id="adminPwInput" class="input-field" placeholder="Senha..." style="margin-bottom:12px;text-align:center;" onkeydown="if(event.key==='Enter')checkAdminPw()">
+        <button class="btn-primary" onclick="checkAdminPw()">Entrar ➜</button>
+        <div id="adminPwError" style="color:#c0392b;font-size:0.82rem;margin-top:8px;display:none;">Senha incorreta!</div>
       </div>
-      <div id="couplePhrasesList"></div>
     </div>
-
-    <!-- QUIZ TAB -->
-    <div id="wtab-content-quiz" style="display:none;">
-      <div class="card" style="background:linear-gradient(135deg,#fde8f0,white);border-color:#f7c5d8;margin-bottom:12px;">
-        <div class="card-title" style="color:#c0508a;">❓ Quiz — Nossa História</div>
-        <p style="font-size:0.82rem;color:var(--text-soft);">Perguntas sobre a nossa história em inglês! 💕</p>
+    <div id="adminPanel" style="display:none;">
+      <div class="card" style="background:linear-gradient(135deg,var(--accent-light),white);border-color:var(--accent);">
+        <div class="card-title" style="color:var(--accent);">⚙️ Painel do Admin</div>
+        <button onclick="adminLogout()" style="padding:6px 14px;background:var(--border);border:none;border-radius:20px;font-family:'Nunito',sans-serif;font-size:0.78rem;font-weight:700;cursor:pointer;color:var(--text-soft);">Sair</button>
       </div>
-      <div id="weddingQuizContainer"></div>
-    </div>
 
-    <!-- CHALLENGE TAB -->
-    <div id="wtab-content-challenge" style="display:none;">
-      <div class="card" style="background:linear-gradient(135deg,#fde8f0,white);border-color:#f7c5d8;">
-        <div class="card-title" style="color:#c0508a;">🗓️ Desafio dos 7 dias — Semana do Casamento</div>
-        <p style="font-size:0.82rem;color:var(--text-soft);margin-bottom:12px;">Uma tarefa especial por dia para celebrar nosso amor aprendendo inglês! 💍</p>
-        <div class="challenge-progress-bar">
-          <div class="challenge-progress-fill" id="challengeProgressBar" style="width:0%"></div>
+      <!-- DESEMPENHO -->
+      <div class="card">
+        <div class="card-title">📊 Desempenho da Andressa</div>
+        <div id="adminStats"></div>
+      </div>
+
+      <!-- EXERCÍCIOS CUSTOM -->
+      <div class="card">
+        <div class="card-title">✍️ Adicionar Exercício</div>
+        <div class="input-group">
+          <label class="input-label">Frase (use _____ para o espaço em branco)</label>
+          <input type="text" id="adminExSentence" class="input-field" placeholder="Ex: I am _____ .">
         </div>
-        <p style="font-size:0.72rem;color:var(--text-muted);margin-top:5px;"><span id="challengeDoneCount">0</span>/7 dias completados</p>
+        <div class="input-group">
+          <label class="input-label">Resposta correta</label>
+          <input type="text" id="adminExBlank" class="input-field" placeholder="Ex: happy">
+        </div>
+        <div class="input-group">
+          <label class="input-label">Opções erradas (separadas por vírgula)</label>
+          <input type="text" id="adminExWrong" class="input-field" placeholder="Ex: bread, tired, doctor">
+        </div>
+        <div class="input-group">
+          <label class="input-label">Tradução (PT)</label>
+          <input type="text" id="adminExPt" class="input-field" placeholder="Ex: Estou feliz.">
+        </div>
+        <button class="btn-primary" onclick="adminAddExercise()" style="margin-bottom:8px;">Adicionar Exercício ✅</button>
+        <div id="adminExList" style="margin-top:10px;"></div>
       </div>
-      <div id="challengeDaysList"></div>
+
+      <!-- QUIZ CUSTOM -->
+      <div class="card">
+        <div class="card-title">🃏 Adicionar Pergunta ao Quiz</div>
+        <div class="input-group">
+          <label class="input-label">Palavra em inglês</label>
+          <input type="text" id="adminQEn" class="input-field" placeholder="Ex: doctor">
+        </div>
+        <div class="input-group">
+          <label class="input-label">Tradução correta (PT)</label>
+          <input type="text" id="adminQPt" class="input-field" placeholder="Ex: médico">
+        </div>
+        <button class="btn-primary" onclick="adminAddQuizWord()">Adicionar ao Quiz ✅</button>
+        <div id="adminQuizList" style="margin-top:10px;"></div>
+      </div>
     </div>
   </div>
 
@@ -786,114 +765,52 @@ const BADGES_DEF=[
   {id:'streak_30',     emoji:'👑',name:'1 Mês!',               desc:'30 dias — dedicação total!',    check:s=>s.streak>=30},
   {id:'pron_10',       emoji:'🗣️',name:'Treino do R',          desc:'Praticou 10 palavras com R',    check:s=>Object.keys(s.pronPracticed||{}).length>=10},
   {id:'pron_all',      emoji:'🎤',name:'Mestre do R',          desc:'Praticou todas as palavras R!', check:s=>Object.keys(s.pronPracticed||{}).length>=23},
-  {id:'quiz_goal',     emoji:'💎',name:'Meta do Dia',          desc:'Completou todas as metas hoje!',check:s=>(s.quizToday||0)>=(s.quizGoal||3)&&(s.exToday||0)>=1&&(s.challengeDays||[]).includes(getTodayChallengeDayNum())},
-  {id:'diary_5',       emoji:'🎬',name:'Cinéfila',             desc:'5 entradas no diário',          check:s=>(s.diary||[]).length>=5},
+  {id:'quiz_goal',     emoji:'💎',name:'Meta do Dia',          desc:'Completou todas as metas hoje!',check:s=>(s.quizToday||0)>=(s.quizGoal||3)&&(s.exToday||0)>=1},
   {id:'exercises_5',   emoji:'✍️',name:'Praticante',           desc:'5 exercícios completados',      check:s=>(s.exDone||0)>=5},
+  {id:'exercises_20',  emoji:'💪',name:'Dedicada!',            desc:'20 exercícios completados',     check:s=>(s.exDone||0)>=20},
+  {id:'diary_5',       emoji:'📔',name:'Diário',               desc:'5 entradas no diário',          check:s=>(s.diary||[]).length>=5},
   {id:'pronouns',      emoji:'🧩',name:'Pronomes',             desc:'Explorou os pronomes',          check:s=>s.visitedPronouns||false},
-  {id:'wedding_quiz',  emoji:'💕',name:'Nossa História',       desc:'Completou o quiz do casal',     check:s=>s.weddingQuizDone||false},
-  {id:'wedding_7days', emoji:'💍',name:'Recém-casada!',        desc:'Completou o desafio dos 7 dias!',check:s=>(s.challengeDays||[]).length>=7},
   {id:'days_10',       emoji:'🌟',name:'10 Dias Acessados',    desc:'Acessou o app 10 dias no total',check:s=>Object.keys(s.weekDays||{}).length>=10},
   {id:'days_30',       emoji:'🌺',name:'30 Dias Acessados',    desc:'Acessou o app 30 dias no total',check:s=>Object.keys(s.weekDays||{}).length>=30},
 ];
 
-const COUPLE_PHRASES=[
-  {en:"I love you so much.",         pt:"Eu te amo muito.",              tip:"Use todo dia! 💕"},
-  {en:"You are my favorite person.", pt:"Você é minha pessoa favorita.", tip:"Frase linda para o Vinicius 🥰"},
-  {en:"Thank you for everything.",   pt:"Obrigada por tudo.",            tip:"'Everything' = tudo"},
-  {en:"You make me so happy.",       pt:"Você me faz muito feliz.",      tip:"'Make' = fazer"},
-  {en:"I miss you.",                 pt:"Sinto sua falta.",              tip:"Uma das frases mais usadas em inglês"},
-  {en:"Let's cook dinner together.", pt:"Vamos cozinhar o jantar juntos.",tip:"'Together' = juntos"},
-  {en:"Good morning, my love.",      pt:"Bom dia, meu amor.",            tip:"Perfeita para começar o dia 🌅"},
-  {en:"I am proud of you.",          pt:"Tenho orgulho de você.",        tip:"'Proud' = orgulhoso/a"},
-  {en:"We are a great team.",        pt:"Somos uma ótima equipe.",       tip:"'Team' = equipe"},
-  {en:"You are the best husband.",   pt:"Você é o melhor marido.",       tip:"'Husband' = marido 💍"},
-  {en:"I can't wait to see you.",    pt:"Mal posso esperar para te ver.",tip:"'Can't wait' = mal posso esperar"},
-  {en:"Our family is everything.",   pt:"Nossa família é tudo.",         tip:"Family = família 👨‍👩‍👦"},
-  {en:"One more kiss, please!",      pt:"Mais um beijo, por favor!",     tip:"'Kiss' = beijo 😘"},
-  {en:"I believe in us.",            pt:"Eu acredito em nós.",           tip:"'Believe' = acreditar"},
-  {en:"Every day with you is special.", pt:"Todo dia com você é especial.", tip:"'Every day' = todo dia"},
-];
-
-const WEDDING_QUIZ=[
-  {q:"Where did Vinicius and Andressa meet for the first time?",
-   qPt:"Onde Vinicius e Andressa se conheceram pela primeira vez?",
-   opts:["In Amsterdam","At Viracopos Airport in Campinas, Brazil","In Hoek, Zeeland","Online"],
-   correct:"At Viracopos Airport in Campinas, Brazil",
-   fun:"Foi um encontro de cinema — ele foi te buscar no aeroporto! ✈️💕"},
-  {q:"In which city do Vinicius, Andressa and Miguel live in the Netherlands?",
-   qPt:"Em qual cidade Vinicius, Andressa e Miguel moram na Holanda?",
-   opts:["Amsterdam","Rotterdam","Hoek, Zeeland","Den Haag"],
-   correct:"Hoek, Zeeland",
-   fun:"Hoek é uma cidadezinha linda em Zeeland! 🌊🏡"},
-  {q:"What is the name of their son?",
-   qPt:"Qual é o nome do filho deles?",
-   opts:["Martin","Lucas","Miguel","Gabriel"],
-   correct:"Miguel",
-   fun:"O nosso Miguelzinho! 👶💛"},
-  {q:"When did Vinicius pick up Andressa at the airport?",
-   qPt:"Quando Vinicius foi buscar Andressa no aeroporto?",
-   opts:["January 15, 2025","January 27, 2025","March 30, 2025","December 1, 2024"],
-   correct:"January 27, 2025",
-   fun:"O começo de tudo! 🥹"},
-  {q:"Which musician does Vinicius love that Andressa also knows?",
-   qPt:"Qual músico o Vinicius ama e a Andressa também conhece?",
-   opts:["The Beatles","Elvis Presley","Bob Marley","Michael Jackson"],
-   correct:"Bob Marley",
-   fun:"'One love, one heart...' 🎵🌿"},
-  {q:"What is today's special date?",
-   qPt:"O que é a data especial de hoje?",
-   opts:["Their first date","Miguel's birthday","Their wedding day","Vinicius's birthday"],
-   correct:"Their wedding day",
-   fun:"Hoje é o dia mais especial! Parabéns, casal! 💍🥂"},
-  {q:"How do you say 'marido' in English?",
-   qPt:"Como se diz 'marido' em inglês?",
-   opts:["Brother","Friend","Husband","Father"],
-   correct:"Husband",
-   fun:"And Vinicius is the best husband! 💕"},
-  {q:"How do you say 'I love you' in English?",
-   qPt:"Como se diz 'Eu te amo' em inglês?",
-   opts:["I miss you","I love you","I need you","I like you"],
-   correct:"I love you",
-   fun:"As três palavras mais importantes! ❤️"},
-];
-
-const CHALLENGE_7DAYS=[
-  {day:1, title:"Diga 'I love you' de 3 formas",       desc:"Aprenda: 'I love you', 'You are my everything', 'I adore you'. Diga para o Vinicius hoje! 💕",      en:"I love you, I adore you, you are my everything"},
-  {day:2, title:"Bob Marley em inglês",                desc:"Ouça 'Three Little Birds' do Bob Marley e encontre 3 palavras em inglês que você reconhece. Escreva no diário! 🎵", en:"Three little birds"},
-  {day:3, title:"Escreva uma frase para o Vinicius",   desc:"Em inglês! Pode ser curta: 'You are the best'. Mostre para ele e peça para ele avaliar sua pronúncia. 😄", en:"You are the best"},
-  {day:4, title:"Aprenda sobre a nossa cidade",        desc:"Como se diz 'We live in Hoek, in the Netherlands'? Pratique dizendo em voz alta 5 vezes! 🏡🌊",           en:"We live in Hoek in the Netherlands"},
-  {day:5, title:"Família em inglês",                   desc:"Aprenda: husband, wife, son, baby, family. Use numa frase: 'My family is my everything!' 👨‍👩‍👦",             en:"My family is my everything"},
-  {day:6, title:"Quiz da nossa história",              desc:"Vá na aba 'Nossa História' e complete o quiz sobre nós dois. Veja quantas você acerta! ❓💕",              en:"Our love story"},
-  {day:7, title:"Carta para o futuro",                 desc:"Escreva 3 frases em inglês sobre o que você deseja para a nossa família. Ex: 'I want us to be happy.' 🌸", en:"I want us to be happy together"},
-];
 
 
-// Fill-in exercises
-const FILL_EXERCISES=[
-  {sentence:['I','am','_____','.'],      blank:'happy',      options:['happy','bread','doctor','run'],  pt:'Eu estou feliz.',     speak:'I am happy'},
-  {sentence:['She','is','a','_____','.'],blank:'nurse',      options:['nurse','sorry','milk','left'],   pt:'Ela é uma enfermeira.',speak:'She is a nurse'},
-  {sentence:['We','need','_____','.'],   blank:'water',      options:['water','tired','ready','bus'],   pt:'Nós precisamos de água.',speak:'We need water'},
-  {sentence:['He','is','very','_____','.'],blank:'tired',    options:['tired','train','egg','run'],     pt:'Ele está muito cansado.',speak:'He is very tired'},
-  {sentence:['I','want','_____','.'],    blank:'bread',      options:['bread','sorry','room','she'],    pt:'Eu quero pão.',        speak:'I want bread'},
-  {sentence:['_____','is','sleeping','.'],blank:'He',        options:['He','bread','very','lost'],      pt:'Ele está dormindo.',   speak:'He is sleeping'},
-  {sentence:['The','train','is','_____','.'],blank:'late',   options:['late','hungry','we','milk'],     pt:'O trem está atrasado.',speak:'The train is late'},
-  {sentence:['I','am','_____','.'],      blank:'hungry',     options:['hungry','ticket','she','red'],   pt:'Estou com fome.',      speak:'I am hungry'},
-  {sentence:['Where','is','the','_____','?'],blank:'doctor', options:['doctor','happy','we','room'],    pt:'Onde está o médico?',  speak:'Where is the doctor'},
-  {sentence:['She','has','a','_____','.'],blank:'fever',     options:['fever','left','we','really'],    pt:'Ela está com febre.',  speak:'She has a fever'},
-  {sentence:['_____','are','learning','.'],blank:'We',       options:['We','bread','sorry','tired'],    pt:'Nós estamos aprendendo.',speak:'We are learning'},
-  {sentence:['I','need','a','_____','.'],blank:'bag',        options:['bag','happy','she','run'],       pt:'Preciso de uma sacola.',speak:'I need a bag'},
-];
-
-// Listen exercises
-const LISTEN_EXERCISES=[
-  {speak:'I am happy',    sentence:['I','am','_____','.'],    blank:'happy',   options:['happy','tired','sad','cold'],       pt:'Eu estou feliz.'},
-  {speak:'She needs help',sentence:['She','needs','_____','.'],blank:'help',   options:['help','run','bread','left'],        pt:'Ela precisa de ajuda.'},
-  {speak:'We are hungry', sentence:['We','are','_____','.'],  blank:'hungry',  options:['hungry','sorry','train','red'],     pt:'Estamos com fome.'},
-  {speak:'He is tired',   sentence:['He','is','_____','.'],   blank:'tired',   options:['tired','milk','happy','right'],     pt:'Ele está cansado.'},
-  {speak:'I need water',  sentence:['I','need','_____','.'],  blank:'water',   options:['water','eggs','sorry','late'],      pt:'Preciso de água.'},
-  {speak:'She is ready',  sentence:['She','is','_____','.'],  blank:'ready',   options:['ready','bus','hungry','we'],        pt:'Ela está pronta.'},
-  {speak:'I am cold',     sentence:['I','am','_____','.'],    blank:'cold',    options:['cold','bread','doctor','run'],      pt:'Estou com frio.'},
-  {speak:'They are lost', sentence:['They','are','_____','.'],blank:'lost',    options:['lost','milk','happy','ticket'],     pt:'Eles estão perdidos.'},
+// ══ UNIFIED EXERCISE POOL ══════════════════════════════
+// Each exercise: sentence (array), blank (answer), options (3 wrong), pt (translation), speak (full sentence)
+// 'listen' flag = true means it will auto-play audio before answering
+const ALL_EXERCISES=[
+  // --- FILL / LISTEN combined pool ---
+  {sentence:['I','am','_____','.'],        blank:'happy',       wrong:['bread','doctor','run'],       pt:'Eu estou feliz.',           speak:'I am happy',            listen:false},
+  {sentence:['She','is','a','_____','.'],  blank:'nurse',       wrong:['sorry','milk','left'],        pt:'Ela é uma enfermeira.',     speak:'She is a nurse',        listen:true},
+  {sentence:['We','need','_____','.'],     blank:'water',       wrong:['tired','ready','bus'],        pt:'Nós precisamos de água.',   speak:'We need water',         listen:false},
+  {sentence:['He','is','very','_____','.'],blank:'tired',       wrong:['train','egg','run'],          pt:'Ele está muito cansado.',   speak:'He is very tired',      listen:true},
+  {sentence:['I','want','_____','.'],      blank:'bread',       wrong:['sorry','room','she'],         pt:'Eu quero pão.',             speak:'I want bread',          listen:false},
+  {sentence:['_____','is','sleeping','.'], blank:'He',          wrong:['bread','very','lost'],        pt:'Ele está dormindo.',        speak:'He is sleeping',        listen:true},
+  {sentence:['The','train','is','_____','.'],blank:'late',      wrong:['hungry','we','milk'],         pt:'O trem está atrasado.',     speak:'The train is late',     listen:false},
+  {sentence:['I','am','_____','.'],        blank:'hungry',      wrong:['ticket','she','red'],         pt:'Estou com fome.',           speak:'I am hungry',           listen:true},
+  {sentence:['Where','is','the','_____','?'],blank:'doctor',    wrong:['happy','we','room'],          pt:'Onde está o médico?',       speak:'Where is the doctor',   listen:false},
+  {sentence:['She','has','a','_____','.'], blank:'fever',       wrong:['left','we','really'],         pt:'Ela está com febre.',       speak:'She has a fever',       listen:true},
+  {sentence:['_____','are','learning','.'],blank:'We',          wrong:['bread','sorry','tired'],      pt:'Nós estamos aprendendo.',   speak:'We are learning',       listen:false},
+  {sentence:['I','need','a','_____','.'],  blank:'bag',         wrong:['happy','she','run'],          pt:'Preciso de uma sacola.',    speak:'I need a bag',          listen:true},
+  {sentence:['She','needs','_____','.'],   blank:'help',        wrong:['run','bread','left'],         pt:'Ela precisa de ajuda.',     speak:'She needs help',        listen:false},
+  {sentence:['We','are','_____','.'],      blank:'hungry',      wrong:['sorry','train','red'],        pt:'Estamos com fome.',         speak:'We are hungry',         listen:true},
+  {sentence:['He','is','_____','.'],       blank:'tired',       wrong:['milk','happy','right'],       pt:'Ele está cansado.',         speak:'He is tired',           listen:false},
+  {sentence:['I','need','_____','.'],      blank:'water',       wrong:['eggs','sorry','late'],        pt:'Preciso de água.',          speak:'I need water',          listen:true},
+  {sentence:['She','is','_____','.'],      blank:'ready',       wrong:['bus','hungry','we'],          pt:'Ela está pronta.',          speak:'She is ready',          listen:false},
+  {sentence:['I','am','_____','.'],        blank:'cold',        wrong:['bread','doctor','run'],       pt:'Estou com frio.',           speak:'I am cold',             listen:true},
+  {sentence:['They','are','_____','.'],    blank:'lost',        wrong:['milk','happy','ticket'],      pt:'Eles estão perdidos.',      speak:'They are lost',         listen:false},
+  {sentence:['I','have','a','_____','.'],  blank:'fever',       wrong:['bus','left','doctor'],        pt:'Estou com febre.',          speak:'I have a fever',        listen:true},
+  {sentence:['He','is','_____','.'],       blank:'happy',       wrong:['bread','sorry','ticket'],     pt:'Ele está feliz.',           speak:'He is happy',           listen:false},
+  {sentence:['I','feel','_____','.'],      blank:'good',        wrong:['train','lost','tired'],       pt:'Eu me sinto bem.',          speak:'I feel good',           listen:true},
+  {sentence:['She','is','my','_____','.'], blank:'sister',      wrong:['bread','left','happy'],       pt:'Ela é minha irmã.',         speak:'She is my sister',      listen:false},
+  {sentence:['We','are','at','the','_____','.'],blank:'hospital',wrong:['bus','ticket','bread'],     pt:'Estamos no hospital.',      speak:'We are at the hospital',listen:true},
+  {sentence:['The','baby','is','_____','.'],blank:'sleeping',   wrong:['train','bread','ticket'],     pt:'O bebê está dormindo.',     speak:'The baby is sleeping',  listen:false},
+  {sentence:['I','want','to','go','_____','.'],blank:'home',    wrong:['milk','sorry','late'],        pt:'Quero ir para casa.',       speak:'I want to go home',     listen:true},
+  {sentence:['_____','is','very','cold','.'],blank:'It',        wrong:['She','bread','ready'],        pt:'Está muito frio.',          speak:'It is very cold',       listen:false},
+  {sentence:['He','needs','a','_____','.'],blank:'doctor',      wrong:['happy','bag','train'],        pt:'Ele precisa de um médico.', speak:'He needs a doctor',     listen:true},
+  {sentence:['I','am','very','_____','.'], blank:'excited',     wrong:['bread','ticket','bus'],       pt:'Estou muito animada.',      speak:'I am very excited',     listen:false},
+  {sentence:['Can','you','help','_____','?'],blank:'me',        wrong:['bread','she','train'],        pt:'Você pode me ajudar?',      speak:'Can you help me',       listen:true},
 ];
 
 // ══ STATE ══════════════════════════════════════════════
@@ -916,9 +833,6 @@ let state={
   weekDays:        load('ae_weekDays',{}),
   exDone:          load('ae_exDone',0),
   visitedPronouns: load('ae_visitedPronouns',false),
-  challengeDays:   load('ae_challengeDays',[]),
-  weddingQuizDone: load('ae_weddingQuizDone',false),
-  weddingQuizIdx:  load('ae_weddingQuizIdx',0),
   goalDays:        load('ae_goalDays',{}),
 };
 
@@ -964,10 +878,9 @@ function init(){
   renderDailyPhrase();
   renderHome();
   renderVocab();
-  renderWedding();
   renderMiguel();
   renderPron();
-  renderExercises('mixed');
+  renderExercises();
   startQuiz();
   updateStats();
 }
@@ -987,142 +900,6 @@ function showSection(id,btn){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('section-'+id).classList.add('active');
   btn.classList.add('active');
-}
-
-// ══ WEDDING ════════════════════════════════════════════
-function renderWedding(){
-  renderCouplePhrases();
-  renderWeddingQuiz();
-  renderChallenge();
-}
-
-function showWeddingTab(tab,btn){
-  ['phrases','quiz','challenge'].forEach(t=>{
-    document.getElementById('wtab-content-'+t).style.display=t===tab?'block':'none';
-    document.getElementById('wtab-'+t).classList.toggle('active',t===tab);
-  });
-}
-
-function renderCouplePhrases(){
-  const el=document.getElementById('couplePhrasesList');if(!el)return;
-  el.innerHTML=COUPLE_PHRASES.map(p=>`
-    <div class="couple-phrase-card">
-      <div style="display:flex;align-items:flex-start;gap:10px;">
-        <div style="flex:1;">
-          <div class="couple-phrase-en">${p.en}</div>
-          <div class="couple-phrase-pt">${p.pt}</div>
-          <div class="couple-phrase-tip">💡 ${p.tip}</div>
-        </div>
-        <button class="speak-btn" style="background:#fde8f0;color:#c0508a;flex-shrink:0;" onclick="speakText('${p.en.replace(/'/g,"\\'")}',this)">🔊</button>
-      </div>
-    </div>`).join('');
-}
-
-let weddingQuizAnswered=false;
-
-function renderWeddingQuiz(){
-  const container=document.getElementById('weddingQuizContainer');if(!container)return;
-  if(state.weddingQuizDone){
-    container.innerHTML=`
-      <div class="wedding-quiz-card">
-        <div style="font-size:3rem;margin-bottom:12px;">💕</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;color:#8a3060;margin-bottom:8px;">Parabéns! Quiz concluído!</div>
-        <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:16px;">Você conhece muito bem a nossa história! 🥹</div>
-        <button onclick="resetWeddingQuiz()" style="padding:10px 22px;background:#f7c5d8;color:#8a3060;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;">🔄 Jogar de novo</button>
-      </div>`;
-    return;
-  }
-  const idx=state.weddingQuizIdx||0;
-  if(idx>=WEDDING_QUIZ.length){state.weddingQuizDone=true;save('ae_weddingQuizDone',true);checkBadges();renderWeddingQuiz();return;}
-  const q=WEDDING_QUIZ[idx];
-  container.innerHTML=`
-    <div class="wedding-quiz-card">
-      <div style="font-size:0.72rem;color:#c0508a;font-weight:800;margin-bottom:12px;">❓ Pergunta ${idx+1}/${WEDDING_QUIZ.length}</div>
-      <div class="wedding-quiz-q">${q.q}</div>
-      <div style="font-size:0.8rem;color:var(--text-muted);font-style:italic;margin-bottom:16px;margin-top:-10px;">${q.qPt}</div>
-      <div id="weddingOpts">
-        ${q.opts.map(o=>`<button class="wedding-opt" onclick="answerWeddingQuiz(this,'${o.replace(/'/g,"\\'")}','${q.correct.replace(/'/g,"\\'")}','${q.fun.replace(/'/g,"\\'").replace(/"/g,"&quot;")}')">${o}</button>`).join('')}
-      </div>
-      <div id="weddingFeedback" style="display:none;margin-top:12px;font-size:0.85rem;font-weight:700;line-height:1.4;"></div>
-      <button id="weddingNextBtn" onclick="nextWeddingQuiz()" style="display:none;margin-top:12px;padding:10px 24px;background:#c0508a;color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;">Próxima 💕</button>
-    </div>`;
-  weddingQuizAnswered=false;
-}
-
-function answerWeddingQuiz(btn,selected,correct,fun){
-  if(weddingQuizAnswered)return;
-  weddingQuizAnswered=true;
-  const ok=selected===correct;
-  document.querySelectorAll('.wedding-opt').forEach(b=>{b.onclick=null;if(b.textContent.trim()===correct)b.classList.add('correct');});
-  if(!ok)btn.classList.add('wrong');
-  const fb=document.getElementById('weddingFeedback');
-  fb.innerHTML=(ok?'✅ Correto! ':'❌ Era: <strong>'+correct+'</strong>. ')+'<em>'+fun+'</em>';
-  fb.style.color=ok?'var(--green)':'#c0392b';fb.style.display='block';
-  document.getElementById('weddingNextBtn').style.display='inline-block';
-}
-
-function nextWeddingQuiz(){
-  state.weddingQuizIdx=(state.weddingQuizIdx||0)+1;
-  save('ae_weddingQuizIdx',state.weddingQuizIdx);
-  renderWeddingQuiz();
-}
-
-function resetWeddingQuiz(){
-  state.weddingQuizDone=false;state.weddingQuizIdx=0;
-  save('ae_weddingQuizDone',false);save('ae_weddingQuizIdx',0);
-  renderWeddingQuiz();
-}
-
-function getTodayChallengeDayNum(){
-  const weddingDate=new Date('2026-03-30');
-  const today=new Date();today.setHours(0,0,0,0);weddingDate.setHours(0,0,0,0);
-  const diff=Math.floor((today-weddingDate)/(1000*60*60*24));
-  return diff>=0&&diff<7?diff+1:-1;
-}
-
-function renderChallenge(){
-  const container=document.getElementById('challengeDaysList');if(!container)return;
-  const today=new Date();today.setHours(0,0,0,0);
-  const weddingDate=new Date('2026-03-30');weddingDate.setHours(0,0,0,0);
-  const doneDays=state.challengeDays||[];
-  const pct=Math.min(100,Math.round(doneDays.length/7*100));
-  const pb=document.getElementById('challengeProgressBar');if(pb)pb.style.width=pct+'%';
-  const dc=document.getElementById('challengeDoneCount');if(dc)dc.textContent=doneDays.length;
-
-  container.innerHTML=CHALLENGE_7DAYS.map(d=>{
-    const dayDate=new Date(weddingDate);dayDate.setDate(dayDate.getDate()+d.day-1);
-    const isPast=today>=dayDate;
-    const isDone=doneDays.includes(d.day);
-    const isToday=today.getTime()===dayDate.getTime();
-    const dateStr=dayDate.toLocaleDateString('pt-BR',{day:'numeric',month:'short'});
-    return `<div class="challenge-day ${isDone?'done':''} ${!isPast&&!isToday?'locked':''}">
-      <div class="challenge-day-num">${isDone?'✓':d.day}</div>
-      <div class="challenge-day-body">
-        <div class="challenge-day-title">${isToday?'⭐ Hoje! ':''}<strong>Dia ${d.day}</strong> — ${d.title}</div>
-        <div style="font-size:0.68rem;color:var(--text-muted);margin-bottom:3px;">${dateStr}</div>
-        <div class="challenge-day-desc">${d.desc}</div>
-        ${(isPast||isToday)?`
-          <div style="display:flex;gap:8px;align-items:center;margin-top:6px;">
-            <button class="challenge-day-btn ${isDone?'done':''}" onclick="toggleChallengeDay(${d.day},this)">
-              ${isDone?'✅ Feita!':'☐ Marcar como feita'}
-            </button>
-            <button class="speak-btn" style="width:28px;height:28px;font-size:0.85rem;" onclick="speakText('${d.en.replace(/'/g,"\\'")}',this)">🔊</button>
-          </div>`:
-          `<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">🔒 Disponível em ${dateStr}</div>`}
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function toggleChallengeDay(day,btn){
-  let days=state.challengeDays||[];
-  if(days.includes(day))days=days.filter(d=>d!==day);
-  else days.push(day);
-  state.challengeDays=days;save('ae_challengeDays',days);
-  const isDone=days.includes(day);
-  btn.classList.toggle('done',isDone);btn.textContent=isDone?'✅ Feita!':'☐ Marcar como feita';
-  renderChallenge();updateStats();checkBadges();
-  if(isDone)showToast('💍 Desafio do dia concluído! Incrível!');
 }
 
 // ══ HOME ═══════════════════════════════════════════════
@@ -1173,13 +950,10 @@ function renderDailyGoals(){
   if(!container)return;
   const quizDone=state.quizToday||0; const quizGoal=state.quizGoal||3;
   const exDoneToday=state.exToday||0; const exGoal=1;
-  const challengeGoal=1;
-  const challengeDone=state.challengeDays&&state.challengeDays.includes(getTodayChallengeDayNum())?1:0;
 
   const goals=[
     {icon:'🃏',label:`Quiz`,done:quizDone,goal:quizGoal,color:'var(--accent)'},
     {icon:'✍️',label:`Exercício`,done:exDoneToday,goal:exGoal,color:'var(--purple)'},
-    {icon:'💍',label:`Desafio do casal`,done:challengeDone,goal:challengeGoal,color:'#c0508a'},
   ];
 
   const allComplete=goals.every(g=>g.done>=g.goal);
@@ -1366,10 +1140,11 @@ function setQuizType(type,btn){
 }
 
 function buildQuizPool(){
+  const customWords=getCustomExQuizWords();
   if(quizType==='pronouns'){
     return PRONOUNS_DATA.map(p=>({en:p.en,pt:p.pt,isPronoun:true,allPts:PRONOUNS_DATA.map(x=>x.pt)}));
   }
-  const all=getAllWords();
+  const all=[...getAllWords(),...customWords];
   const unmastered=all.filter(w=>!state.mastered[w.en]);
   const base=unmastered.length>=6?unmastered:all;
   if(quizType==='mixed'){
@@ -1449,30 +1224,31 @@ function answerQuiz(btn,selected,correct){
   res.textContent=ok?'✅ Correto! Muito bem!':`❌ A resposta certa é: ${correct}`;
   res.style.color=ok?'var(--green)':'#c0392b';
   res.classList.add('show');
-  document.getElementById('quizNextBtn').classList.add('show');
   quizIndex++;
+  if(ok&&quizType==='mixed'){
+    // Auto-advance on correct in mixed mode
+    setTimeout(()=>loadQuizQuestion(),800);
+  } else {
+    document.getElementById('quizNextBtn').classList.add('show');
+  }
 }
 function nextQuiz(){loadQuizQuestion();}
 
 // ══ EXERCISES ══════════════════════════════════════════
-let exType='mixed',exIndex=0,exPool=[],exAnswered=false;
+let exIndex=0,exPool=[],exAnswered=false;
 
-function buildMixedPool(){
-  // Interleave fill and listen exercises
-  const fills=shuffle([...FILL_EXERCISES]).map(e=>({...e,exKind:'fill'}));
-  const listens=shuffle([...LISTEN_EXERCISES]).map(e=>({...e,exKind:'listen'}));
-  const mixed=[];
-  const max=Math.max(fills.length,listens.length);
-  for(let i=0;i<max;i++){
-    if(i<fills.length)mixed.push(fills[i]);
-    if(i<listens.length)mixed.push(listens[i]);
-  }
-  return mixed;
+function getCustomExercises(){
+  try{return JSON.parse(localStorage.getItem('ae_custom_ex')||'[]');}catch{return[];}
 }
 
-function renderExercises(type){
-  exType='mixed';
-  exPool=buildMixedPool();
+function buildExPool(){
+  const custom=getCustomExercises();
+  const base=shuffle([...ALL_EXERCISES,...custom]);
+  return base;
+}
+
+function renderExercises(){
+  exPool=buildExPool();
   exIndex=0;
   renderCurrentExercise();
 }
@@ -1487,59 +1263,64 @@ function renderCurrentExercise(){
         <div style="font-size:3rem;margin-bottom:12px;">🎉</div>
         <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--primary-dark);margin-bottom:8px;">Exercícios concluídos!</div>
         <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:20px;">Você completou todos os exercícios desta rodada. Incrível! 🌸</div>
-        <button onclick="renderExercises(exType)" style="padding:12px 28px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">🔄 Repetir</button>
+        <button onclick="renderExercises()" style="padding:12px 28px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">🔄 Novo Lote</button>
       </div>`;
     return;
   }
   const ex=exPool[exIndex];
   exAnswered=false;
 
-  // Build sentence with blank
+  // Build sentence HTML with blank
   const sentenceHTML=ex.sentence.map(w=>
     w==='_____'?`<span class="ex-blank" id="exBlank">_____</span>`:
     w==='.'?'.':w==='?'?'?':` ${w}`
   ).join('');
 
-  const dotsHTML=exPool.map((_,i)=>`<div class="ex-dot ${i<exIndex?'done':''} ${i===exIndex?'current':''}"></div>`).join('');
+  const dotsHTML=exPool.slice(0,Math.min(exPool.length,15)).map((_,i)=>
+    `<div class="ex-dot ${i<exIndex?'done':''} ${i===exIndex?'current':''}"></div>`
+  ).join('');
 
-  const currentKind=ex.exKind||exType;
-  if(currentKind==='listen'){
-    container.innerHTML=`
-      <div class="ex-listen-card">
-        <div class="card-title" style="color:var(--purple);">🎧 Ouça e complete a frase</div>
-        <button class="ex-listen-btn" id="listenBtn" onclick="speakText('${ex.speak}',this)">🔊 Ouvir a frase</button>
+  // Build shuffled options (correct answer goes in random position)
+  const options=shuffle([ex.blank,...ex.wrong.slice(0,3)]);
+
+  const isListen=ex.listen;
+  const cardBg=isListen
+    ?'background:linear-gradient(135deg,var(--purple-light),white);border:2px solid var(--purple-light);'
+    :'';
+  const typeLabel=isListen
+    ?'<div class="card-title" style="color:var(--purple);">🎧 Ouça e complete a frase</div>'
+    :'<div class="card-title" style="color:var(--primary-dark);">✍️ Complete a frase</div>';
+  const listenHint=isListen
+    ?`<div style="text-align:center;margin-bottom:14px;">
+        <button class="ex-listen-btn" id="listenBtn" onclick="speakText('${ex.speak.replace(/'/g,"\\'")}',this)">🔊 Ouvir a frase</button>
         <div class="ex-listen-hint">Ouça com atenção e escolha a palavra que está faltando!</div>
-        <div class="ex-sentence">${sentenceHTML}</div>
-        <div class="ex-feedback" id="exFeedback"></div>
-        <div class="ex-options" id="exOptions">
-          ${ex.options.map(o=>`<button class="ex-opt" onclick="answerEx('${o.replace(/'/g,"\\'")}','${ex.blank.replace(/'/g,"\\'")}',this)">${o}</button>`).join('')}
-        </div>
-        <div style="text-align:center;margin-top:12px;">
-          <button id="exNextBtn" onclick="nextExercise()" style="display:none;padding:11px 26px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">Próximo ➜</button>
-        </div>
+      </div>`
+    :`<div style="text-align:right;margin-bottom:8px;">
+        <button class="speak-btn" onclick="speakText('${ex.speak.replace(/'/g,"\\'")}',this)" style="width:34px;height:34px;font-size:1rem;">🔊</button>
+      </div>`;
+
+  container.innerHTML=`
+    <div class="ex-card" style="${cardBg}">
+      ${typeLabel}
+      <div class="ex-progress" style="margin-top:4px;">
+        <div class="ex-progress-label">${exIndex+1} de ${Math.min(exPool.length,15)}</div>
+        <div class="ex-dots">${dotsHTML}</div>
       </div>
-      <div class="card" style="text-align:center;padding:14px;">
-        <div class="ex-dots" style="justify-content:center;">${dotsHTML}</div>
-        <div style="font-size:0.72rem;color:var(--text-muted);margin-top:6px;">${exIndex+1} de ${exPool.length}</div>
-      </div>`;
-  } else {
-    container.innerHTML=`
-      <div class="ex-card">
-        <div class="ex-progress">
-          <div class="ex-progress-label">✍️ Complete a frase</div>
-          <div class="ex-dots">${dotsHTML}</div>
-        </div>
-        <div style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-bottom:8px;">Tradução: <em>${ex.pt}</em></div>
-        <div class="ex-sentence">${sentenceHTML}</div>
-        <div class="ex-feedback" id="exFeedback"></div>
-        <div class="ex-options" id="exOptions">
-          ${ex.options.map(o=>`<button class="ex-opt" onclick="answerEx('${o.replace(/'/g,"\\'")}','${ex.blank.replace(/'/g,"\\'")}',this)">${o}</button>`).join('')}
-        </div>
-        <div style="text-align:center;margin-top:12px;">
-          <button class="speak-btn" onclick="speakText('${ex.speak}',this)" style="width:38px;height:38px;font-size:1.1rem;display:inline-flex;margin-right:10px;">🔊</button>
-          <button id="exNextBtn" onclick="nextExercise()" style="display:none;padding:11px 26px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">Próximo ➜</button>
-        </div>
-      </div>`;
+      <div style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-bottom:8px;">Tradução: <em>${ex.pt}</em></div>
+      ${listenHint}
+      <div class="ex-sentence">${sentenceHTML}</div>
+      <div class="ex-feedback" id="exFeedback"></div>
+      <div class="ex-options" id="exOptions">
+        ${options.map(o=>`<button class="ex-opt" onclick="answerEx('${o.replace(/'/g,"\\'")}','${ex.blank.replace(/'/g,"\\'")}',this)">${o}</button>`).join('')}
+      </div>
+      <div style="text-align:center;margin-top:12px;">
+        <button id="exNextBtn" onclick="nextExercise()" style="display:none;padding:11px 26px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">Próximo ➜</button>
+      </div>
+    </div>`;
+
+  // Auto-play audio for listen exercises
+  if(isListen){
+    setTimeout(()=>speakText(ex.speak,document.getElementById('listenBtn')),600);
   }
 }
 
@@ -1556,20 +1337,26 @@ function answerEx(selected,correct,btn){
   if(!ok)btn.classList.add('wrong-opt');
   const fb=document.getElementById('exFeedback');
   if(fb){fb.textContent=ok?'✅ Correto! Muito bem!':'❌ A resposta certa é: '+correct;fb.style.color=ok?'var(--green)':'#c0392b';fb.classList.add('show');}
-  const nb=document.getElementById('exNextBtn');
-  if(nb)nb.style.display='inline-block';
   if(ok)speakText(correct,null);
+
+  if(ok){
+    // On correct: track progress then auto-advance after short delay
+    if(exIndex===0){
+      state.exToday=(state.exToday||0)+1;
+      save('ae_exToday',state.exToday);
+      renderDailyGoals();checkBadges();
+      if(state.exToday===1)showToast('✍️ Exercício do dia feito! 🌸');
+    }
+    setTimeout(()=>nextExercise(),900);
+  } else {
+    // On wrong: show Next button manually
+    const nb=document.getElementById('exNextBtn');
+    if(nb)nb.style.display='inline-block';
+  }
 }
 
 function nextExercise(){
   exIndex++;
-  if(exIndex===1){
-    // First exercise completed — count toward daily goal
-    state.exToday=(state.exToday||0)+1;
-    save('ae_exToday',state.exToday);
-    renderDailyGoals();checkBadges();
-    if(state.exToday===1)showToast('✍️ Exercício do dia feito! 🌸');
-  }
   renderCurrentExercise();
 }
 
@@ -1653,6 +1440,156 @@ function updateStats(){
 
 // ══ TOAST ══════════════════════════════════════════════
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
+
+// ══ ADMIN ══════════════════════════════════════════════
+const ADMIN_PW='vini2024';
+let adminLoggedIn=false;
+
+function showAdminLogin(){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('section-admin').classList.add('active');
+  if(adminLoggedIn){
+    document.getElementById('adminLoginPanel').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+    renderAdminStats();
+    renderAdminExList();
+    renderAdminQuizList();
+  } else {
+    document.getElementById('adminLoginPanel').style.display='block';
+    document.getElementById('adminPanel').style.display='none';
+  }
+}
+
+function checkAdminPw(){
+  const val=document.getElementById('adminPwInput').value;
+  if(val===ADMIN_PW){
+    adminLoggedIn=true;
+    document.getElementById('adminLoginPanel').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+    renderAdminStats();
+    renderAdminExList();
+    renderAdminQuizList();
+  } else {
+    document.getElementById('adminPwError').style.display='block';
+    document.getElementById('adminPwInput').value='';
+  }
+}
+
+function adminLogout(){
+  adminLoggedIn=false;
+  document.getElementById('adminLoginPanel').style.display='block';
+  document.getElementById('adminPanel').style.display='none';
+  document.getElementById('adminPwInput').value='';
+  document.getElementById('adminPwError').style.display='none';
+}
+
+function renderAdminStats(){
+  const el=document.getElementById('adminStats');if(!el)return;
+  const mc=Object.keys(state.mastered||{}).length;
+  const pron=Object.keys(state.pronPracticed||{}).length;
+  const diary=(state.diary||[]).length;
+  const rows=[
+    ['🔥 Streak atual',state.streak+' dias'],
+    ['⭐ Palavras dominadas',mc+' palavras'],
+    ['🃏 Acertos no quiz total',state.quizCorrect],
+    ['🃏 Quiz hoje',`${state.quizToday||0}/${state.quizGoal||3}`],
+    ['✍️ Exercícios hoje',(state.exToday||0)],
+    ['✍️ Exercícios totais',(state.exDone||0)],
+    ['🗣️ Pronúncia R praticada',pron+' palavras'],
+    ['📔 Entradas no diário',diary],
+    ['📅 Dias no app',Object.keys(state.weekDays||{}).length],
+    ['🏆 Dias meta completa',Object.keys(state.goalDays||{}).length],
+  ];
+  el.innerHTML=rows.map(([label,val])=>`
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem;">
+      <span style="color:var(--text-soft);font-weight:600;">${label}</span>
+      <span style="font-weight:900;color:var(--primary-dark);">${val}</span>
+    </div>`).join('')+`
+  <div style="margin-top:14px;">
+    <button onclick="if(confirm('Resetar TODO o progresso?')){localStorage.clear();location.reload();}" style="padding:8px 18px;background:#ffd5d5;color:#c0392b;border:1.5px solid #e86a6a;border-radius:20px;font-family:'Nunito',sans-serif;font-size:0.78rem;font-weight:800;cursor:pointer;">🗑️ Resetar todo progresso</button>
+  </div>`;
+}
+
+function getCustomExQuizWords(){
+  try{return JSON.parse(localStorage.getItem('ae_custom_quiz')||'[]');}catch{return[];}
+}
+
+function adminAddExercise(){
+  const raw=document.getElementById('adminExSentence').value.trim();
+  const blank=document.getElementById('adminExBlank').value.trim();
+  const wrongRaw=document.getElementById('adminExWrong').value.trim();
+  const pt=document.getElementById('adminExPt').value.trim();
+  if(!raw||!blank||!wrongRaw||!pt){showToast('⚠️ Preencha todos os campos!');return;}
+  const sentence=raw.split(/\s+/);
+  const wrong=wrongRaw.split(',').map(s=>s.trim()).filter(Boolean);
+  if(!sentence.includes('_____')){showToast('⚠️ Use _____ para marcar o espaço em branco!');return;}
+  const newEx={sentence,blank,wrong,pt,speak:raw.replace('_____',blank).replace('.','').replace('?','').trim(),listen:false};
+  const list=getCustomExercises();
+  list.push(newEx);
+  localStorage.setItem('ae_custom_ex',JSON.stringify(list));
+  document.getElementById('adminExSentence').value='';
+  document.getElementById('adminExBlank').value='';
+  document.getElementById('adminExWrong').value='';
+  document.getElementById('adminExPt').value='';
+  renderAdminExList();
+  renderExercises();
+  showToast('✅ Exercício adicionado!');
+}
+
+function adminDeleteExercise(idx){
+  const list=getCustomExercises();
+  list.splice(idx,1);
+  localStorage.setItem('ae_custom_ex',JSON.stringify(list));
+  renderAdminExList();
+  renderExercises();
+  showToast('🗑️ Exercício removido');
+}
+
+function renderAdminExList(){
+  const el=document.getElementById('adminExList');if(!el)return;
+  const list=getCustomExercises();
+  if(!list.length){el.innerHTML='<div style="font-size:0.78rem;color:var(--text-muted);">Nenhum exercício personalizado ainda.</div>';return;}
+  el.innerHTML='<div style="font-size:0.75rem;font-weight:800;color:var(--text-muted);margin-bottom:6px;">Exercícios personalizados:</div>'+
+    list.map((ex,i)=>`
+    <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--bg);border-radius:8px;margin-bottom:5px;font-size:0.8rem;">
+      <div style="flex:1;"><strong>${ex.sentence.join(' ')}</strong> → <em>${ex.blank}</em></div>
+      <button onclick="adminDeleteExercise(${i})" style="background:#ffd5d5;color:#c0392b;border:none;border-radius:6px;padding:3px 8px;font-size:0.7rem;font-weight:800;cursor:pointer;">✕</button>
+    </div>`).join('');
+}
+
+function adminAddQuizWord(){
+  const en=document.getElementById('adminQEn').value.trim();
+  const pt=document.getElementById('adminQPt').value.trim();
+  if(!en||!pt){showToast('⚠️ Preencha inglês e português!');return;}
+  const list=getCustomExQuizWords();
+  list.push({en,pt});
+  localStorage.setItem('ae_custom_quiz',JSON.stringify(list));
+  document.getElementById('adminQEn').value='';
+  document.getElementById('adminQPt').value='';
+  renderAdminQuizList();
+  showToast('✅ Palavra adicionada ao quiz!');
+}
+
+function adminDeleteQuizWord(idx){
+  const list=getCustomExQuizWords();
+  list.splice(idx,1);
+  localStorage.setItem('ae_custom_quiz',JSON.stringify(list));
+  renderAdminQuizList();
+  showToast('🗑️ Palavra removida');
+}
+
+function renderAdminQuizList(){
+  const el=document.getElementById('adminQuizList');if(!el)return;
+  const list=getCustomExQuizWords();
+  if(!list.length){el.innerHTML='<div style="font-size:0.78rem;color:var(--text-muted);">Nenhuma palavra personalizada ainda.</div>';return;}
+  el.innerHTML='<div style="font-size:0.75rem;font-weight:800;color:var(--text-muted);margin-bottom:6px;">Palavras personalizadas:</div>'+
+    list.map((w,i)=>`
+    <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--bg);border-radius:8px;margin-bottom:5px;font-size:0.8rem;">
+      <div style="flex:1;"><strong>${w.en}</strong> → ${w.pt}</div>
+      <button onclick="adminDeleteQuizWord(${i})" style="background:#ffd5d5;color:#c0392b;border:none;border-radius:6px;padding:3px 8px;font-size:0.7rem;font-weight:800;cursor:pointer;">✕</button>
+    </div>`).join('');
+}
 
 init();
 </script>
