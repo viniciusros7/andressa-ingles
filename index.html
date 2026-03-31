@@ -768,7 +768,6 @@ const BADGES_DEF=[
   {id:'quiz_goal',     emoji:'💎',name:'Meta do Dia',          desc:'Completou todas as metas hoje!',check:s=>(s.quizToday||0)>=(s.quizGoal||3)&&(s.exToday||0)>=1},
   {id:'exercises_5',   emoji:'✍️',name:'Praticante',           desc:'5 exercícios completados',      check:s=>(s.exDone||0)>=5},
   {id:'exercises_20',  emoji:'💪',name:'Dedicada!',            desc:'20 exercícios completados',     check:s=>(s.exDone||0)>=20},
-  {id:'diary_5',       emoji:'📔',name:'Diário',               desc:'5 entradas no diário',          check:s=>(s.diary||[]).length>=5},
   {id:'pronouns',      emoji:'🧩',name:'Pronomes',             desc:'Explorou os pronomes',          check:s=>s.visitedPronouns||false},
   {id:'days_10',       emoji:'🌟',name:'10 Dias Acessados',    desc:'Acessou o app 10 dias no total',check:s=>Object.keys(s.weekDays||{}).length>=10},
   {id:'days_30',       emoji:'🌺',name:'30 Dias Acessados',    desc:'Acessou o app 30 dias no total',check:s=>Object.keys(s.weekDays||{}).length>=30},
@@ -1243,7 +1242,8 @@ function getCustomExercises(){
 
 function buildExPool(){
   const custom=getCustomExercises();
-  const base=shuffle([...ALL_EXERCISES,...custom]);
+  // Limit to 10 exercises per round, shuffled
+  const base=shuffle([...ALL_EXERCISES,...custom]).slice(0,10);
   return base;
 }
 
@@ -1261,9 +1261,9 @@ function renderCurrentExercise(){
     container.innerHTML=`
       <div class="ex-card" style="text-align:center;padding:30px 20px;">
         <div style="font-size:3rem;margin-bottom:12px;">🎉</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--primary-dark);margin-bottom:8px;">Exercícios concluídos!</div>
-        <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:20px;">Você completou todos os exercícios desta rodada. Incrível! 🌸</div>
-        <button onclick="renderExercises()" style="padding:12px 28px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">🔄 Novo Lote</button>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--primary-dark);margin-bottom:8px;">Rodada completa!</div>
+        <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:20px;">Você completou os 10 exercícios de hoje. Incrível! 🌸</div>
+        <button onclick="renderExercises()" style="padding:12px 28px;background:var(--primary);color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;">🔄 Nova Rodada</button>
       </div>`;
     return;
   }
@@ -1276,38 +1276,32 @@ function renderCurrentExercise(){
     w==='.'?'.':w==='?'?'?':` ${w}`
   ).join('');
 
-  const dotsHTML=exPool.slice(0,Math.min(exPool.length,15)).map((_,i)=>
+  const dotsHTML=exPool.map((_,i)=>
     `<div class="ex-dot ${i<exIndex?'done':''} ${i===exIndex?'current':''}"></div>`
   ).join('');
 
   // Build shuffled options (correct answer goes in random position)
   const options=shuffle([ex.blank,...ex.wrong.slice(0,3)]);
 
-  const isListen=ex.listen;
-  const cardBg=isListen
-    ?'background:linear-gradient(135deg,var(--purple-light),white);border:2px solid var(--purple-light);'
-    :'';
-  const typeLabel=isListen
-    ?'<div class="card-title" style="color:var(--purple);">🎧 Ouça e complete a frase</div>'
-    :'<div class="card-title" style="color:var(--primary-dark);">✍️ Complete a frase</div>';
-  const listenHint=isListen
-    ?`<div style="text-align:center;margin-bottom:14px;">
+  // Unified label and style — always same card type
+  const listenSection=ex.listen
+    ?`<div style="text-align:center;margin-bottom:16px;">
         <button class="ex-listen-btn" id="listenBtn" onclick="speakText('${ex.speak.replace(/'/g,"\\'")}',this)">🔊 Ouvir a frase</button>
-        <div class="ex-listen-hint">Ouça com atenção e escolha a palavra que está faltando!</div>
+        <div class="ex-listen-hint">Ouça e escolha a palavra que está faltando!</div>
       </div>`
-    :`<div style="text-align:right;margin-bottom:8px;">
+    :`<div style="text-align:right;margin-bottom:10px;">
         <button class="speak-btn" onclick="speakText('${ex.speak.replace(/'/g,"\\'")}',this)" style="width:34px;height:34px;font-size:1rem;">🔊</button>
       </div>`;
 
   container.innerHTML=`
-    <div class="ex-card" style="${cardBg}">
-      ${typeLabel}
+    <div class="ex-card">
+      <div class="card-title" style="color:var(--primary-dark);">✍️ Exercício — complete a frase</div>
       <div class="ex-progress" style="margin-top:4px;">
-        <div class="ex-progress-label">${exIndex+1} de ${Math.min(exPool.length,15)}</div>
+        <div class="ex-progress-label">${exIndex+1} de ${exPool.length}</div>
         <div class="ex-dots">${dotsHTML}</div>
       </div>
-      <div style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-bottom:8px;">Tradução: <em>${ex.pt}</em></div>
-      ${listenHint}
+      <div style="font-size:0.95rem;font-weight:700;color:var(--text-soft);text-align:center;margin-bottom:12px;">${ex.pt}</div>
+      ${listenSection}
       <div class="ex-sentence">${sentenceHTML}</div>
       <div class="ex-feedback" id="exFeedback"></div>
       <div class="ex-options" id="exOptions">
@@ -1319,7 +1313,7 @@ function renderCurrentExercise(){
     </div>`;
 
   // Auto-play audio for listen exercises
-  if(isListen){
+  if(ex.listen){
     setTimeout(()=>speakText(ex.speak,document.getElementById('listenBtn')),600);
   }
 }
