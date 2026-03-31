@@ -373,12 +373,9 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 <nav class="nav">
   <button class="nav-btn active" onclick="showSection('home',this)">🏠 Início</button>
   <button class="nav-btn" onclick="showSection('vocab',this)">📚 Vocabulário</button>
-  <button class="nav-btn" onclick="showSection('tasks',this)">✏️ Tarefas</button>
-  <button class="nav-btn" onclick="showSection('pronouns',this)">🧩 Pronomes</button>
   <button class="nav-btn" onclick="showSection('quiz',this)">🃏 Quiz</button>
   <button class="nav-btn" onclick="showSection('exercises',this)">✍️ Exercícios</button>
   <button class="nav-btn" onclick="showSection('wedding',this)">💍 Nosso Amor</button>
-  <button class="nav-btn" onclick="showSection('diary',this)">🎬 Diário</button>
   <button class="nav-btn" onclick="showSection('miguel',this)">👶 Miguel</button>
   <button class="nav-btn" onclick="showSection('pron',this)">🗣️ Pronúncia R</button>
   <button class="nav-btn" onclick="showSection('recs',this)">🎥 Séries</button>
@@ -403,7 +400,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 
     <div class="progress-row">
       <div class="stat-box"><div class="stat-num" id="statMastered">0</div><div class="stat-label">Palavras ⭐</div></div>
-      <div class="stat-box"><div class="stat-num" id="statTasks">0</div><div class="stat-label">Tarefas feitas</div></div>
+      <div class="stat-box"><div class="stat-num" id="statGoalDays">0</div><div class="stat-label">Dias 🎯 completos</div></div>
       <div class="stat-box"><div class="stat-num" id="statQuiz">0</div><div class="stat-label">Quiz acertos</div></div>
     </div>
 
@@ -419,13 +416,14 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
     </div>
 
     <div class="card">
-      <div class="card-title">🏅 Conquistas</div>
-      <div class="badges-grid" id="badgesGrid"></div>
+      <div class="card-title">🏆 Dias com todas as metas alcançadas</div>
+      <div class="week-tracker" id="goalDaysTracker"></div>
+      <div style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:6px;">🟢 dias em que você completou tudo</div>
     </div>
 
     <div class="card">
-      <div class="card-title">📋 Tarefas de hoje</div>
-      <div id="homeTaskList"></div>
+      <div class="card-title">🏅 Conquistas</div>
+      <div class="badges-grid" id="badgesGrid"></div>
     </div>
   </div>
 
@@ -436,42 +434,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
       <div class="pack-grid" id="packGrid"></div>
     </div>
     <div id="vocabListContainer"></div>
-  </div>
-
-  <!-- TASKS -->
-  <div id="section-tasks" class="section">
-    <div class="card">
-      <div class="card-title">✏️ Suas Tarefas de Hoje</div>
-      <div id="taskList"></div>
-      <p id="noTasks" style="font-size:0.85rem;color:var(--text-muted);text-align:center;padding:20px 0;">Nenhuma tarefa por hoje ainda.<br>O Vinicius vai adicionar em breve! 😊</p>
-    </div>
-  </div>
-
-  <!-- PRONOMES -->
-  <div id="section-pronouns" class="section">
-    <div class="pronouns-intro">
-      <div class="card-title" style="color:var(--teal);">🧩 Pronomes e Estrutura de Frases</div>
-      <p>Antes de montar frases, você precisa conhecer os <strong>pronomes</strong> — as palavras que substituem os nomes (eu, você, ele...). Depois aprende como montar frases simples em inglês! 🌸</p>
-    </div>
-
-    <div class="card">
-      <div class="card-title">👤 Pronomes Pessoais</div>
-      <table class="pronoun-table">
-        <thead><tr><th>Inglês</th><th>Português</th><th>Exemplo</th><th></th></tr></thead>
-        <tbody id="pronounTableBody"></tbody>
-      </table>
-    </div>
-
-    <div class="card">
-      <div class="card-title">🔨 Como montar uma frase simples</div>
-      <p style="font-size:0.82rem;color:var(--text-soft);margin-bottom:14px;">Em inglês, a ordem das palavras é sempre: <strong>Sujeito → Verbo → Complemento</strong></p>
-      <div id="structureExamples"></div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">💡 Verbos essenciais para começar</div>
-      <div id="basicVerbsTable"></div>
-    </div>
   </div>
 
   <!-- QUIZ -->
@@ -500,10 +462,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 
   <!-- EXERCÍCIOS -->
   <div id="section-exercises" class="section">
-    <div class="ex-type-tabs">
-      <div class="ex-type-tab active" onclick="setExType('fill',this)">✍️ Complete a Frase</div>
-      <div class="ex-type-tab" onclick="setExType('listen',this)">🎧 Ouça e Complete</div>
-    </div>
     <div id="exContent"></div>
   </div>
 
@@ -552,23 +510,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
       </div>
       <div id="challengeDaysList"></div>
     </div>
-  </div>
-
-  <!-- DIARY -->
-  <div id="section-diary" class="section">
-    <div class="card">
-      <div class="card-title">🎬 Registrar o que assistimos</div>
-      <div class="input-group">
-        <label class="input-label">Título (série ou filme)</label>
-        <input class="input-field" id="diaryTitle" placeholder="Ex: Monk, Knives Out...">
-      </div>
-      <div class="input-group">
-        <label class="input-label">Palavras aprendidas (separadas por vírgula)</label>
-        <input class="input-field" id="diaryWords" placeholder="Ex: hello, goodbye, please">
-      </div>
-      <button class="btn-primary" onclick="saveDiary()">💾 Salvar</button>
-    </div>
-    <div id="diaryList"></div>
   </div>
 
   <!-- MIGUEL -->
@@ -845,7 +786,7 @@ const BADGES_DEF=[
   {id:'streak_30',     emoji:'👑',name:'1 Mês!',               desc:'30 dias — dedicação total!',    check:s=>s.streak>=30},
   {id:'pron_10',       emoji:'🗣️',name:'Treino do R',          desc:'Praticou 10 palavras com R',    check:s=>Object.keys(s.pronPracticed||{}).length>=10},
   {id:'pron_all',      emoji:'🎤',name:'Mestre do R',          desc:'Praticou todas as palavras R!', check:s=>Object.keys(s.pronPracticed||{}).length>=23},
-  {id:'quiz_goal',     emoji:'💎',name:'Meta do Dia',          desc:'Completou todas as metas hoje!',check:s=>(s.quizToday||0)>=(s.quizGoal||3)&&(s.exToday||0)>=1},
+  {id:'quiz_goal',     emoji:'💎',name:'Meta do Dia',          desc:'Completou todas as metas hoje!',check:s=>(s.quizToday||0)>=(s.quizGoal||3)&&(s.exToday||0)>=1&&(s.challengeDays||[]).includes(getTodayChallengeDayNum())},
   {id:'diary_5',       emoji:'🎬',name:'Cinéfila',             desc:'5 entradas no diário',          check:s=>(s.diary||[]).length>=5},
   {id:'exercises_5',   emoji:'✍️',name:'Praticante',           desc:'5 exercícios completados',      check:s=>(s.exDone||0)>=5},
   {id:'pronouns',      emoji:'🧩',name:'Pronomes',             desc:'Explorou os pronomes',          check:s=>s.visitedPronouns||false},
@@ -875,34 +816,42 @@ const COUPLE_PHRASES=[
 
 const WEDDING_QUIZ=[
   {q:"Where did Vinicius and Andressa meet for the first time?",
+   qPt:"Onde Vinicius e Andressa se conheceram pela primeira vez?",
    opts:["In Amsterdam","At Viracopos Airport in Campinas, Brazil","In Hoek, Zeeland","Online"],
    correct:"At Viracopos Airport in Campinas, Brazil",
    fun:"Foi um encontro de cinema — ele foi te buscar no aeroporto! ✈️💕"},
   {q:"In which city do Vinicius, Andressa and Miguel live in the Netherlands?",
+   qPt:"Em qual cidade Vinicius, Andressa e Miguel moram na Holanda?",
    opts:["Amsterdam","Rotterdam","Hoek, Zeeland","Den Haag"],
    correct:"Hoek, Zeeland",
    fun:"Hoek é uma cidadezinha linda em Zeeland! 🌊🏡"},
   {q:"What is the name of their son?",
+   qPt:"Qual é o nome do filho deles?",
    opts:["Martin","Lucas","Miguel","Gabriel"],
    correct:"Miguel",
    fun:"O nosso Miguelzinho! 👶💛"},
   {q:"When did Vinicius pick up Andressa at the airport?",
+   qPt:"Quando Vinicius foi buscar Andressa no aeroporto?",
    opts:["January 15, 2025","January 27, 2025","March 30, 2025","December 1, 2024"],
    correct:"January 27, 2025",
    fun:"O começo de tudo! 🥹"},
   {q:"Which musician does Vinicius love that Andressa also knows?",
+   qPt:"Qual músico o Vinicius ama e a Andressa também conhece?",
    opts:["The Beatles","Elvis Presley","Bob Marley","Michael Jackson"],
    correct:"Bob Marley",
    fun:"'One love, one heart...' 🎵🌿"},
   {q:"What is today's special date?",
+   qPt:"O que é a data especial de hoje?",
    opts:["Their first date","Miguel's birthday","Their wedding day","Vinicius's birthday"],
    correct:"Their wedding day",
    fun:"Hoje é o dia mais especial! Parabéns, casal! 💍🥂"},
   {q:"How do you say 'marido' in English?",
+   qPt:"Como se diz 'marido' em inglês?",
    opts:["Brother","Friend","Husband","Father"],
    correct:"Husband",
    fun:"And Vinicius is the best husband! 💕"},
   {q:"How do you say 'I love you' in English?",
+   qPt:"Como se diz 'Eu te amo' em inglês?",
    opts:["I miss you","I love you","I need you","I like you"],
    correct:"I love you",
    fun:"As três palavras mais importantes! ❤️"},
@@ -970,6 +919,7 @@ let state={
   challengeDays:   load('ae_challengeDays',[]),
   weddingQuizDone: load('ae_weddingQuizDone',false),
   weddingQuizIdx:  load('ae_weddingQuizIdx',0),
+  goalDays:        load('ae_goalDays',{}),
 };
 
 // ══ SPEECH ═════════════════════════════════════════════
@@ -1013,14 +963,11 @@ function init(){
 
   renderDailyPhrase();
   renderHome();
-  renderTasks();
   renderVocab();
-  renderPronouns();
   renderWedding();
-  renderDiary();
   renderMiguel();
   renderPron();
-  renderExercises('fill');
+  renderExercises('mixed');
   startQuiz();
   updateStats();
 }
@@ -1040,7 +987,6 @@ function showSection(id,btn){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('section-'+id).classList.add('active');
   btn.classList.add('active');
-  if(id==='pronouns'&&!state.visitedPronouns){state.visitedPronouns=true;save('ae_visitedPronouns',true);checkBadges();}
 }
 
 // ══ WEDDING ════════════════════════════════════════════
@@ -1093,6 +1039,7 @@ function renderWeddingQuiz(){
     <div class="wedding-quiz-card">
       <div style="font-size:0.72rem;color:#c0508a;font-weight:800;margin-bottom:12px;">❓ Pergunta ${idx+1}/${WEDDING_QUIZ.length}</div>
       <div class="wedding-quiz-q">${q.q}</div>
+      <div style="font-size:0.8rem;color:var(--text-muted);font-style:italic;margin-bottom:16px;margin-top:-10px;">${q.qPt}</div>
       <div id="weddingOpts">
         ${q.opts.map(o=>`<button class="wedding-opt" onclick="answerWeddingQuiz(this,'${o.replace(/'/g,"\\'")}','${q.correct.replace(/'/g,"\\'")}','${q.fun.replace(/'/g,"\\'").replace(/"/g,"&quot;")}')">${o}</button>`).join('')}
       </div>
@@ -1180,18 +1127,9 @@ function toggleChallengeDay(day,btn){
 
 // ══ HOME ═══════════════════════════════════════════════
 function renderHome(){
-  const c=document.getElementById('homeTaskList');
-  if(!state.tasks.length){c.innerHTML='<p style="font-size:0.82rem;color:var(--text-muted);text-align:center;padding:10px 0;">Sem tarefas hoje ainda 😊</p>';return;}
-  c.innerHTML=state.tasks.map((t,i)=>`
-    <div class="task-item ${t.done?'done':''}">
-      <div class="task-check" onclick="toggleTask(${i})">${t.done?'✓':''}</div>
-      <div class="task-text">
-        <div class="task-title">${t.title}</div>
-        ${t.desc?`<div class="task-desc">${t.desc}</div>`:''}
-      </div>
-    </div>`).join('');
   renderWeekTracker();
   renderDailyGoals();
+  renderGoalDaysTracker();
   renderBadges();
 }
 
@@ -1213,6 +1151,23 @@ function renderQuizGoal(){
   renderDailyGoals();
 }
 
+function renderGoalDaysTracker(){
+  const el=document.getElementById('goalDaysTracker');
+  if(!el)return;
+  const dayNames=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  const today=new Date();const todayStr=today.toDateString();
+  const days=[];
+  for(let i=6;i>=0;i--){const d=new Date(today);d.setDate(d.getDate()-i);days.push({str:d.toDateString(),name:dayNames[d.getDay()],isToday:d.toDateString()===todayStr});}
+  el.innerHTML=days.map(d=>`
+    <div class="week-day">
+      <div class="week-day-name">${d.name}</div>
+      <div class="week-day-dot ${state.goalDays[d.str]?'done':''} ${d.isToday?'today':''}"></div>
+    </div>`).join('');
+  // Update stat count
+  const statEl=document.getElementById('statGoalDays');
+  if(statEl)statEl.textContent=Object.keys(state.goalDays).length;
+}
+
 function renderDailyGoals(){
   const container=document.getElementById('dailyGoalsContainer');
   if(!container)return;
@@ -1227,6 +1182,16 @@ function renderDailyGoals(){
     {icon:'💍',label:`Desafio do casal`,done:challengeDone,goal:challengeGoal,color:'#c0508a'},
   ];
 
+  const allComplete=goals.every(g=>g.done>=g.goal);
+
+  // Mark today in goalDays if all done
+  const today=new Date().toDateString();
+  if(allComplete&&!state.goalDays[today]){
+    state.goalDays[today]=true;save('ae_goalDays',state.goalDays);
+    renderGoalDaysTracker();
+    showToast('🏆 Todas as metas do dia! Dia marcado! 🌸');
+  }
+
   container.innerHTML=goals.map(g=>{
     const pct=Math.min(100,Math.round(g.done/g.goal*100));
     const allDone=g.done>=g.goal;
@@ -1239,14 +1204,7 @@ function renderDailyGoals(){
         <div style="width:${pct}%;height:100%;background:${g.color};border-radius:50px;transition:width 0.5s ease;"></div>
       </div>
     </div>`;
-  }).join('');
-}
-
-function getTodayChallengeDayNum(){
-  const weddingDate=new Date('2026-03-30');
-  const today=new Date();
-  const diff=Math.floor((today-weddingDate)/(1000*60*60*24));
-  return diff>=0&&diff<7?diff+1:-1;
+  }).join('')+(allComplete?`<div style="text-align:center;margin-top:6px;font-size:0.82rem;font-weight:800;color:var(--green);">🎉 Todas as metas de hoje completas!</div>`:'');
 }
 
 function renderBadges(){
@@ -1262,78 +1220,16 @@ function renderBadges(){
   }).join('');
 }
 
-// ══ TASKS ══════════════════════════════════════════════
-function renderTasks(){
-  document.getElementById('noTasks').style.display=state.tasks.length?'none':'block';
-  document.getElementById('taskList').innerHTML=state.tasks.map((t,i)=>`
-    <div class="task-item ${t.done?'done':''}">
-      <div class="task-check" onclick="toggleTask(${i})">${t.done?'✓':''}</div>
-      <div class="task-text">
-        <div class="task-title">${t.title}</div>
-        ${t.desc?`<div class="task-desc">${t.desc}</div>`:''}
-      </div>
-    </div>`).join('');
-}
+// ══ TASKS (kept for data compatibility) ════════════════
 function toggleTask(i){
   state.tasks[i].done=!state.tasks[i].done;save('ae_tasks',state.tasks);
-  renderTasks();renderHome();updateStats();
+  updateStats();
   if(state.tasks[i].done)showToast('✅ Tarefa concluída! Ótimo trabalho!');
-}
-
-// ══ PRONOUNS ═══════════════════════════════════════════
-function renderPronouns(){
-  // Table
-  document.getElementById('pronounTableBody').innerHTML=PRONOUNS_DATA.map(p=>`
-    <tr>
-      <td><span class="pronoun-en">${p.en}</span> <span style="font-size:0.7rem;color:var(--text-muted);">(${p.pron})</span></td>
-      <td style="color:var(--text-soft);font-weight:600;">${p.pt}</td>
-      <td style="font-style:italic;color:var(--text-muted);font-size:0.78rem;">${p.ex}</td>
-      <td><button class="pronoun-speak" onclick="speakText('${p.ex}',this)">🔊</button></td>
-    </tr>`).join('');
-
-  // Structures
-  document.getElementById('structureExamples').innerHTML=STRUCTURES_DATA.map(s=>`
-    <div class="structure-card">
-      <div class="structure-formula">
-        ${s.formula.map(f=>f.type==='plus'
-          ?`<span class="formula-plus">${f.text}</span>`
-          :`<span class="formula-block formula-${f.type}">${f.text}</span>`
-        ).join('')}
-      </div>
-      <div class="structure-examples">
-        ${s.examples.map(e=>`
-          <div class="struct-ex">
-            <div class="struct-ex-en">${e.en}</div>
-            <div class="struct-ex-pt">${e.pt}</div>
-            <button class="speak-btn" onclick="speakText('${e.speak}',this)" style="flex-shrink:0;">🔊</button>
-          </div>`).join('')}
-      </div>
-    </div>`).join('');
-
-  // Basic verbs
-  document.getElementById('basicVerbsTable').innerHTML=`
-    <table style="width:100%;border-collapse:collapse;">
-      <thead><tr>
-        <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;border-radius:8px 0 0 0;">Verbo em inglês</th>
-        <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;">Significado</th>
-        <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;border-radius:0 8px 0 0;"></th>
-      </tr></thead>
-      <tbody>
-        ${BASIC_VERBS.map(v=>`
-          <tr>
-            <td style="padding:8px 10px;font-weight:900;color:var(--primary-dark);border-bottom:1px solid var(--border);">${v.en} <span style="font-size:0.68rem;color:var(--text-muted);font-weight:600;">(${v.pron})</span></td>
-            <td style="padding:8px 10px;color:var(--text-soft);font-size:0.83rem;border-bottom:1px solid var(--border);">${v.pt}</td>
-            <td style="padding:8px 10px;border-bottom:1px solid var(--border);">
-              <button class="speak-btn" onclick="speakText('${v.en.split(' ')[0]}',this)">🔊</button>
-            </td>
-          </tr>`).join('')}
-      </tbody>
-    </table>`;
 }
 
 // ══ VOCAB ══════════════════════════════════════════════
 function renderVocab(){
-  document.getElementById('packGrid').innerHTML=VOCAB_PACKS.map(p=>{
+  const vocabPacks=VOCAB_PACKS.map(p=>{
     const mc=p.words.filter(w=>state.mastered[w.en]).length;
     return `<div class="pack-btn" onclick="showPack('${p.id}',this)">
       ${mc>0?`<div class="pack-mastered">⭐${mc}/${p.words.length}</div>`:''}
@@ -1342,6 +1238,88 @@ function renderVocab(){
       <div class="pack-count">${p.words.length} palavras</div>
     </div>`;
   }).join('');
+  const extraPacks=`
+    <div class="pack-btn" onclick="showSpecialPack('pronouns',this)">
+      <div class="pack-emoji">🧩</div>
+      <div class="pack-name">Pronomes</div>
+      <div class="pack-count">${PRONOUNS_DATA.length} pronomes</div>
+    </div>
+    <div class="pack-btn" onclick="showSpecialPack('verbs',this)">
+      <div class="pack-emoji">🔤</div>
+      <div class="pack-name">Verbos Essenciais</div>
+      <div class="pack-count">${BASIC_VERBS.length} verbos</div>
+    </div>`;
+  document.getElementById('packGrid').innerHTML=vocabPacks+extraPacks;
+}
+
+function showSpecialPack(type,btn){
+  document.querySelectorAll('.pack-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const container=document.getElementById('vocabListContainer');
+  if(type==='pronouns'){
+    container.innerHTML=`
+      <div class="card">
+        <div class="card-title">🧩 Pronomes Pessoais</div>
+        <div class="pronouns-intro" style="margin-bottom:12px;">
+          <p>As palavras que substituem os nomes — <strong>eu, você, ele...</strong> São a base de toda frase em inglês! 🌸</p>
+        </div>
+        <table class="pronoun-table">
+          <thead><tr><th>Inglês</th><th>Português</th><th>Exemplo</th><th></th></tr></thead>
+          <tbody>
+            ${PRONOUNS_DATA.map(p=>`
+              <tr>
+                <td><span class="pronoun-en">${p.en}</span> <span style="font-size:0.7rem;color:var(--text-muted);">(${p.pron})</span></td>
+                <td style="color:var(--text-soft);font-weight:600;">${p.pt}</td>
+                <td style="font-style:italic;color:var(--text-muted);font-size:0.78rem;">${p.ex}</td>
+                <td><button class="pronoun-speak" onclick="speakText('${p.ex}',this)">🔊</button></td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+        <div style="margin-top:16px;">
+          <div class="card-title">🔨 Como montar uma frase simples</div>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-bottom:14px;">Em inglês, a ordem é sempre: <strong>Sujeito → Verbo → Complemento</strong></p>
+          ${STRUCTURES_DATA.map(s=>`
+            <div class="structure-card">
+              <div class="structure-formula">
+                ${s.formula.map(f=>f.type==='plus'
+                  ?`<span class="formula-plus">${f.text}</span>`
+                  :`<span class="formula-block formula-${f.type}">${f.text}</span>`
+                ).join('')}
+              </div>
+              <div class="structure-examples">
+                ${s.examples.map(e=>`
+                  <div class="struct-ex">
+                    <div class="struct-ex-en">${e.en}</div>
+                    <div class="struct-ex-pt">${e.pt}</div>
+                    <button class="speak-btn" onclick="speakText('${e.speak}',this)" style="flex-shrink:0;">🔊</button>
+                  </div>`).join('')}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`;
+  } else {
+    container.innerHTML=`
+      <div class="card">
+        <div class="card-title">🔤 Verbos Essenciais para Começar</div>
+        <table style="width:100%;border-collapse:collapse;">
+          <thead><tr>
+            <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;border-radius:8px 0 0 0;">Verbo em inglês</th>
+            <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;">Significado</th>
+            <th style="background:var(--primary);color:white;padding:8px 10px;font-size:0.75rem;font-weight:800;text-align:left;border-radius:0 8px 0 0;"></th>
+          </tr></thead>
+          <tbody>
+            ${BASIC_VERBS.map(v=>`
+              <tr>
+                <td style="padding:8px 10px;font-weight:900;color:var(--primary-dark);border-bottom:1px solid var(--border);">${v.en} <span style="font-size:0.68rem;color:var(--text-muted);font-weight:600;">(${v.pron})</span></td>
+                <td style="padding:8px 10px;color:var(--text-soft);font-size:0.83rem;border-bottom:1px solid var(--border);">${v.pt}</td>
+                <td style="padding:8px 10px;border-bottom:1px solid var(--border);">
+                  <button class="speak-btn" onclick="speakText('${v.en.split(' ')[0]}',this)">🔊</button>
+                </td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  }
 }
 function showPack(id,btn){
   document.querySelectorAll('.pack-btn').forEach(b=>b.classList.remove('active'));
@@ -1477,18 +1455,24 @@ function answerQuiz(btn,selected,correct){
 function nextQuiz(){loadQuizQuestion();}
 
 // ══ EXERCISES ══════════════════════════════════════════
-let exType='fill',exIndex=0,exPool=[],exAnswered=false;
+let exType='mixed',exIndex=0,exPool=[],exAnswered=false;
 
-function setExType(type,btn){
-  exType=type;
-  document.querySelectorAll('.ex-type-tab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderExercises(type);
+function buildMixedPool(){
+  // Interleave fill and listen exercises
+  const fills=shuffle([...FILL_EXERCISES]).map(e=>({...e,exKind:'fill'}));
+  const listens=shuffle([...LISTEN_EXERCISES]).map(e=>({...e,exKind:'listen'}));
+  const mixed=[];
+  const max=Math.max(fills.length,listens.length);
+  for(let i=0;i<max;i++){
+    if(i<fills.length)mixed.push(fills[i]);
+    if(i<listens.length)mixed.push(listens[i]);
+  }
+  return mixed;
 }
 
 function renderExercises(type){
-  exType=type;
-  exPool=shuffle(type==='fill'?[...FILL_EXERCISES]:[...LISTEN_EXERCISES]);
+  exType='mixed';
+  exPool=buildMixedPool();
   exIndex=0;
   renderCurrentExercise();
 }
@@ -1518,7 +1502,8 @@ function renderCurrentExercise(){
 
   const dotsHTML=exPool.map((_,i)=>`<div class="ex-dot ${i<exIndex?'done':''} ${i===exIndex?'current':''}"></div>`).join('');
 
-  if(exType==='listen'){
+  const currentKind=ex.exKind||exType;
+  if(currentKind==='listen'){
     container.innerHTML=`
       <div class="ex-listen-card">
         <div class="card-title" style="color:var(--purple);">🎧 Ouça e complete a frase</div>
@@ -1587,38 +1572,6 @@ function nextExercise(){
   }
   renderCurrentExercise();
 }
-
-// ══ DIARY ══════════════════════════════════════════════
-function renderDiary(){
-  const list=document.getElementById('diaryList');
-  if(!state.diary.length){list.innerHTML='<p style="font-size:0.85rem;color:var(--text-muted);text-align:center;padding:20px;">Nenhuma entrada ainda. Assistam algo juntos! 🎬</p>';return;}
-  list.innerHTML=state.diary.slice().reverse().map((e,ri)=>{
-    const i=state.diary.length-1-ri;
-    return `<div class="diary-entry">
-      <div class="entry-top">
-        <div class="entry-title">🎬 ${e.title}</div>
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div class="entry-date">${e.date}</div>
-          <button class="entry-del" onclick="deleteDiary(${i})">×</button>
-        </div>
-      </div>
-      <div class="entry-words">
-        ${e.words.map(w=>`<span class="word-tag" onclick="speakText('${w.replace(/'/g,"\\'")}',null)">${w} 🔊</span>`).join('')}
-      </div>
-    </div>`;
-  }).join('');
-}
-function saveDiary(){
-  const title=document.getElementById('diaryTitle').value.trim();
-  if(!title){showToast('⚠️ Digite o título!');return;}
-  const words=(document.getElementById('diaryWords').value||'').split(',').map(w=>w.trim()).filter(Boolean);
-  const now=new Date();
-  state.diary.push({title,words,date:`${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`});
-  save('ae_diary',state.diary);
-  document.getElementById('diaryTitle').value='';document.getElementById('diaryWords').value='';
-  renderDiary();checkBadges();showToast('🎬 Entrada salva!');
-}
-function deleteDiary(i){state.diary.splice(i,1);save('ae_diary',state.diary);renderDiary();}
 
 // ══ MIGUEL ═════════════════════════════════════════════
 function renderMiguel(){
@@ -1693,9 +1646,9 @@ function checkBadges(){
 function updateStats(){
   const mc=Object.keys(state.mastered).length;
   document.getElementById('statMastered').textContent=mc;
-  document.getElementById('statTasks').textContent=state.tasks.filter(t=>t.done).length;
+  document.getElementById('statGoalDays').textContent=Object.keys(state.goalDays).length;
   document.getElementById('statQuiz').textContent=state.quizCorrect;
-  renderWeekTracker();renderDailyGoals();renderBadges();
+  renderWeekTracker();renderDailyGoals();renderGoalDaysTracker();renderBadges();
 }
 
 // ══ TOAST ══════════════════════════════════════════════
